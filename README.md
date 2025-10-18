@@ -8,4 +8,4 @@ Hi! I'm Arnav Bhardwaj, a 3rd year B.Tech CSE student. I build reliable software
 
 ## Live Demo
 
-Visit the live portfolio: [https://portfolio-arnav1.vercel.app/](https://portfolio-arnav1.vercel.app)
+Visit the live portfolio: [https://portfolio-arnav1.vercel.app](https://portfolio-arnav1.vercel.app)
