@@ -18,6 +18,20 @@ export const Experience = () => {
       technologies: ["Python", "FAISS", "Hugging Face", "OpenAI", "RAG", "Tkinter", "Geospatial Mapping"]
     },
     {
+      company: "TECHNOV8 Hackathon",
+      position: "Top 10 Finalist",
+      duration: "2025",
+      location: "Remote",
+      type: "Achievement",
+      description: [
+        "Ranked Top 10 out of 192 teams in the FinTech Innovation track",
+        "Developed an AI-powered personal finance management solution",
+        "Competed against top teams in building innovative financial technology solutions",
+        "Demonstrated expertise in full-stack development and AI integration"
+      ],
+      technologies: ["FinTech", "AI", "Full-Stack", "Innovation", "Team Collaboration"]
+    },
+    {
       company: "TechCom",
       position: "Core Team Member",
       duration: "August 2024 - Present",
@@ -33,7 +47,7 @@ export const Experience = () => {
       technologies: ["Leadership", "Event Management", "Technical Mentoring", "Community Building"]
     },
     {
-      company: "IOSD MAIT",
+      company: "IOSD MAIT (International Organisation of Software Developers)",
       position: "Member",
       duration: "October 2023 - Present",
       location: "Delhi, India",
@@ -45,20 +59,6 @@ export const Experience = () => {
         "Networking with industry professionals and senior developers"
       ],
       technologies: ["Open Source", "Collaboration", "Software Development", "Networking"]
-    },
-    {
-      company: "TECHNOV8 Hackathon",
-      position: "Top 10 Finalist",
-      duration: "2024",
-      location: "Remote",
-      type: "Achievement",
-      description: [
-        "Ranked Top 10 out of 192 teams in the FinTech Innovation track",
-        "Developed an AI-powered personal finance management solution",
-        "Competed against top teams in building innovative financial technology solutions",
-        "Demonstrated expertise in full-stack development and AI integration"
-      ],
-      technologies: ["FinTech", "AI", "Full-Stack", "Innovation", "Team Collaboration"]
     }
   ];
 
