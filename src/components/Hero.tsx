@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code, Brain, Award, Target, BookOpen, Zap } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code, Brain, Award, Target, BookOpen, Zap, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
@@ -44,40 +44,41 @@ export const Hero = () => {
         <div className="text-center max-w-6xl mx-auto">
           {/* Enhanced Floating Tech Icons - Symmetric Layout */}
           {/* Top Row */}
-          <div className="absolute top-20 left-10 animate-bounce">
+          <div className="absolute top-20 left-10 animate-bounce -z-10 pointer-events-none">
             <div className="p-3 rounded-full bg-blue-500/10 backdrop-blur-sm">
               <Code className="w-10 h-10 text-blue-400/60" />
             </div>
           </div>
-          <div className="absolute top-20 right-10 animate-bounce">
+          <div className="absolute top-20 right-10 animate-bounce -z-10 pointer-events-none">
             <div className="p-3 rounded-full bg-blue-500/10 backdrop-blur-sm">
-              <Brain className="w-10 h-10 text-blue-300/60" />
+              <Award className="w-8 h-8 text-blue-400/60" />
             </div>
           </div>
           
           {/* Middle Row */}
-          <div className="absolute top-1/2 left-10 animate-bounce">
+          <div className="absolute top-1/2 left-10 animate-bounce -z-10 pointer-events-none">
             <div className="p-3 rounded-full bg-cyan-500/10 backdrop-blur-sm">
               <Zap className="w-8 h-8 text-cyan-400/60" />
             </div>
           </div>
-          <div className="absolute top-1/2 right-10 animate-bounce">
+          <div className="absolute top-1/2 right-10 animate-bounce -z-10 pointer-events-none">
             <div className="p-3 rounded-full bg-purple-500/10 backdrop-blur-sm">
               <Target className="w-8 h-8 text-purple-400/60" />
             </div>
           </div>
           
           {/* Bottom Row */}
-          <div className="absolute bottom-20 left-10 animate-bounce">
+          <div className="absolute bottom-20 left-10 animate-bounce -z-10 pointer-events-none">
             <div className="p-3 rounded-full bg-cyan-500/10 backdrop-blur-sm">
               <Sparkles className="w-10 h-10 text-cyan-400/60" />
             </div>
           </div>
-          <div className="absolute bottom-20 right-10 animate-bounce">
+          <div className="absolute bottom-20 right-10 animate-bounce -z-10 pointer-events-none">
             <div className="p-3 rounded-full bg-blue-500/10 backdrop-blur-sm">
-              <Award className="w-8 h-8 text-blue-400/60" />
+              <Brain className="w-10 h-10 text-blue-300/60" />
             </div>
           </div>
+          
 
           {/* Name & Title */}
           <div className="mb-5">
@@ -161,7 +162,6 @@ export const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-5 justify-center mb-5">
             <Button 
-              size="md" 
               className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-semibold px-7 py-3 rounded-full shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
               onClick={() => scrollToSection('contact')}
             >
@@ -171,13 +171,22 @@ export const Hero = () => {
             </Button>
             <Button 
               variant="outline" 
-              size="md" 
-              className="border-2 border-blue-400 text-blue-300 hover:bg-blue-500 hover:text-white font-semibold px-7 py-3 rounded-full shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
+              className="border-2 border-blue-400 text-cyan-300 hover:bg-blue-500 hover:text-white font-semibold px-7 py-3 rounded-full shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
               onClick={() => scrollToSection('projects')}
             >
               <Github className="w-5 h-5 mr-2" />
               View Projects
               <Code className="w-5 h-5 ml-2" />
+            </Button>
+            <Button 
+              asChild
+              variant="outline"
+              className="border-2 border-blue-400 text-blue-300 hover:bg-cyan-500 hover:text-white font-semibold px-7 py-3 rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105"
+            >
+              <a href="https://qrr.to/ebb73269" target="_blank" rel="noopener noreferrer">
+                <Download className="w-5 h-5 mr-2" />
+                Download Resume
+              </a>
             </Button>
           </div>
           
