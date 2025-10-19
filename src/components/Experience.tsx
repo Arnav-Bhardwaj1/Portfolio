@@ -24,10 +24,11 @@ export const Experience = () => {
       location: "Delhi, India",
       type: "Leadership",
       description: [
+        
         "Leading technical initiatives and organizing coding events",
+        "Building community engagement and fostering tech culture",
         "Mentoring junior students in programming and development",
-        "Coordinating workshops on emerging technologies",
-        "Building community engagement and fostering tech culture"
+        "Coordinating workshops on emerging technologies"
       ],
       technologies: ["Leadership", "Event Management", "Technical Mentoring", "Community Building"]
     },

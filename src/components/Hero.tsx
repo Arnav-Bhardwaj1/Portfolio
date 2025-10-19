@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code, Brain, Award, Target, BookOpen, Zap, Download } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code, Brain, Award, Target, BookOpen, Zap, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Hero = () => {
@@ -184,8 +184,8 @@ export const Hero = () => {
               className="border-2 border-blue-400 text-blue-300 hover:bg-cyan-500 hover:text-white font-semibold px-7 py-3 rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105"
             >
               <a href="https://qrr.to/ebb73269" target="_blank" rel="noopener noreferrer">
-                <Download className="w-5 h-5 mr-2" />
-                Download Resume
+                <FileText className="w-5 h-5 mr-2" />
+                View Resume
               </a>
             </Button>
           </div>
