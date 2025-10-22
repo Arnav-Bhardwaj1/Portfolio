@@ -2,6 +2,7 @@ import { ExternalLink, Github, Code, Database, Brain, Globe } from "lucide-react
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { CodeVisualization } from "./ThreeVisualizations";
 
 export const Projects = () => {
   const projects = [
@@ -68,10 +69,15 @@ export const Projects = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             A showcase of my technical projects spanning full-stack development, machine learning, 
             mobile applications, and open-source contributions.
           </p>
+          
+          {/* 3D Code Visualization */}
+          <div className="max-w-2xl mx-auto">
+            <CodeVisualization />
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">

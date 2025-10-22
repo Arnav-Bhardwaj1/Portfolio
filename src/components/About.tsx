@@ -1,6 +1,7 @@
 import { GraduationCap, Trophy, Users, Code } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SkillsVisualization } from "./ThreeVisualizations";
 
 export const About = () => {
   const highlights = [
@@ -94,6 +95,12 @@ export const About = () => {
         {/* Skills */}
         <div>
           <h3 className="text-2xl font-semibold mb-6 text-center">Technical Skills</h3>
+          
+          {/* 3D Skills Visualization */}
+          <div className="mb-8">
+            <SkillsVisualization />
+          </div>
+          
           <div className="flex flex-wrap justify-center gap-3">
             {skills.map((skill, index) => (
               <Badge 

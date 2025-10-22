@@ -1,6 +1,7 @@
 import { Calendar, MapPin, Building } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ExperienceVisualization } from "./ThreeVisualizations";
 
 export const Experience = () => {
   const experiences = [
@@ -79,10 +80,15 @@ export const Experience = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Professional <span className="text-gradient">Experience</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
             My journey through internships, leadership roles, and community contributions 
             that have shaped my technical expertise and professional growth.
           </p>
+          
+          {/* 3D Data Visualization */}
+          <div className="max-w-2xl mx-auto">
+            <ExperienceVisualization />
+          </div>
         </div>
 
         <div className="space-y-6">

@@ -1,5 +1,6 @@
 import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code, Brain, Award, Target, BookOpen, Zap, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { OptimizedThreeScene } from "./OptimizedThreeScene";
 
 export const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -14,13 +15,16 @@ export const Hero = () => {
       {/* Enhanced Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-slate-900 to-gray-900" />
       
+      {/* 3D Interactive Background */}
+      <OptimizedThreeScene />
+      
       {/* Enhanced Animated Background Elements */}
-      <div className="absolute inset-0">
-        {/* Floating Particles */}
-        {[...Array(60)].map((_, i) => (
+      <div className="absolute inset-0 z-10">
+        {/* Reduced CSS Particles (3D ones handle most of the effect) */}
+        {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-blue-400/70 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-blue-400/40 rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -40,7 +44,7 @@ export const Hero = () => {
       {/* Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
       
-      <div className="container mx-auto px-6 relative z-10 pt-8">
+      <div className="container mx-auto px-6 relative z-20 pt-8">
         <div className="text-center max-w-6xl mx-auto">
           {/* Enhanced Floating Tech Icons - Symmetric Layout */}
           {/* Top Row */}
