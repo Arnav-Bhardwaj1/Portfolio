@@ -33,7 +33,7 @@ export const Projects = () => {
         "Document handling and reports"
       ],
       icon: Database,
-      demoLink: "#",
+      demoLink: "https://finance1manager.netlify.app/",
       githubLink: "https://github.com/Arnav-Bhardwaj1/FinanceManager"
     },
     {
@@ -128,9 +128,20 @@ export const Projects = () => {
                 
                 <div className="mt-auto flex gap-2">
                   {project.demoLink && project.demoLink !== "#" && (
-                    <Button size="sm" variant="outline" className="flex-1">
-                      <ExternalLink className="w-3 h-3 mr-1" />
-                      Demo
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      className="flex-1"
+                      asChild
+                    >
+                      <a 
+                        href={project.demoLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-3 h-3 mr-1" />
+                        Live Demo
+                      </a>
                     </Button>
                   )}
                   {project.githubLink && project.githubLink !== "private" && (
