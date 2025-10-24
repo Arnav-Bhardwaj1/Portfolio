@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Code, Database, Brain, Globe } from "lucide-react";
+import { ExternalLink, Github, Code, Database, Brain, Globe, CheckSquare } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -7,15 +7,15 @@ import { CodeVisualization } from "./ThreeVisualizations";
 export const Projects = () => {
   const projects = [
     {
-      title: "FarmSphere - AI Driven Smart Farming Application",
-      description: "Built an on-device ML Crop Health Scanner (TFLite) for instant leaf disease diagnosis and remediation steps. Integrated an AI chatbot for personalized farming advice, real-time weather alerts, and market price aggregation.",
-      category: "Mobile & AI",
-      technologies: ["Flutter", "Generative AI", "TFLite", "SQL", "Riverpod", "Geolocation"],
+      title: "FarmSphere - AI Driven Smart Farming Web Application",
+      description: "Built an ML Crop Health Scanner for instant leaf disease diagnosis and remediation steps. Integrated an AI chatbot for personalized farming advice, real-time weather alerts, and market price aggregation. Features computer vision for crop analysis and intelligent recommendations.",
+      category: "Full-Stack, AI and ML",
+      technologies: ["React", "Node.js", "TensorFlow.js", "Computer Vision", "AI/ML", "Weather API"],
       features: [
-        "On-device ML crop disease detection",
+        "ML-powered crop disease detection",
         "AI chatbot for farming guidance",
         "Real-time weather alerts",
-        "Multilingual voice input/output"
+        "Computer vision crop analysis"
       ],
       icon: Brain,
       demoLink: "#",
@@ -24,20 +24,22 @@ export const Projects = () => {
     {
       title: "Finova - AI-Powered Personal Finance Manager",
       description: "Developed a full-stack expense management platform with real-time features. Improved data consistency & reliability across dynamic reports. Integrated AI-powered chatbot for personalized financial insights and budget planning.",
-      category: "Full-Stack Development",
+      category: "Full-Stack & AI",
       technologies: ["JavaScript", "MongoDB", "Express.js", "React.js", "Node.js", "AI Integration"],
       features: [
-        "Secure user authentication",
-        "Real-time data synchronization",
-        "AI-powered financial insights",
-        "Document handling and reports"
+        "AI-powered financial insights & budget recommendations",
+        "Real-time expense tracking with smart categorization",
+        "Interactive charts & comprehensive financial reports",
+        "Document upload & automated expense extraction",
+        "Secure multi-user authentication system",
+        "Advanced filtering & search capabilities"
       ],
       icon: Database,
       demoLink: "https://finance1manager.netlify.app/",
       githubLink: "https://github.com/Arnav-Bhardwaj1/FinanceManager"
     },
     {
-      title: "AstroGuard: Earth's Sentinel 🛡️",
+      title: "AstroGuard: Earth's Sentinel",
       description: "Interactive asteroid impact visualization tool that simulates asteroid impacts and tests deflection strategies using real NASA data. Features 3D trajectory visualization, impact calculations, and educational planetary defense insights.",
       category: "Full-Stack & 3D",
       technologies: ["Python", "Flask", "React", "TypeScript", "Three.js", "Leaflet", "Tailwind CSS", "NASA API"],
@@ -50,14 +52,33 @@ export const Projects = () => {
       icon: Globe,
       demoLink: "#",
       githubLink: "https://github.com/Arnav-Bhardwaj1/AstroGuard"
+    },
+    {
+      title: "TaskFlow - Task Management Web App",
+      description: "TaskFlow helps users organize work with secure sign-in, task creation/editing, powerful filtering and sorting, and priority & deadline tracking. Built with React on the frontend and Node/Express + MongoDB on the backend, it includes analytics to surface actionable insights and supports real-time UI updates for instant feedback.",
+      category: "Full-Stack Development",
+      technologies: ["React 18", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS", "Framer Motion", "React Query"],
+      features: [
+        "JWT-based secure authentication system",
+        "Advanced task filtering by status, priority & tags",
+        "Real-time dashboard with analytics & insights",
+        "Priority levels (Urgent, High, Medium, Low)",
+        "Due date tracking with deadline alerts",
+        "Custom tag system for task organization"
+      ],
+      icon: CheckSquare,
+      demoLink: "#",
+      githubLink: "https://github.com/Arnav-Bhardwaj1/TaskFlow"
     }
   ];
 
   const getCategoryColor = (category: string) => {
     switch (category) {
       case "Full-Stack Development": return "bg-primary/10 text-primary border-primary/20";
-      case "Mobile & AI": return "bg-accent/10 text-accent border-accent/20";
-      case "Full-Stack & 3D": return "bg-secondary/10 text-secondary-foreground border-secondary/20";
+      case "Full-Stack & AI": return "bg-blue-500/10 text-blue-500 border-blue-500/20";
+      case "Full-Stack, AI and ML": return "bg-purple-500/10 text-purple-500 border-purple-500/20";
+      case "Full-Stack & ML": return "bg-green-500/10 text-green-500 border-green-500/20";
+      case "Full-Stack & 3D": return "bg-orange-500/10 text-orange-500 border-orange-500/20";
       default: return "bg-muted/10 text-muted-foreground border-muted/20";
     }
   };
@@ -80,7 +101,7 @@ export const Projects = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <Card key={index} className="card-elegant hover-lift flex flex-col">
               <CardHeader>

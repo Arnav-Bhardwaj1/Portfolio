@@ -24,12 +24,12 @@ export function SkillsVisualization() {
   }, []);
 
   const skills = [
-    { name: 'React', color: '#61dafb', delay: 0, icon: '⚛️', glow: '#61dafb80' },
-    { name: 'Python', color: '#3776ab', delay: 0.2, icon: '🐍', glow: '#3776ab80' },
-    { name: 'ML', color: '#ff6b6b', delay: 0.4, icon: '🤖', glow: '#ff6b6b80' },
-    { name: 'Node.js', color: '#68a063', delay: 0.6, icon: '🟢', glow: '#68a06380' },
-    { name: 'DSA', color: '#00599c', delay: 0.8, icon: '⚡', glow: '#00599c80' },
-    { name: 'Flutter', color: '#02569b', delay: 1.0, icon: '📱', glow: '#02569b80' },
+    { name: 'React', color: '#61dafb', delay: 0, glow: '#61dafb80' },
+    { name: 'Python', color: '#3776ab', delay: 0.2, glow: '#3776ab80' },
+    { name: 'ML', color: '#ff6b6b', delay: 0.4, glow: '#ff6b6b80' },
+    { name: 'Node.js', color: '#68a063', delay: 0.6, glow: '#68a06380' },
+    { name: 'DSA', color: '#00599c', delay: 0.8, glow: '#00599c80' },
+    { name: 'Flutter', color: '#02569b', delay: 1.0, glow: '#02569b80' },
   ];
 
   return (
@@ -120,7 +120,6 @@ export function SkillsVisualization() {
               onMouseLeave={() => setHoveredSkill(null)}
             >
               <div className="flex items-center gap-2">
-                <span className="text-lg drop-shadow-lg">{skill.icon}</span>
                 <span className="drop-shadow-md">{skill.name}</span>
               </div>
             </div>
@@ -166,6 +165,9 @@ export function CodeVisualization() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [activeBlock, setActiveBlock] = useState<string | null>(null);
+  const [currentText, setCurrentText] = useState(0);
+
+  const rotatingTexts = ['Project Hub', 'Innovation', 'Development', 'Solutions'];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -184,11 +186,20 @@ export function CodeVisualization() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (isVisible) {
+      const interval = setInterval(() => {
+        setCurrentText((prev) => (prev + 1) % rotatingTexts.length);
+      }, 2000);
+      return () => clearInterval(interval);
+    }
+  }, [isVisible]);
+
   const codeBlocks = [
-    { text: '<React/>', color: '#61dafb', delay: 0, position: 'top-left', icon: '⚛️', glow: '#61dafb80' },
-    { text: 'Python', color: '#3776ab', delay: 0.3, position: 'top-right', icon: '🐍', glow: '#3776ab80' },
-    { text: 'ML', color: '#ff6b6b', delay: 0.6, position: 'bottom-left', icon: '🤖', glow: '#ff6b6b80' },
-    { text: 'Node.js', color: '#68a063', delay: 0.9, position: 'bottom-right', icon: '🟢', glow: '#68a06380' },
+    { text: 'Finova', color: '#61dafb', delay: 0, position: 'top-left', glow: '#61dafb80', type: 'Finance App' },
+    { text: 'Farmsphere', color: '#3776ab', delay: 0.3, position: 'top-right', glow: '#3776ab80', type: 'AI Project' },
+    { text: 'TaskFlow', color: '#ff6b6b', delay: 0.6, position: 'bottom-left', glow: '#ff6b6b80', type: 'Web App' },
+    { text: 'Astroguard', color: '#68a063', delay: 0.9, position: 'bottom-right', glow: '#68a06380', type: 'Mobile Dev' },
   ];
 
   const getPositionClasses = (position: string) => {
@@ -197,7 +208,7 @@ export function CodeVisualization() {
       case 'top-right': return 'top-6 right-6';
       case 'bottom-left': return 'bottom-6 left-6';
       case 'bottom-right': return 'bottom-6 right-6';
-      default: return 'top-1/2 left-1/2';
+      default: return 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2';
     }
   };
 
@@ -242,38 +253,45 @@ export function CodeVisualization() {
             onMouseEnter={() => setActiveBlock(block.text)}
             onMouseLeave={() => setActiveBlock(null)}
           >
-            <div className="flex items-center gap-2">
-              <span className="text-lg drop-shadow-lg">{block.icon}</span>
-              <span className="drop-shadow-md">{block.text}</span>
+            <div className="flex flex-col items-center gap-1">
+              <span className="drop-shadow-md font-semibold">{block.text}</span>
             </div>
           </div>
         </div>
       ))}
 
-      {/* Enhanced central terminal */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <div 
-          className={`w-24 h-24 bg-gradient-to-br from-slate-900/80 to-black/90 rounded-xl border-2 border-green-400/60 transition-all duration-1000 ${
-            isVisible ? 'scale-100' : 'scale-0'
-          }`}
-          style={{
-            animationDelay: '1.2s',
-            boxShadow: `
-              0 0 40px rgba(34, 197, 94, 0.5),
-              inset 0 0 20px rgba(34, 197, 94, 0.2),
-              0 0 80px rgba(34, 197, 94, 0.3)
-            `,
-          }}
-        >
-          <div className="w-full h-full flex items-center justify-center">
-            <div className="flex gap-1">
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{ boxShadow: '0 0 8px #22c55e' }} />
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s', boxShadow: '0 0 8px #22c55e' }} />
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{ animationDelay: '1s', boxShadow: '0 0 8px #22c55e' }} />
-            </div>
-          </div>
-        </div>
-      </div>
+       {/* Enhanced central terminal - Project Hub with rotating text */}
+       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+         <div 
+           className={`w-32 h-32 bg-gradient-to-br from-slate-900/80 to-black/90 rounded-xl border-2 border-green-400/60 transition-all duration-1000 ${
+             isVisible ? 'scale-100' : 'scale-0'
+           }`}
+           style={{
+             animationDelay: '1.2s',
+             boxShadow: `
+               0 0 40px rgba(34, 197, 94, 0.5),
+               inset 0 0 20px rgba(34, 197, 94, 0.2),
+               0 0 80px rgba(34, 197, 94, 0.3)
+             `,
+           }}
+         >
+           <div className="w-full h-full flex flex-col items-center justify-center">
+             {/* Rotating text */}
+             <div className="text-green-400 text-xs font-mono mb-2 text-center">
+               <div className="transition-all duration-500 ease-in-out">
+                 {rotatingTexts[currentText]}
+               </div>
+             </div>
+             
+             {/* Terminal dots */}
+             <div className="flex gap-1">
+               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{ boxShadow: '0 0 8px #22c55e' }} />
+               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{ animationDelay: '0.5s', boxShadow: '0 0 8px #22c55e' }} />
+               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" style={{ animationDelay: '1s', boxShadow: '0 0 8px #22c55e' }} />
+             </div>
+           </div>
+         </div>
+       </div>
 
       {/* Enhanced floating syntax elements */}
       {isVisible && (
@@ -294,7 +312,7 @@ export function CodeVisualization() {
 export function ExperienceVisualization() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [hoveredBar, setHoveredBar] = useState<string | null>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -313,12 +331,26 @@ export function ExperienceVisualization() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        const y = ((event.clientY - rect.top) / rect.height) * 2 - 1;
+        setMousePosition({ x, y });
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   const dataPoints = [
-    { height: 60, color: '#3b82f6', label: 'ML', delay: 0, icon: '🤖', glow: '#3b82f680' },
-    { height: 80, color: '#06b6d4', label: 'Web Dev', delay: 0.2, icon: '🌐', glow: '#06b6d480' },
-    { height: 70, color: '#8b5cf6', label: 'Mobile', delay: 0.4, icon: '📱', glow: '#8b5cf680' },
-    { height: 90, color: '#10b981', label: 'DSA', delay: 0.6, icon: '⚡', glow: '#10b98180' },
-    { height: 50, color: '#f59e0b', label: 'AI', delay: 0.8, icon: '🧠', glow: '#f59e0b80' },
+    { height: 60, color: '#3b82f6', label: 'ML', delay: 0 },
+    { height: 80, color: '#06b6d4', label: 'Web Dev', delay: 0.2 },
+    { height: 70, color: '#8b5cf6', label: 'Mobile', delay: 0.4 },
+    { height: 90, color: '#10b981', label: 'DSA', delay: 0.6 },
+    { height: 50, color: '#f59e0b', label: 'Gen AI', delay: 0.8 },
   ];
 
   return (
@@ -326,106 +358,69 @@ export function ExperienceVisualization() {
       ref={containerRef}
       className="w-full h-64 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-pink-900/50 rounded-xl overflow-hidden relative group border border-slate-700/30 backdrop-blur-sm"
     >
-      {/* Enhanced animated background waves */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="w-full h-full bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-blue-500/10 animate-pulse" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-purple-500/5 to-transparent animate-pulse" style={{ animationDelay: '2s' }} />
-      </div>
+      {/* Enhanced floating data points with mouse interaction */}
+      {[...Array(20)].map((_, i) => {
+        const baseX = 15 + Math.random() * 70;
+        const baseY = 15 + Math.random() * 70;
+        const mouseInfluence = 0.3;
+        
+        return (
+          <div
+            key={i}
+            className={`absolute w-2 h-2 rounded-full transition-all duration-1000 ${
+              isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
+            }`}
+            style={{
+              left: `${baseX + mousePosition.x * mouseInfluence}%`,
+              top: `${baseY + mousePosition.y * mouseInfluence}%`,
+              backgroundColor: i % 3 === 0 ? '#3b82f680' : i % 3 === 1 ? '#06b6d480' : '#8b5cf680',
+              animationDelay: `${0.5 + Math.random() * 0.5}s`,
+              boxShadow: `0 0 15px ${i % 3 === 0 ? '#3b82f680' : i % 3 === 1 ? '#06b6d480' : '#8b5cf680'}`,
+            }}
+          />
+        );
+      })}
 
-      {/* Enhanced chart container */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-end gap-4 h-32">
+      {/* Skill circles instead of bars */}
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center gap-8">
         {dataPoints.map((point, index) => (
-          <div key={point.label} className="flex flex-col items-center group/bar">
-            {/* Enhanced bar */}
+          <div key={point.label} className="flex flex-col items-center">
+            {/* Circular skill indicator */}
             <div
-              className={`w-12 rounded-t-xl transition-all duration-1000 cursor-pointer ${
-                hoveredBar === point.label ? 'scale-110' : 'hover:scale-105'
-              }`}
+              className={`w-16 h-16 rounded-full border-2 transition-all duration-1000 cursor-pointer hover:scale-110`}
               style={{
-                height: `${point.height}px`,
-                backgroundColor: point.color,
+                backgroundColor: `${point.color}20`,
+                borderColor: point.color,
                 animationDelay: `${point.delay}s`,
-                boxShadow: `
-                  0 0 25px ${point.glow},
-                  0 8px 32px rgba(0, 0, 0, 0.3),
-                  inset 0 1px 0 rgba(255, 255, 255, 0.2)
-                `,
-                background: `
-                  linear-gradient(to top, ${point.color}, ${point.color}cc),
-                  radial-gradient(circle at top, rgba(255, 255, 255, 0.2), transparent 50%)
-                `,
-                transformOrigin: 'bottom',
-                transform: isVisible ? 'scaleY(1)' : 'scaleY(0)',
+                boxShadow: `0 0 25px ${point.color}40`,
+                transform: isVisible ? 'scale(1)' : 'scale(0)',
               }}
-              onMouseEnter={() => setHoveredBar(point.label)}
-              onMouseLeave={() => setHoveredBar(null)}
             >
-              {/* Enhanced bar gradient overlay */}
-              <div 
-                className="w-full h-full rounded-t-xl bg-gradient-to-t from-transparent via-white/10 to-white/20"
-                style={{ animationDelay: `${point.delay + 0.1}s` }}
-              />
+              <div className="w-full h-full flex items-center justify-center">
+                <div 
+                  className="w-8 h-8 rounded-full"
+                  style={{ backgroundColor: point.color }}
+                />
+              </div>
             </div>
             
-            {/* Enhanced label with icon */}
+            {/* Clean label */}
             <div
-              className={`mt-3 text-xs font-semibold text-gray-200 transition-all duration-1000 ${
+              className={`mt-3 text-sm font-medium text-gray-300 transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
               style={{ animationDelay: `${point.delay + 0.1}s` }}
             >
-              <div className="flex flex-col items-center gap-1">
-                <span className="text-lg drop-shadow-lg">{point.icon}</span>
-                <span className="drop-shadow-md">{point.label}</span>
-              </div>
+              {point.label}
             </div>
           </div>
         ))}
       </div>
 
-      {/* Enhanced floating data points */}
-      {[...Array(15)].map((_, i) => (
-        <div
-          key={i}
-          className={`absolute w-2 h-2 rounded-full transition-all duration-1000 ${
-            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
-          }`}
-          style={{
-            left: `${15 + Math.random() * 70}%`,
-            top: `${15 + Math.random() * 70}%`,
-            backgroundColor: i % 3 === 0 ? '#3b82f6' : i % 3 === 1 ? '#06b6d4' : '#8b5cf6',
-            animationDelay: `${0.5 + Math.random() * 0.5}s`,
-            boxShadow: `0 0 15px ${i % 3 === 0 ? '#3b82f6' : i % 3 === 1 ? '#06b6d4' : '#8b5cf6'}80`,
-          }}
-        />
-      ))}
-
-      {/* Enhanced connection lines */}
-      {isVisible && (
-        <svg className="absolute inset-0 w-full h-full pointer-events-none">
-          {dataPoints.map((point, index) => {
-            const x = 50 + (index - 2) * 8; // Approximate bar positions
-            return (
-              <line
-                key={index}
-                x1={`${x}%`}
-                y1="20%"
-                x2={`${x}%`}
-                y2="80%"
-                stroke={point.color}
-                strokeWidth="2"
-                opacity="0.3"
-                className="animate-pulse"
-                style={{ 
-                  animationDelay: `${point.delay}s`,
-                  filter: `drop-shadow(0 0 4px ${point.color})`,
-                }}
-              />
-            );
-          })}
-        </svg>
-      )}
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="w-full h-full bg-[linear-gradient(rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px]" />
+      </div>
     </div>
   );
 }
