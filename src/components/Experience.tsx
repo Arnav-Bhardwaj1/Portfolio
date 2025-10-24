@@ -67,7 +67,7 @@ export const Experience = () => {
     switch (type) {
       case "Internship": return "bg-primary/10 text-primary border-primary/20";
       case "Leadership": return "bg-accent/10 text-accent border-accent/20";
-      case "Organization": return "bg-secondary/10 text-secondary-foreground border-secondary/20";
+      case "Organization": return "bg-yellow-500/10 text-yellow-500 border-yellow-500/20";
       case "Achievement": return "bg-primary/10 text-primary border-primary/20";
       default: return "bg-muted/10 text-muted-foreground border-muted/20";
     }

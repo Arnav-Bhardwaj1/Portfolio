@@ -23,7 +23,7 @@ export const Education = () => {
     {
       title: "Generative AI Professional - Oracle Cloud (OCI)",
       issuer: "Oracle",
-      category: "AI/ML",
+      category: "Gen AI and RAG",
     },
     {
       title: "AI Essentials Certification",
@@ -76,8 +76,9 @@ export const Education = () => {
   const getCategoryColor = (category: string) => {
     switch (category) {
       case "AI/ML": return "bg-primary/10 text-primary border-primary/20";
+      case "Gen AI and RAG": return "bg-yellow-500/10 text-yellow-500 border-yellow-500/20";
       case "Cloud": return "bg-accent/10 text-accent border-accent/20";
-      case "Professional": return "bg-secondary/10 text-secondary-foreground border-secondary/20";
+      case "Professional": return "bg-green-500/10 text-green-500 border-green-500/20";
       case "Achievement": return "bg-primary/10 text-primary border-primary/20";
       default: return "bg-muted/10 text-muted-foreground border-muted/20";
     }

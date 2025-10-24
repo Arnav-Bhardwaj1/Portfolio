@@ -12,7 +12,7 @@ export const About = () => {
     },
     {
       icon: Code,
-      title: "Competitive Programming",
+      title: "DSA (Data Structures and Algorithms)",
       description: "500+ DSA problems solved | 1650+ LeetCode Contest Rating",
     },
     {
@@ -27,10 +27,31 @@ export const About = () => {
     },
   ];
 
-  const skills = [
-    "C++", "Python", "C", "Java", "JavaScript", "Data Structures & Algorithms",
-    "Flutter App Development", "HTML", "CSS", "React.js", "Node.js", "Express.js",
-    "SQL", "MongoDB", "Machine Learning", "Public Speaking", "Team Collaboration"
+  const skillCategories = [
+    {
+      title: "Programming Languages",
+      skills: ["C++", "Python", "C", "Java", "JavaScript"]
+    },
+    {
+      title: "Web Development",
+      skills: ["HTML", "CSS", "React.js", "Node.js", "Express.js", "MongoDB"]
+    },
+    {
+      title: "Core CS Subjects",
+      skills: ["Data Structures & Algorithms", "Object-Oriented Programming", "Database Management Systems", "Computer Networking", "Operating Systems"]
+    },
+    {
+      title: "Machine Learning and Gen AI",
+      skills: ["Machine Learning", "RAG Agent (Retrieval-Augmented Generation)"]
+    },
+    {
+      title: "Databases & Mobile",
+      skills: ["SQL", "MongoDB", "Flutter App Development"]
+    },
+    {
+      title: "Soft Skills",
+      skills: ["Public Speaking", "Team Collaboration", "Communication Skills"]
+    }
   ];
 
   return (
@@ -40,9 +61,8 @@ export const About = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             About <span className="text-gradient">Me</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A passionate computer science student with a strong foundation in machine learning 
-            and full-stack development, dedicated to creating impactful solutions.
+          <p className="text-lg text-muted-foreground max-w-5xl mx-auto">
+            A passionate computer science student with a strong foundation in full-stack development, <br />machine learning and DSA, dedicated to creating impactful solutions.
           </p>
         </div>
 
@@ -101,15 +121,22 @@ export const About = () => {
             <SkillsVisualization />
           </div>
           
-          <div className="flex flex-wrap justify-center gap-3">
-            {skills.map((skill, index) => (
-              <Badge 
-                key={index} 
-                variant="secondary" 
-                className="px-4 py-2 text-sm hover:bg-primary/20 hover:text-primary transition-colors cursor-default"
-              >
-                {skill}
-              </Badge>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skillCategories.map((category, index) => (
+              <div key={index} className={`bg-card/30 rounded-lg border border-border/50 text-center ${index === 0 || index === 1 ? 'pt-[50px] pb-4 px-4' : 'p-4'}`}>
+                <h4 className="font-semibold text-primary mb-3">{category.title}</h4>
+                <div className="flex flex-wrap gap-2 justify-center items-center">
+                  {category.skills.map((skill, skillIndex) => (
+                    <Badge 
+                      key={skillIndex} 
+                      variant="secondary" 
+                      className="px-3 py-1 text-xs hover:bg-primary/20 hover:text-primary transition-colors cursor-default"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>

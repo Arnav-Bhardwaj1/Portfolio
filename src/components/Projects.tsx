@@ -76,9 +76,9 @@ export const Projects = () => {
     switch (category) {
       case "Full-Stack Development": return "bg-primary/10 text-primary border-primary/20";
       case "Full-Stack & AI": return "bg-blue-500/10 text-blue-500 border-blue-500/20";
-      case "Full-Stack, AI and ML": return "bg-purple-500/10 text-purple-500 border-purple-500/20";
+      case "Full-Stack, AI and ML": return "bg-orange-500/10 text-orange-500 border-orange-500/20";
       case "Full-Stack & ML": return "bg-green-500/10 text-green-500 border-green-500/20";
-      case "Full-Stack & 3D": return "bg-orange-500/10 text-orange-500 border-orange-500/20";
+      case "Full-Stack & 3D": return "bg-purple-500/10 text-purple-500 border-purple-500/20";
       default: return "bg-muted/10 text-muted-foreground border-muted/20";
     }
   };

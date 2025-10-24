@@ -24,8 +24,8 @@ export function SkillsVisualization() {
   }, []);
 
   const skills = [
-    { name: 'React', color: '#61dafb', delay: 0, glow: '#61dafb80' },
-    { name: 'Python', color: '#3776ab', delay: 0.2, glow: '#3776ab80' },
+    { name: 'React.js', color: '#61dafb', delay: 0, glow: '#61dafb80' },
+    { name: 'RAG Agent', color: '#9c27b0', delay: 0.2, glow: '#9c27b080' },
     { name: 'ML', color: '#ff6b6b', delay: 0.4, glow: '#ff6b6b80' },
     { name: 'Node.js', color: '#68a063', delay: 0.6, glow: '#68a06380' },
     { name: 'DSA', color: '#00599c', delay: 0.8, glow: '#00599c80' },
@@ -83,10 +83,12 @@ export function SkillsVisualization() {
 
       {/* Enhanced floating skill badges */}
       {skills.map((skill, index) => {
-        const angle = (index * 60) * (Math.PI / 180);
-        const radius = 100;
+        const angle = (index * 360 / skills.length) * (Math.PI / 180);
+        const radius = 130;
         const x = Math.cos(angle) * radius;
-        const y = Math.sin(angle) * radius;
+        // Move top and bottom badges closer to center to touch connection lines
+        const isTopOrBottom = index === 1 || index === 2 || index === 4 || index === 5; // DSA, Flutter, ML, RAG Agent
+        const y = isTopOrBottom ? Math.sin(angle) * 111 : Math.sin(angle) * radius;
 
         return (
           <div
@@ -100,7 +102,7 @@ export function SkillsVisualization() {
             }}
           >
             <div
-              className={`px-3 py-1.5 rounded-full text-xs font-semibold text-white border-2 backdrop-blur-md transition-all duration-300 cursor-pointer group/skill ${
+              className={`w-28 px-3 py-1.5 rounded-full text-sm font-semibold text-white border-2 backdrop-blur-md transition-all duration-300 cursor-pointer group/skill flex items-center justify-center ${
                 hoveredSkill === skill.name ? 'scale-125 z-10' : 'hover:scale-110'
               }`}
               style={{
@@ -131,10 +133,10 @@ export function SkillsVisualization() {
       {isVisible && (
         <svg className="absolute inset-0 w-full h-full pointer-events-none">
           {skills.map((skill, index) => {
-            const angle = (index * 60) * (Math.PI / 180);
-            const radius = 100;
-            const x = Math.cos(angle) * radius;
-            const y = Math.sin(angle) * radius;
+            const angle = (index * 360 / skills.length) * (Math.PI / 180);
+            const lineRadius = 90;
+            const x = Math.cos(angle) * lineRadius;
+            const y = Math.sin(angle) * lineRadius;
             
             return (
               <line
@@ -167,7 +169,7 @@ export function CodeVisualization() {
   const [activeBlock, setActiveBlock] = useState<string | null>(null);
   const [currentText, setCurrentText] = useState(0);
 
-  const rotatingTexts = ['Project Hub', 'Innovation', 'Development', 'Solutions'];
+  const rotatingTexts = ['Project Core', 'Innovation', 'Development', 'Solutions'];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -197,9 +199,9 @@ export function CodeVisualization() {
 
   const codeBlocks = [
     { text: 'Finova', color: '#61dafb', delay: 0, position: 'top-left', glow: '#61dafb80', type: 'Finance App' },
-    { text: 'Farmsphere', color: '#3776ab', delay: 0.3, position: 'top-right', glow: '#3776ab80', type: 'AI Project' },
+    { text: 'FarmSphere', color: '#3776ab', delay: 0.3, position: 'top-right', glow: '#3776ab80', type: 'AI Project' },
     { text: 'TaskFlow', color: '#ff6b6b', delay: 0.6, position: 'bottom-left', glow: '#ff6b6b80', type: 'Web App' },
-    { text: 'Astroguard', color: '#68a063', delay: 0.9, position: 'bottom-right', glow: '#68a06380', type: 'Mobile Dev' },
+    { text: 'AstroGuard', color: '#68a063', delay: 0.9, position: 'bottom-right', glow: '#68a06380', type: 'Mobile Dev' },
   ];
 
   const getPositionClasses = (position: string) => {
@@ -296,11 +298,19 @@ export function CodeVisualization() {
       {/* Enhanced floating syntax elements */}
       {isVisible && (
         <>
-          <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-green-400/70 font-mono text-lg animate-float drop-shadow-lg" style={{ textShadow: '0 0 10px #22c55e' }}>
+          <div className="absolute top-6 left-[47.5%] transform -translate-x-1/2 text-green-400/70 font-mono text-lg animate-float drop-shadow-lg" style={{ textShadow: '0 0 10px #22c55e', animationDelay: '0s' }}>
             {'{ }'}
           </div>
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-blue-400/70 font-mono text-lg animate-float drop-shadow-lg" style={{ animationDelay: '1s', textShadow: '0 0 10px #3b82f6' }}>
+          <div className="absolute bottom-3 left-[47.5%] transform -translate-x-1/2 text-blue-400/70 font-mono text-lg animate-float drop-shadow-lg" style={{textShadow: '0 0 10px #3b82f6', animationDelay: '0s' }}>
             {'< />'}
+          </div>
+          
+          {/* Floating globe elements between projects */}
+          <div className="absolute top-[45.8%] left-14 transform -translate-y-1/2 text-cyan-400/60 text-3xl animate-float drop-shadow-lg" style={{textShadow: '0 0 8px #06b6d4', animationDelay: '0s' }}>
+            🌐
+          </div>
+          <div className="absolute top-[45.8%] right-16 transform -translate-y-1/2 text-cyan-400/60 text-3xl animate-float drop-shadow-lg" style={{textShadow: '0 0 8px #06b6d4', animationDelay: '0s' }}>
+            🌐
           </div>
         </>
       )}
@@ -356,7 +366,7 @@ export function ExperienceVisualization() {
   return (
     <div 
       ref={containerRef}
-      className="w-full h-64 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-pink-900/50 rounded-xl overflow-hidden relative group border border-slate-700/30 backdrop-blur-sm"
+      className="w-full h-48 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-pink-900/50 rounded-xl overflow-hidden relative group border border-slate-700/30 backdrop-blur-sm"
     >
       {/* Enhanced floating data points with mouse interaction */}
       {[...Array(20)].map((_, i) => {

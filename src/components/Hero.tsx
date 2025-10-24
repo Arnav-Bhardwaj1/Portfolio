@@ -153,12 +153,15 @@ export const Hero = () => {
 
           {/* Description */}
           <div className="mb-5 max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-slate-800/40 to-slate-900/40 backdrop-blur-sm border border-blue-500/20 rounded-xl p-6">
-              <p className="text-base text-gray-300 leading-relaxed text-center">
-                Passionate about <span className="text-blue-400 font-semibold">machine learning, </span>
-                <span className="text-cyan-400 font-bold text-lg"> full-stack web development</span>, and 
-                <span className="text-gray-400 font-semibold"> competitive programming</span>. 
-                Currently pursuing B.Tech in Computer Science and Engineering with a strong focus on AI and software development.
+            <div className="bg-gradient-to-r from-slate-800/40 to-slate-900/40 backdrop-blur-sm border border-blue-500/20 rounded-xl px-6 pt-6 pb-4">
+              <p className="text-base text-gray-300 leading-relaxed text-center font-semibold tracking-wide" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: '1.1em', fontWeight: '600' }}>
+                Passionate about <span className="text-purple-400 font-semibold bg-purple-400/10 px-2 py-1 rounded-md" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace", fontSize: '0.95em', fontWeight: '500' }}>machine learning</span>, 
+                <span className="text-purple-400 font-bold bg-purple-400/10 px-2 py-1 rounded-md mx-1" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace", fontSize: '0.95em', fontWeight: '500' }}>full-stack web development</span> and 
+                <span className="text-purple-400 font-semibold bg-purple-400/10 px-2 py-1 rounded-md" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace", fontSize: '0.95em', fontWeight: '500' }}>DSA</span>. 
+                <br />
+                Currently pursuing B.Tech in Computer Science and Engineering with a strong focus on 
+                <br />
+                <span className="text-emerald-400 font-semibold bg-emerald-400/10 px-2 py-1 rounded-md mx-1" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace", fontSize: '0.95em', fontWeight: '500' }}>AI</span> and <span className="text-emerald-400 font-semibold bg-emerald-400/10 px-2 py-1 rounded-md mx-1" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace", fontSize: '0.95em', fontWeight: '500' }}>software development</span>
               </p>
             </div>
           </div>
