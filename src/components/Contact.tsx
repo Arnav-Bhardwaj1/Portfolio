@@ -3,6 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { BorderBeam } from "./aceternity/BorderBeam";
+import { GridBackground } from "./aceternity/GridBackground";
+import { AnimatedBeam } from "./aceternity/AnimatedBeam";
+import { MagicButton } from "./aceternity/MagicButton";
+import { motion } from "framer-motion";
 
 export const Contact = () => {
   const contactInfo = [
@@ -40,17 +45,24 @@ export const Contact = () => {
 
 
   return (
-    <section id="contact" className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Get In <span className="text-gradient">Touch</span>
+    <section id="contact" className="py-20 px-6 relative">
+      <GridBackground className="absolute inset-0 opacity-20" />
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+            Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Touch</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             I'm always open to discussing new opportunities, interesting projects, 
             or just having a chat about technology and innovation.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
@@ -64,8 +76,22 @@ export const Contact = () => {
             {/* Contact Details */}
             <div className="space-y-4 mb-8">
               {contactInfo.map((contact, index) => (
-                <Card key={index} className="card-elegant hover-lift">
-                  <CardContent className="p-4">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="glass-effect hover-lift relative overflow-hidden">
+                    <BorderBeam 
+                      size={150}
+                      duration={10}
+                      colorFrom="#3b82f6"
+                      colorTo="#8b5cf6"
+                      delay={index * 0.3}
+                    />
+                    <CardContent className="p-6">
                     <div className="flex items-center gap-4">
                       <div className="p-2 rounded-lg bg-primary/10">
                         <contact.icon className="w-5 h-5 text-primary" />
@@ -86,6 +112,7 @@ export const Contact = () => {
                     </div>
                   </CardContent>
                 </Card>
+                </motion.div>
               ))}
             </div>
 
@@ -115,10 +142,23 @@ export const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="card-elegant">
-            <CardHeader>
-              <CardTitle>Send a Message</CardTitle>
-            </CardHeader>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Card className="glass-effect relative overflow-hidden">
+              <AnimatedBeam className="opacity-40" duration={5} />
+              <BorderBeam 
+                size={250}
+                duration={12}
+                colorFrom="#3b82f6"
+                colorTo="#ec4899"
+              />
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold">Send a Message</CardTitle>
+              </CardHeader>
             <CardContent>
               <form 
                 action="https://formspree.io/f/myznoqkr" 
@@ -176,18 +216,26 @@ export const Contact = () => {
                   />
                 </div>
                 
-                <Button type="submit" size="lg" className="w-full glow-effect">
+                <MagicButton type="submit" className="w-full">
                   <Send className="w-4 h-4 mr-2" />
                   Send Message
-                </Button>
+                </MagicButton>
               </form>
             </CardContent>
           </Card>
+          </motion.div>
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <Card className="card-elegant max-w-2xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mt-16"
+        >
+          <Card className="glass-effect max-w-2xl mx-auto relative overflow-hidden">
+            <BorderBeam size={300} duration={15} colorFrom="#8b5cf6" colorTo="#ec4899" />
             <CardContent className="p-8">
               <h3 className="text-2xl font-semibold mb-4">Ready to collaborate?</h3>
               <p className="text-muted-foreground mb-6">
@@ -214,7 +262,7 @@ export const Contact = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

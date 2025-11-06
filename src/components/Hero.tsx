@@ -1,6 +1,18 @@
-import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code, Brain, Award, Target, BookOpen, Zap, FileText } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code, FileText, Target, Award, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { OptimizedThreeScene } from "./OptimizedThreeScene";
+import { BackgroundBeams } from "./aceternity/BackgroundBeams";
+import { Meteors } from "./aceternity/Meteors";
+import { GridBackground } from "./aceternity/GridBackground";
+import { TextGenerateEffect } from "./aceternity/TextGenerateEffect";
+import { SparklesText } from "./aceternity/SparklesText";
+import { Spotlight } from "./aceternity/Spotlight";
+import { Particles } from "./aceternity/Particles";
+import { AnimatedGradientText } from "./aceternity/AnimatedGradientText";
+import { BlurFade } from "./aceternity/BlurFade";
+import { MagicButton } from "./aceternity/MagicButton";
+import { ShimmerButton } from "./aceternity/ShimmerButton";
+import { motion } from "framer-motion";
 
 export const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -11,225 +23,358 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Enhanced Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-slate-900 to-gray-900" />
+    <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-24 pb-24">
+      {/* Enhanced Modern Background with Beautiful Gradients */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950/40 via-purple-950/30 to-slate-950" />
       
-      {/* 3D Interactive Background */}
-      <OptimizedThreeScene />
+      {/* Animated Gradient Orbs */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/20 via-purple-500/15 to-pink-500/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            x: [0, -80, 0],
+            y: [0, -60, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5,
+          }}
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/20 via-pink-500/15 to-blue-500/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            x: [0, 60, 0],
+            y: [0, -40, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-cyan-500/15 via-blue-500/10 to-purple-500/15 rounded-full blur-3xl"
+        />
+      </div>
       
-      {/* Enhanced Animated Background Elements */}
-      <div className="absolute inset-0 z-10">
-        {/* Reduced CSS Particles (3D ones handle most of the effect) */}
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute w-1 h-1 bg-blue-400/40 rounded-full animate-pulse"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 3}s`
-            }}
-          />
-        ))}
-        
-        {/* Enhanced Gradient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-gray-800/15 to-slate-800/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-slate-800/10 to-gray-800/8 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-gray-700/12 to-slate-700/8 rounded-full blur-2xl animate-pulse delay-500" />
-        <div className="absolute top-3/4 left-1/3 w-80 h-80 bg-gradient-to-r from-slate-700/8 to-gray-800/6 rounded-full blur-3xl animate-pulse delay-2000" />
+      {/* 3D Interactive Background - Reduced opacity */}
+      <div className="absolute inset-0 opacity-30">
+        <OptimizedThreeScene />
+      </div>
+      
+      {/* Subtle Grid Background */}
+      <GridBackground className="absolute inset-0 opacity-20" />
+      
+      {/* Subtle Background Beams */}
+      <BackgroundBeams className="absolute inset-0 opacity-15" />
+      
+      {/* Reduced Meteor Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <Meteors number={20} className="top-0" />
       </div>
 
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]" />
+      {/* Subtle Interactive Particles */}
+      <Particles 
+        className="opacity-20"
+        quantity={50}
+        ease={60}
+        color="#6366f1"
+      />
       
-      <div className="container mx-auto px-6 relative z-20 pt-8">
-        <div className="text-center max-w-6xl mx-auto">
-          {/* Enhanced Floating Tech Icons - Symmetric Layout */}
-          {/* Top Row */}
-          <div className="absolute top-20 left-10 animate-bounce -z-10 pointer-events-none">
-            <div className="p-3 rounded-full bg-blue-500/10 backdrop-blur-sm">
-              <Code className="w-10 h-10 text-blue-400/60" />
-            </div>
-          </div>
-          <div className="absolute top-20 right-10 animate-bounce -z-10 pointer-events-none">
-            <div className="p-3 rounded-full bg-blue-500/10 backdrop-blur-sm">
-              <Award className="w-8 h-8 text-blue-400/60" />
-            </div>
-          </div>
-          
-          {/* Middle Row */}
-          <div className="absolute top-1/2 left-10 animate-bounce -z-10 pointer-events-none">
-            <div className="p-3 rounded-full bg-cyan-500/10 backdrop-blur-sm">
-              <Zap className="w-8 h-8 text-cyan-400/60" />
-            </div>
-          </div>
-          <div className="absolute top-1/2 right-10 animate-bounce -z-10 pointer-events-none">
-            <div className="p-3 rounded-full bg-purple-500/10 backdrop-blur-sm">
-              <Target className="w-8 h-8 text-purple-400/60" />
-            </div>
-          </div>
-          
-          {/* Bottom Row */}
-          <div className="absolute bottom-20 left-10 animate-bounce -z-10 pointer-events-none">
-            <div className="p-3 rounded-full bg-cyan-500/10 backdrop-blur-sm">
-              <Sparkles className="w-10 h-10 text-cyan-400/60" />
-            </div>
-          </div>
-          <div className="absolute bottom-20 right-10 animate-bounce -z-10 pointer-events-none">
-            <div className="p-3 rounded-full bg-blue-500/10 backdrop-blur-sm">
-              <Brain className="w-10 h-10 text-blue-300/60" />
-            </div>
-          </div>
-          
-
-          {/* Name & Title */}
-          <div className="mb-5">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 relative">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-600 to-cyan-400 animate-pulse">
-                Arnav
-              </span>{" "}
-              <span className="text-white drop-shadow-2xl">
-                Bhardwaj
-              </span>
-              {/* Glow effect */}
-              <div className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-600 to-cyan-400 blur-sm opacity-40">
-                Arnav Bhardwaj
-              </div>
-            </h1>
-            
-            {/* Subtitle */}
-            <div className="space-y-3">
-              <p className="text-lg md:text-xl text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300 font-semibold">
-                ML Intern @DRDO | AI & Full-Stack Web Developer
-              </p>
-                <p className="text-base md:text-lg text-gray-300 font-medium">
-                  CSE Pre-Final Year | Core Team Member @TechCom | Top 10 Finalist @TECHNOV8
-                </p>
-            </div>
-          </div>
-          
-          {/* Achievement Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 max-w-3xl mx-auto">
-            {/* DSA Card */}
-            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-blue-500/20 rounded-lg p-4 hover:bg-gradient-to-br hover:from-slate-800/80 hover:to-slate-900/80 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 group">
-              <div className="flex items-center justify-center mb-2">
-                <div className="p-2 rounded-full bg-blue-500/20 group-hover:bg-blue-500/30 transition-all duration-300">
-                  <Target className="w-6 h-6 text-blue-400" />
+      {/* Elegant Spotlight Effect */}
+      <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="white" />
+      
+      {/* Subtle Glowing Orbs for Depth */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        <motion.div
+          animate={{
+            opacity: [0.3, 0.5, 0.3],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/3 left-1/3 w-72 h-72 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            opacity: [0.2, 0.4, 0.2],
+            scale: [1, 1.15, 1],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+          className="absolute bottom-1/3 right-1/3 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"
+        />
+      </div>
+      
+      {/* Main Content */}
+      <div className="container mx-auto px-6 relative z-50 w-full flex-1 flex items-center justify-center">
+        <div className="text-center max-w-6xl mx-auto w-full">
+              {/* Name with Sparkles Effect */}
+              <BlurFade delay={0.1} direction="up">
+                <div className="mb-6">
+                  <div className="relative">
+                    <SparklesText 
+                      text="Arnav Bhardwaj"
+                      className="text-6xl md:text-7xl lg:text-8xl mb-4"
+                      sparklesCount={30}
+                    />
+                    {/* Gradient Glow Overlay */}
+                    <div className="absolute inset-0 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 blur-2xl opacity-50 -z-10">
+                      Arnav Bhardwaj
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">500+</h3>
-              <p className="text-gray-300 text-xs font-medium">DSA Problems</p>
-            </div>
-
-            {/* LeetCode Card */}
-            <a 
-              href="https://leetcode.com/u/ArnavBhardwaj/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="block bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-blue-500/20 rounded-lg p-4 hover:bg-gradient-to-br hover:from-slate-800/80 hover:to-slate-900/80 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 group"
-            >
-              <div className="flex items-center justify-center mb-2">
-                <div className="p-2 rounded-full bg-blue-500/20 group-hover:bg-blue-500/30 transition-all duration-300">
-                  <Award className="w-6 h-6 text-blue-400" />
+              </BlurFade>
+              
+              {/* Subtitle with TextGenerateEffect and Creative Effects */}
+              <BlurFade delay={0.2} direction="up">
+                <div className="space-y-3 mb-6">
+                  <div className="text-xl md:text-2xl lg:text-3xl">
+                    <TextGenerateEffect 
+                      words="ML Intern @DRDO | AI & Full-Stack Web Developer"
+                      className="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 font-bold"
+                      filter={false}
+                      duration={0.4}
+                    />
+                  </div>
+                  <div className="text-base md:text-lg lg:text-xl">
+                    <TextGenerateEffect 
+                      words="CSE Pre-Final Year | Core Team Member @TechCom | Top 10 Finalist @TECHNOV8"
+                      className="text-gray-300"
+                      filter={false}
+                      duration={0.3}
+                    />
+                  </div>
                 </div>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">1650+</h3>
-              <p className="text-gray-300 text-xs font-medium">LeetCode Rating</p>
-            </a>
-
-            {/* CGPA Card */}
-            <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 backdrop-blur-sm border border-blue-500/20 rounded-lg p-4 hover:bg-gradient-to-br hover:from-slate-800/80 hover:to-slate-900/80 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/20 group">
-              <div className="flex items-center justify-center mb-2">
-                <div className="p-2 rounded-full bg-blue-500/20 group-hover:bg-blue-500/30 transition-all duration-300">
-                  <BookOpen className="w-6 h-6 text-blue-400" />
+              </BlurFade>
+              
+              {/* Achievement Cards with Creative Animations */}
+              <BlurFade delay={0.4} direction="up">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-6 max-w-4xl mx-auto">
+              {/* DSA Card */}
+              <motion.div
+                whileHover={{ scale: 1.05, rotateY: 5 }}
+                className="glass-effect rounded-2xl p-6 group relative overflow-hidden"
+              >
+                <motion.div
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                />
+                <div className="relative z-10">
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                    className="flex items-center justify-center mb-3"
+                  >
+                    <div className="p-3 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 group-hover:from-blue-500/40 group-hover:to-purple-500/40 transition-all duration-300">
+                      <Target className="w-7 h-7 text-blue-400" />
+                    </div>
+                  </motion.div>
+                  <AnimatedGradientText className="text-3xl font-bold mb-2">500+</AnimatedGradientText>
+                  <p className="text-gray-300 text-sm font-medium">DSA Problems</p>
                 </div>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">9.76</h3>
-              <p className="text-gray-300 text-xs font-medium">CGPA</p>
-            </div>
-          </div>
+              </motion.div>
 
-          {/* Description */}
-          <div className="mb-5 max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-slate-800/40 to-slate-900/40 backdrop-blur-sm border border-blue-500/20 rounded-xl px-6 pt-6 pb-4">
-              <p className="text-base text-gray-300 leading-relaxed text-center font-semibold tracking-wide" style={{ fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", fontSize: '1.1em', fontWeight: '600' }}>
-                Passionate about <span className="text-purple-400 font-semibold bg-purple-400/10 px-2 py-1 rounded-md" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace", fontSize: '0.95em', fontWeight: '500' }}>machine learning</span>, 
-                <span className="text-purple-400 font-bold bg-purple-400/10 px-2 py-1 rounded-md mx-1" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace", fontSize: '0.95em', fontWeight: '500' }}>full-stack web development</span> and 
-                <span className="text-purple-400 font-semibold bg-purple-400/10 px-2 py-1 rounded-md" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace", fontSize: '0.95em', fontWeight: '500' }}>DSA</span>. 
-                <br />
-                Currently pursuing B.Tech in Computer Science and Engineering with a strong focus on 
-                <br />
-                <span className="text-emerald-400 font-semibold bg-emerald-400/10 px-2 py-1 rounded-md mx-1" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace", fontSize: '0.95em', fontWeight: '500' }}>AI</span> and <span className="text-emerald-400 font-semibold bg-emerald-400/10 px-2 py-1 rounded-md mx-1" style={{ fontFamily: "'JetBrains Mono', 'Fira Code', monospace", fontSize: '0.95em', fontWeight: '500' }}>software development</span>
-              </p>
+              {/* LeetCode Card */}
+              <motion.a
+                href="https://leetcode.com/u/ArnavBhardwaj/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, rotateY: -5 }}
+                className="glass-effect rounded-2xl p-6 group relative overflow-hidden block"
+              >
+                <motion.div
+                  animate={{ rotate: [360, 0] }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                />
+                <div className="relative z-10">
+                  <motion.div
+                    whileHover={{ rotate: -360 }}
+                    transition={{ duration: 0.5 }}
+                    className="flex items-center justify-center mb-3"
+                  >
+                    <div className="p-3 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 group-hover:from-purple-500/40 group-hover:to-pink-500/40 transition-all duration-300">
+                      <Award className="w-7 h-7 text-purple-400" />
+                    </div>
+                  </motion.div>
+                  <AnimatedGradientText className="text-3xl font-bold mb-2">1650+</AnimatedGradientText>
+                  <p className="text-gray-300 text-sm font-medium">LeetCode Rating</p>
+                </div>
+              </motion.a>
+
+              {/* CGPA Card */}
+              <motion.div
+                whileHover={{ scale: 1.05, rotateY: 5 }}
+                className="glass-effect rounded-2xl p-6 group relative overflow-hidden"
+              >
+                <motion.div
+                  animate={{ rotate: [0, -360] }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 bg-gradient-to-br from-pink-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                />
+                <div className="relative z-10">
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                    className="flex items-center justify-center mb-3"
+                  >
+                    <div className="p-3 rounded-full bg-gradient-to-br from-pink-500/20 to-blue-500/20 group-hover:from-pink-500/40 group-hover:to-blue-500/40 transition-all duration-300">
+                      <BookOpen className="w-7 h-7 text-pink-400" />
+                    </div>
+                  </motion.div>
+                  <AnimatedGradientText className="text-3xl font-bold mb-2">9.76</AnimatedGradientText>
+                  <p className="text-gray-300 text-sm font-medium">CGPA</p>
+                </div>
+              </motion.div>
             </div>
-          </div>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-5 justify-center mb-5">
-            <Button 
-              className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-semibold px-7 py-3 rounded-full shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
-              onClick={() => scrollToSection('contact')}
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              Get In Touch
-              <Sparkles className="w-5 h-5 ml-2" />
-            </Button>
-            <Button 
-              variant="outline" 
-              className="border-2 border-blue-400 text-cyan-300 hover:bg-blue-500 hover:text-white font-semibold px-7 py-3 rounded-full shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
-              onClick={() => scrollToSection('projects')}
-            >
-              <Github className="w-5 h-5 mr-2" />
-              View Projects
-              <Code className="w-5 h-5 ml-2" />
-            </Button>
-            <Button 
-              asChild
-              variant="outline"
-              className="border-2 border-blue-400 text-blue-300 hover:bg-cyan-500 hover:text-white font-semibold px-7 py-3 rounded-full shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105"
-            >
-              <a href="https://qrr.to/ebb73269" target="_blank" rel="noopener noreferrer">
-                <FileText className="w-5 h-5 mr-2" />
-                View Resume
-              </a>
-            </Button>
-          </div>
-          
-          {/* Social Links */}
-          <div className="flex justify-center gap-6 mb-4">
-            <a 
-              href="https://github.com/Arnav-Bhardwaj1" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group p-3 rounded-full bg-gradient-to-r from-slate-800/60 to-slate-900/60 border border-blue-500/30 hover:border-blue-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm"
-            >
-              <Github className="w-6 h-6 text-gray-300 group-hover:text-blue-400 transition-colors" />
-            </a>
-            <a 
-              href="https://linkedin.com/in/-arnavbhardwaj" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="group p-3 rounded-full bg-gradient-to-r from-slate-800/60 to-slate-900/60 border border-blue-500/30 hover:border-blue-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-blue-500/25 backdrop-blur-sm"
-            >
-              <Linkedin className="w-6 h-6 text-gray-300 group-hover:text-blue-400 transition-colors" />
-            </a>
-            <a 
-              href="mailto:arnavbhardwaj111@gmail.com"
-              className="group p-3 rounded-full bg-gradient-to-r from-slate-800/60 to-slate-900/60 border border-blue-500/30 hover:border-cyan-400 transition-all duration-300 hover:scale-110 hover:shadow-lg hover:shadow-cyan-500/25 backdrop-blur-sm"
-            >
-              <Mail className="w-6 h-6 text-gray-300 group-hover:text-cyan-400 transition-colors" />
-            </a>
-          </div>
-          
-          {/* Scroll Indicator */}
-          <div className="animate-bounce">
-            <div className="flex flex-col items-center gap-1">
-              <ArrowDown className="w-4 h-4 text-gray-400" />
-              <span className="text-xs text-gray-500">Scroll</span>
-            </div>
-          </div>
+              </BlurFade>
+
+              {/* Description with Enhanced Styling */}
+              <BlurFade delay={0.5} direction="up">
+                <div className="mb-6 max-w-5xl mx-auto">
+                  <div className="glass-effect rounded-2xl px-8 py-6 backdrop-blur-xl">
+                    <p className="text-base md:text-lg text-gray-300 leading-relaxed text-center font-medium">
+                    Passionate about{" "}
+                    <span className="text-purple-400 font-bold bg-purple-400/10 px-3 py-1 rounded-lg font-mono">
+                      machine learning
+                    </span>
+                    ,{" "}
+                    <span className="text-blue-400 font-bold bg-blue-400/10 px-3 py-1 rounded-lg font-mono">
+                      full-stack web development
+                    </span>
+                    {" "}and{" "}
+                    <span className="text-pink-400 font-bold bg-pink-400/10 px-3 py-1 rounded-lg font-mono">
+                      DSA
+                    </span>
+                    . Currently pursuing B.Tech in Computer Science and Engineering with a strong focus on{" "}
+                    <span className="text-emerald-400 font-bold bg-emerald-400/10 px-3 py-1 rounded-lg font-mono">
+                      AI
+                    </span>
+                    {" "}and{" "}
+                    <span className="text-cyan-400 font-bold bg-cyan-400/10 px-3 py-1 rounded-lg font-mono">
+                      software development
+                    </span>
+                    </p>
+                  </div>
+                </div>
+              </BlurFade>
+              
+              {/* CTA Buttons with Creative Styling */}
+              <BlurFade delay={0.6} direction="up">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-6">
+                  <MagicButton
+                    onClick={() => scrollToSection('contact')}
+                    className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white font-bold px-8 py-6 rounded-full"
+                  >
+                    <Mail className="w-5 h-5 mr-2" />
+                    Get In Touch
+                    <Sparkles className="w-5 h-5 ml-2" />
+                  </MagicButton>
+                  <motion.button
+                    onClick={() => scrollToSection('projects')}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="relative font-bold px-8 py-6 rounded-full text-white transition-all duration-300 flex items-center justify-center overflow-hidden group backdrop-blur-xl"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.15), rgba(6, 182, 212, 0.15))',
+                      border: '2px solid rgba(139, 92, 246, 0.4)',
+                      boxShadow: '0 8px 32px rgba(139, 92, 246, 0.2)',
+                    }}
+                  >
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/25 group-hover:via-blue-500/25 group-hover:to-cyan-500/25 transition-all duration-300" />
+                    <Github className="w-5 h-5 mr-2 relative z-10" />
+                    <span className="relative z-10">View Projects</span>
+                    <Code className="w-5 h-5 ml-2 relative z-10" />
+                    <div 
+                      className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      style={{
+                        boxShadow: '0 0 30px rgba(139, 92, 246, 0.4), 0 0 60px rgba(59, 130, 246, 0.2)',
+                      }}
+                    />
+                  </motion.button>
+                  <motion.a
+                    href="https://qrr.to/ebb73269"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="glass-effect border-2 border-pink-400/50 text-pink-300 hover:bg-pink-500/20 hover:text-white hover:border-pink-400 font-bold px-8 py-6 rounded-full shadow-lg hover:shadow-pink-500/30 transition-all duration-300 flex items-center justify-center"
+                  >
+                    <FileText className="w-5 h-5 mr-2" />
+                    View Resume
+                  </motion.a>
+                </div>
+              </BlurFade>
+              
+              {/* Social Links with Glass Effect */}
+              <div className="flex justify-center gap-4 md:gap-6 mb-4">
+                <a 
+                  href="https://github.com/Arnav-Bhardwaj1" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="glass-effect p-4 rounded-full hover-lift group transition-all duration-300"
+                >
+                  <Github className="w-6 h-6 text-gray-300 group-hover:text-blue-400 transition-colors" />
+                </a>
+                <a 
+                  href="https://linkedin.com/in/-arnavbhardwaj" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="glass-effect p-4 rounded-full hover-lift group transition-all duration-300"
+                >
+                  <Linkedin className="w-6 h-6 text-gray-300 group-hover:text-blue-400 transition-colors" />
+                </a>
+                <a 
+                  href="mailto:arnavbhardwaj111@gmail.com"
+                  className="glass-effect p-4 rounded-full hover-lift group transition-all duration-300"
+                >
+                  <Mail className="w-6 h-6 text-gray-300 group-hover:text-cyan-400 transition-colors" />
+                </a>
+              </div>
+              
+              {/* Scroll Indicator with Creative Animation */}
+              <BlurFade delay={0.7} direction="up">
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="flex flex-col items-center gap-2 cursor-pointer"
+                  onClick={() => scrollToSection('about')}
+                >
+                  <motion.div
+                    animate={{ rotate: [0, 10, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <ArrowDown className="w-6 h-6 text-blue-400" />
+                  </motion.div>
+                  <AnimatedGradientText className="text-xs font-medium">
+                    Scroll to explore
+                  </AnimatedGradientText>
+                </motion.div>
+              </BlurFade>
         </div>
       </div>
     </section>

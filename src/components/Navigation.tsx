@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +20,7 @@ export const Navigation = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsOpen(false); // Close mobile menu after clicking
+    setIsOpen(false);
   };
 
   const navItems = [
@@ -31,47 +32,63 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      scrolled 
-        ? "bg-gradient-to-r from-slate-900/98 via-blue-950/98 to-slate-900/98 backdrop-blur-xl border-b border-blue-400/40 shadow-2xl shadow-blue-500/20" 
-        : "bg-gradient-to-r from-slate-900/80 via-blue-950/80 to-slate-900/80 backdrop-blur-lg"
-    }`}>
+    <motion.nav 
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.5 }}
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        scrolled 
+          ? "glass-effect border-b border-white/10 shadow-2xl" 
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <button 
+          <motion.button 
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-600 to-cyan-400 hover:from-blue-300 hover:via-blue-500 hover:to-cyan-300 transition-all duration-300 transform hover:scale-105"
+            className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 hover:from-blue-300 hover:via-purple-300 hover:to-pink-300 transition-all duration-300 transform hover:scale-105"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             Arnav Bhardwaj
-          </button>
+          </motion.button>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-10">
-            {navItems.map((item) => (
-              <button
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item, index) => (
+              <motion.button
                 key={item.label}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.href.replace('#', ''))}
-                className="text-gray-200 hover:text-blue-400 transition-all duration-300 font-medium relative group text-base"
+                className="text-gray-200 hover:text-white transition-all duration-300 font-medium relative group text-base"
               >
                 {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-cyan-400 group-hover:w-full transition-all duration-300"></span>
-              </button>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 group-hover:w-full transition-all duration-300"></span>
+              </motion.button>
             ))}
-            <Button 
-              size="sm"
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:scale-105"
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.5 }}
             >
-              <Sparkles className="w-4 h-4 mr-2" />
-              Get In Touch
-            </Button>
+              <Button 
+                size="sm"
+                onClick={() => scrollToSection('contact')}
+                className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-110 neon-glow"
+              >
+                <Sparkles className="w-4 h-4 mr-2" />
+                Get In Touch
+              </Button>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
             size="sm"
-            className="md:hidden text-gray-200 hover:text-blue-400 hover:bg-blue-500/20 p-2"
+            className="md:hidden text-gray-200 hover:text-white hover:bg-white/10 p-2 rounded-lg"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -79,30 +96,46 @@ export const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-6 border-t border-blue-400/30 bg-gradient-to-r from-slate-900/95 via-blue-950/95 to-slate-900/95 backdrop-blur-xl">
-            <div className="flex flex-col gap-6">
-              {navItems.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => scrollToSection(item.href.replace('#', ''))}
-                  className="text-gray-200 hover:text-blue-400 transition-all duration-300 text-left font-medium py-2 text-base"
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden py-6 border-t border-white/10 glass-effect rounded-b-2xl mt-2"
+            >
+              <div className="flex flex-col gap-4">
+                {navItems.map((item, index) => (
+                  <motion.button
+                    key={item.label}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    onClick={() => scrollToSection(item.href.replace('#', ''))}
+                    className="text-gray-200 hover:text-white transition-all duration-300 text-left font-medium py-2 text-base"
+                  >
+                    {item.label}
+                  </motion.button>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
                 >
-                  {item.label}
-                </button>
-              ))}
-              <Button 
-                size="sm" 
-                className="w-full mt-4 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white font-bold py-3 rounded-full shadow-lg hover:shadow-blue-500/30 transition-all duration-300"
-                onClick={() => scrollToSection('contact')}
-              >
-                <Sparkles className="w-4 h-4 mr-2" />
-                Get In Touch
-              </Button>
-            </div>
-          </div>
-        )}
+                  <Button 
+                    size="sm" 
+                    className="w-full mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-bold py-3 rounded-full shadow-lg hover:shadow-purple-500/30 transition-all duration-300"
+                    onClick={() => scrollToSection('contact')}
+                  >
+                    <Sparkles className="w-4 h-4 mr-2" />
+                    Get In Touch
+                  </Button>
+                </motion.div>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </nav>
+    </motion.nav>
   );
 };

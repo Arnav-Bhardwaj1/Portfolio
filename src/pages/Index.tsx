@@ -8,13 +8,18 @@ import { Contact } from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-purple-950/10 to-slate-950">
       <Navigation />
       <Hero />
+      <div className="section-divider" />
       <About />
+      <div className="section-divider" />
       <Experience />
+      <div className="section-divider" />
       <Education />
+      <div className="section-divider" />
       <Projects />
+      <div className="section-divider" />
       <Contact />
     </div>
   );

@@ -2,6 +2,12 @@ import { Calendar, MapPin, Building } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExperienceVisualization } from "./ThreeVisualizations";
+import { BorderBeam } from "./aceternity/BorderBeam";
+import { GridBackground } from "./aceternity/GridBackground";
+import { TracingBeam } from "./aceternity/TracingBeam";
+import { AnimatedBeam } from "./aceternity/AnimatedBeam";
+import { BlurFade } from "./aceternity/BlurFade";
+import { motion } from "framer-motion";
 
 export const Experience = () => {
   const experiences = [
@@ -74,13 +80,20 @@ export const Experience = () => {
   };
 
   return (
-    <section id="experience" className="py-20 px-6 bg-card/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Professional <span className="text-gradient">Experience</span>
+    <section id="experience" className="py-20 px-6 relative overflow-hidden">
+      <GridBackground className="absolute inset-0 opacity-10" />
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+            Professional <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Experience</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             My journey through internships, leadership roles, and community contributions 
             that have shaped my technical expertise and professional growth.
           </p>
@@ -89,11 +102,30 @@ export const Experience = () => {
           <div className="max-w-2xl mx-auto">
             <ExperienceVisualization />
           </div>
-        </div>
+        </motion.div>
 
-        <div className="space-y-6">
-          {experiences.map((exp, index) => (
-            <Card key={index} className="card-elegant hover-lift">
+        <TracingBeam>
+          <div className="space-y-8">
+            {experiences.map((exp, index) => (
+              <BlurFade key={index} delay={index * 0.15} direction="up">
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Card className="glass-effect hover-lift relative overflow-hidden">
+                    <AnimatedBeam 
+                      className="opacity-50"
+                      duration={3}
+                      delay={index * 0.5}
+                      reverse={index % 2 === 0}
+                    />
+                    <BorderBeam 
+                      size={200}
+                      duration={15}
+                      colorFrom="#3b82f6"
+                      colorTo="#8b5cf6"
+                      delay={index * 0.5}
+                    />
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div>
@@ -138,8 +170,11 @@ export const Experience = () => {
                 </div>
               </CardContent>
             </Card>
-          ))}
-        </div>
+                </motion.div>
+              </BlurFade>
+            ))}
+          </div>
+        </TracingBeam>
       </div>
     </section>
   );

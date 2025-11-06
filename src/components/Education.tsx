@@ -1,6 +1,9 @@
 import { GraduationCap, Trophy, BookOpen, Award } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { GridBackground } from "./aceternity/GridBackground";
+import { BorderBeam } from "./aceternity/BorderBeam";
+import { motion } from "framer-motion";
 
 export const Education = () => {
   const education = {
@@ -85,21 +88,35 @@ export const Education = () => {
   };
 
   return (
-    <section id="education" className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Education & <span className="text-gradient">Achievements</span>
+    <section id="education" className="py-20 px-6 relative overflow-hidden">
+      <GridBackground className="absolute inset-0 opacity-10" />
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+            Education & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Achievements</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             My academic journey, certifications, and achievements that demonstrate 
             my commitment to continuous learning and excellence.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           {/* Education */}
-          <Card className="card-elegant hover-lift">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Card className="glass-effect hover-lift relative overflow-hidden">
+              <BorderBeam size={200} duration={12} colorFrom="#3b82f6" colorTo="#8b5cf6" />
             <CardHeader>
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-primary/10">
@@ -148,12 +165,27 @@ export const Education = () => {
               </div>
             </CardContent>
           </Card>
+          </motion.div>
 
           {/* Achievements */}
-          <div className="space-y-6">
-            <h3 className="text-2xl font-semibold">Key Achievements</h3>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Key Achievements</h3>
             {achievements.map((achievement, index) => (
-              <Card key={index} className="card-elegant hover-lift">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="glass-effect hover-lift relative overflow-hidden">
+                  <BorderBeam size={150} duration={10} colorFrom="#8b5cf6" colorTo="#ec4899" delay={index * 0.3} />
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="p-2 rounded-lg bg-primary/10">
@@ -167,16 +199,30 @@ export const Education = () => {
                   </div>
                 </CardContent>
               </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Certifications */}
-        <div>
-          <h3 className="text-2xl font-semibold mb-6">Certifications & Awards</h3>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Certifications & Awards</h3>
           <div className="grid md:grid-cols-2 gap-4">
             {certifications.map((cert, index) => (
-              <Card key={index} className="card-elegant hover-lift">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="glass-effect hover-lift relative overflow-hidden">
+                  <BorderBeam size={150} duration={10} colorFrom="#3b82f6" colorTo="#ec4899" delay={index * 0.2} />
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
@@ -189,9 +235,10 @@ export const Education = () => {
                   </div>
                 </CardContent>
               </Card>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

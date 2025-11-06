@@ -1,7 +1,10 @@
 import { GraduationCap, Trophy, Users, Code } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { SkillsVisualization } from "./ThreeVisualizations";
+import { BorderBeam } from "./aceternity/BorderBeam";
+import { GridBackground } from "./aceternity/GridBackground";
+import { InfiniteMovingCards } from "./aceternity/InfiniteMovingCards";
+import { motion } from "framer-motion";
 
 export const About = () => {
   const highlights = [
@@ -55,22 +58,34 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 px-6">
-      <div className="container mx-auto max-w-6xl">
+    <section id="about" className="py-20 px-6 relative overflow-hidden">
+      <GridBackground className="absolute inset-0 opacity-10" />
+      <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            About <span className="text-gradient">Me</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-5xl mx-auto">
-            A passionate computer science student with a strong foundation in full-stack development, <br />machine learning and DSA, dedicated to creating impactful solutions.
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
+          >
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Me</span>
+          </motion.h2>
+          <p className="text-lg md:text-xl text-gray-300 max-w-5xl mx-auto leading-relaxed">
+            A passionate computer science student with a strong foundation in full-stack development, machine learning and DSA, dedicated to creating impactful solutions.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 mb-16">
           {/* Bio */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-6">My Journey</h3>
-            <div className="space-y-4 text-muted-foreground">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">My Journey</h3>
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 I'm currently pursuing my Bachelor of Technology in Computer Science Engineering 
                 at Maharaja Agrasen Institute of Technology, Delhi, where I've maintained an 
@@ -87,15 +102,34 @@ export const About = () => {
                 a member of IOSD MAIT since October 2023.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Highlights */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-6">Key Highlights</h3>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Key Highlights</h3>
             <div className="grid gap-4">
               {highlights.map((highlight, index) => (
-                <Card key={index} className="card-elegant hover-lift">
-                  <CardContent className="p-4">
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <Card className="glass-effect hover-lift relative overflow-hidden">
+                    <BorderBeam 
+                      size={150}
+                      duration={12}
+                      colorFrom="#3b82f6"
+                      colorTo="#8b5cf6"
+                      delay={index * 0.4}
+                    />
+                    <CardContent className="p-6">
                     <div className="flex items-start gap-3">
                       <div className="p-2 rounded-lg bg-primary/10">
                         <highlight.icon className="w-5 h-5 text-primary" />
@@ -107,23 +141,83 @@ export const About = () => {
                     </div>
                   </CardContent>
                 </Card>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Skills */}
-        <div>
-          <h3 className="text-2xl font-semibold mb-6 text-center">Technical Skills</h3>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <h3 className="text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Technical Skills</h3>
           
-          {/* 3D Skills Visualization */}
-          <div className="mb-8">
-            <SkillsVisualization />
+          {/* Infinite Moving Skills Cards */}
+          <div className="mb-12">
+            <InfiniteMovingCards
+              items={[
+                {
+                  quote: "Building scalable web applications with React.js, Node.js, and modern JavaScript frameworks. Experienced in full-stack development with MongoDB and Express.js.",
+                  name: "Full-Stack Development",
+                  title: "React • Node • Express • MongoDB"
+                },
+                {
+                  quote: "Developing intelligent systems using Machine Learning and Generative AI. Specialized in RAG pipelines, Transformers, and building AI-powered solutions.",
+                  name: "AI & Machine Learning",
+                  title: "ML • Gen AI • RAG • Hugging Face"
+                },
+                {
+                  quote: "Strong foundation in Data Structures and Algorithms with 500+ problems solved. Achieved 1650+ rating on LeetCode with expertise in optimization techniques.",
+                  name: "Problem Solving",
+                  title: "DSA • Algorithms • Competitive Programming"
+                },
+                {
+                  quote: "Mastering multiple programming languages including C++, Python, Java, and JavaScript. Building efficient and optimized solutions across different platforms.",
+                  name: "Programming Languages",
+                  title: "C++ • Python • Java • JavaScript"
+                },
+                {
+                  quote: "Creating cross-platform mobile applications with Flutter. Designing intuitive user interfaces and seamless user experiences for iOS and Android.",
+                  name: "Mobile Development",
+                  title: "Flutter • Dart • Mobile UI/UX"
+                },
+                {
+                  quote: "Working with various database systems including SQL and NoSQL databases. Experienced in database design, optimization, and data management.",
+                  name: "Database Management",
+                  title: "SQL • MongoDB • Database Design"
+                },
+                {
+                  quote: "Deep understanding of core Computer Science concepts including Operating Systems, Computer Networks, and Software Engineering principles.",
+                  name: "Core CS Fundamentals",
+                  title: "OS • Networks • Software Engineering"
+                },
+                {
+                  quote: "Collaborating effectively in teams, leading technical initiatives, and organizing large-scale tech events. Strong communication and leadership skills.",
+                  name: "Leadership & Teamwork",
+                  title: "Team Collaboration • Event Organization"
+                }
+              ]}
+              direction="left"
+              speed="slow"
+              pauseOnHover={true}
+              className="[--animation-duration:80s]"
+            />
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, index) => (
-              <div key={index} className={`bg-card/30 rounded-lg border border-border/50 text-center ${index === 0 || index === 1 ? 'pt-[50px] pb-4 px-4' : 'p-4'}`}>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className={`glass-effect rounded-xl text-center hover-lift ${index === 0 || index === 1 ? 'pt-[50px] pb-4 px-4' : 'p-4'}`}
+              >
                 <h4 className="font-semibold text-primary mb-3">{category.title}</h4>
                 <div className="flex flex-wrap gap-2 justify-center items-center">
                   {category.skills.map((skill, skillIndex) => (
@@ -136,10 +230,10 @@ export const About = () => {
                     </Badge>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

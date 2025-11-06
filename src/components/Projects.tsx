@@ -2,7 +2,13 @@ import { ExternalLink, Github, Code, Database, Brain, Globe, CheckSquare } from 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CodeVisualization } from "./ThreeVisualizations";
+import { ProjectsCylinder } from "./ProjectsCylinder";
+import { BorderBeam } from "./aceternity/BorderBeam";
+import { CardContainer, CardBody, CardItem } from "./aceternity/Card3D";
+import { GridBackground } from "./aceternity/GridBackground";
+import { AnimatedBeam } from "./aceternity/AnimatedBeam";
+import { BlurFade } from "./aceternity/BlurFade";
+import { motion } from "framer-motion";
 
 export const Projects = () => {
   const projects = [
@@ -84,114 +90,167 @@ export const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-6 bg-card/30">
-      <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="text-gradient">Projects</span>
+    <section id="projects" className="py-20 px-6 relative overflow-hidden">
+      <GridBackground className="absolute inset-0 opacity-10" />
+      <div className="container mx-auto max-w-6xl relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Projects</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
             A showcase of my technical projects spanning full-stack development, machine learning, 
             mobile applications, and open-source contributions.
           </p>
           
-          {/* 3D Code Visualization */}
-          <div className="max-w-2xl mx-auto">
-            <CodeVisualization />
+          {/* 3D Rotating Projects Cylinder */}
+          <div className="max-w-4xl mx-auto mb-8">
+            <ProjectsCylinder 
+              projects={projects.map(p => ({
+                title: p.title,
+                category: p.category,
+                technologies: p.technologies
+              }))} 
+              height={400}
+            />
           </div>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <Card key={index} className="card-elegant hover-lift flex flex-col">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="p-2 rounded-lg bg-primary/10">
-                    <project.icon className="w-6 h-6 text-primary" />
-                  </div>
-                  <Badge className={getCategoryColor(project.category)}>
-                    {project.category}
-                  </Badge>
-                </div>
-                <CardTitle className="text-lg mb-2">{project.title}</CardTitle>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
-              </CardHeader>
+          {projects.map((project, index) => (            <BlurFade key={index} delay={index * 0.1} direction="up">
+              <CardContainer
+                className="inter-var"
+                containerClassName="w-full"
+              >
+                <CardBody className="bg-card/50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-card/50 dark:border-white/[0.2] border-border w-full h-auto rounded-xl p-6 border backdrop-blur-sm">
+                  <AnimatedBeam 
+                    className="opacity-30"
+                    duration={4}
+                    delay={index * 0.3}
+                    reverse={index % 2 === 1}
+                  />
+                  <CardItem
+                    translateZ="50"
+                    className="text-xl font-bold text-neutral-600 dark:text-white"
+                  >
+                    <Card className="card-elegant hover-lift flex flex-col border-0 shadow-none bg-transparent">
+                    <CardHeader className="p-0">
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="p-2 rounded-lg bg-primary/10">
+                          <project.icon className="w-6 h-6 text-primary" />
+                        </div>
+                        <Badge className={getCategoryColor(project.category)}>
+                          {project.category}
+                        </Badge>
+                      </div>
+                      <CardTitle className="text-lg mb-2">{project.title}</CardTitle>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {project.description}
+                      </p>
+                    </CardHeader>
               
-              <CardContent className="flex-1 flex flex-col">
-                <div className="mb-4">
-                  <h4 className="font-semibold text-sm mb-2">Key Features:</h4>
-                  <ul className="space-y-1">
-                    {project.features.slice(0, 3).map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
-                        <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-1">
-                    {project.technologies.slice(0, 4).map((tech, i) => (
-                      <Badge key={i} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                    {project.technologies.length > 4 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{project.technologies.length - 4} more
-                      </Badge>
-                    )}
-                  </div>
-                </div>
-                
-                <div className="mt-auto flex gap-2">
-                  {project.demoLink && project.demoLink !== "#" && (
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      className="flex-1"
-                      asChild
-                    >
-                      <a 
-                        href={project.demoLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                    <CardContent className="flex-1 flex flex-col p-0">
+                      <CardItem
+                        as="div"
+                        translateZ="60"
+                        className="mb-4"
                       >
-                        <ExternalLink className="w-3 h-3 mr-1" />
-                        Live Demo
-                      </a>
-                    </Button>
-                  )}
-                  {project.githubLink && project.githubLink !== "private" && (
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      className="flex-1"
-                      asChild
-                    >
-                      <a 
-                        href={project.githubLink} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
+                        <h4 className="font-semibold text-sm mb-2">Key Features:</h4>
+                        <ul className="space-y-1">
+                          {project.features.slice(0, 3).map((feature, i) => (
+                            <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+                              <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0" />
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </CardItem>
+                      
+                      <CardItem
+                        as="div"
+                        translateZ="60"
+                        className="mb-6"
                       >
-                        <Github className="w-3 h-3 mr-1" />
-                        Code
-                      </a>
-                    </Button>
-                  )}
-                  {project.githubLink === "private" && (
-                    <Button size="sm" variant="outline" className="flex-1" disabled>
-                      <Github className="w-3 h-3 mr-1" />
-                      Private
-                    </Button>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                        <div className="flex flex-wrap gap-1">
+                          {project.technologies.slice(0, 4).map((tech, i) => (
+                            <Badge key={i} variant="outline" className="text-xs">
+                              {tech}
+                            </Badge>
+                          ))}
+                          {project.technologies.length > 4 && (
+                            <Badge variant="outline" className="text-xs">
+                              +{project.technologies.length - 4} more
+                            </Badge>
+                          )}
+                        </div>
+                      </CardItem>
+                      
+                      <CardItem
+                        translateZ="100"
+                        className="w-full mt-auto"
+                      >
+                        <div className="flex gap-2">
+                          {project.demoLink && project.demoLink !== "#" && (
+                            <Button 
+                              size="sm" 
+                              variant="outline" 
+                              className="flex-1"
+                              asChild
+                            >
+                              <a 
+                                href={project.demoLink} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                              >
+                                <ExternalLink className="w-3 h-3 mr-1" />
+                                Live Demo
+                              </a>
+                            </Button>
+                          )}
+                          {project.githubLink && project.githubLink !== "private" && (
+                            <Button 
+                              size="sm" 
+                              variant="outline" 
+                              className="flex-1"
+                              asChild
+                            >
+                              <a 
+                                href={project.githubLink} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                              >
+                                <Github className="w-3 h-3 mr-1" />
+                                Code
+                              </a>
+                            </Button>
+                          )}
+                          {project.githubLink === "private" && (
+                            <Button size="sm" variant="outline" className="flex-1" disabled>
+                              <Github className="w-3 h-3 mr-1" />
+                              Private
+                            </Button>
+                          )}
+                        </div>
+                      </CardItem>
+                    </CardContent>
+                  </Card>
+                </CardItem>
+                <BorderBeam 
+                  size={250}
+                  duration={12}
+                  colorFrom="#3b82f6"
+                  colorTo="#06b6d4"
+                  delay={0}
+                />
+                  </CardBody>
+                </CardContainer>
+              </BlurFade>
+            ))}
         </div>
       </div>
     </section>
