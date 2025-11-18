@@ -24,8 +24,8 @@ export const MagicButton = ({
       whileTap={{ scale: 0.95 }}
       {...props}
     >
-      <span className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <span className="absolute inset-0 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
+      <span className="absolute inset-0 bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <span className="absolute inset-0 bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA] blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
       <span className="relative z-10 flex items-center gap-2">
         {children}
       </span>

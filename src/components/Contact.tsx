@@ -5,7 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { BorderBeam } from "./aceternity/BorderBeam";
 import { GridBackground } from "./aceternity/GridBackground";
-import { AnimatedBeam } from "./aceternity/AnimatedBeam";
 import { MagicButton } from "./aceternity/MagicButton";
 import { motion } from "framer-motion";
 
@@ -45,8 +44,8 @@ export const Contact = () => {
 
 
   return (
-    <section id="contact" className="py-20 px-6 relative">
-      <GridBackground className="absolute inset-0 opacity-20" />
+    <section id="contact" className="py-20 px-6 relative overflow-hidden">
+      <GridBackground className="absolute inset-0 opacity-10" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -149,7 +148,6 @@ export const Contact = () => {
             transition={{ duration: 0.6 }}
           >
             <Card className="glass-effect relative overflow-hidden">
-              <AnimatedBeam className="opacity-40" duration={5} />
               <BorderBeam 
                 size={250}
                 duration={12}
@@ -216,7 +214,10 @@ export const Contact = () => {
                   />
                 </div>
                 
-                <MagicButton type="submit" className="w-full">
+                <MagicButton 
+                  type="submit" 
+                  className="w-full bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 hover:from-gray-700 hover:via-gray-600 hover:to-gray-700 text-white font-semibold border border-gray-600/50 hover:border-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-gray-900/70 transition-all duration-300"
+                >
                   <Send className="w-4 h-4 mr-2" />
                   Send Message
                 </MagicButton>

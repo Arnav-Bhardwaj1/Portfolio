@@ -2,11 +2,7 @@ import { ExternalLink, Github, Code, Database, Brain, Globe, CheckSquare } from 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ProjectsCylinder } from "./ProjectsCylinder";
-import { BorderBeam } from "./aceternity/BorderBeam";
-import { CardContainer, CardBody, CardItem } from "./aceternity/Card3D";
 import { GridBackground } from "./aceternity/GridBackground";
-import { AnimatedBeam } from "./aceternity/AnimatedBeam";
 import { BlurFade } from "./aceternity/BlurFade";
 import { motion } from "framer-motion";
 
@@ -24,6 +20,7 @@ export const Projects = () => {
         "Computer vision crop analysis"
       ],
       icon: Brain,
+      imageUrl: "/fa.png",
       demoLink: "#",
       githubLink: "https://github.com/Arnav-Bhardwaj1/FarmSphere"
     },
@@ -41,6 +38,7 @@ export const Projects = () => {
         "Advanced filtering & search capabilities"
       ],
       icon: Database,
+      imageUrl: "/finova.jpg",
       demoLink: "https://finance1manager.netlify.app/",
       githubLink: "https://github.com/Arnav-Bhardwaj1/FinanceManager"
     },
@@ -56,6 +54,7 @@ export const Projects = () => {
         "Deflection testing with orbital mechanics"
       ],
       icon: Globe,
+      imageUrl: "/astro.png",
       demoLink: "#",
       githubLink: "https://github.com/Arnav-Bhardwaj1/AstroGuard"
     },
@@ -73,6 +72,7 @@ export const Projects = () => {
         "Custom tag system for task organization"
       ],
       icon: CheckSquare,
+      imageUrl: "/taskflow.jpg",
       demoLink: "#",
       githubLink: "https://github.com/Arnav-Bhardwaj1/TaskFlow"
     }
@@ -103,154 +103,125 @@ export const Projects = () => {
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Projects</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
             A showcase of my technical projects spanning full-stack development, machine learning, 
             mobile applications, and open-source contributions.
           </p>
-          
-          {/* 3D Rotating Projects Cylinder */}
-          <div className="max-w-4xl mx-auto mb-8">
-            <ProjectsCylinder 
-              projects={projects.map(p => ({
-                title: p.title,
-                category: p.category,
-                technologies: p.technologies
-              }))} 
-              height={400}
-            />
-          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (            <BlurFade key={index} delay={index * 0.1} direction="up">
-              <CardContainer
-                className="inter-var"
-                containerClassName="w-full"
+          {projects.map((project, index) => (
+            <BlurFade key={index} delay={index * 0.1} direction="up">
+              <motion.div
+                whileHover={{ scale: 1.02, y: -4 }}
+                transition={{ duration: 0.3 }}
+                className="h-full"
               >
-                <CardBody className="bg-card/50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-card/50 dark:border-white/[0.2] border-border w-full h-auto rounded-xl p-6 border backdrop-blur-sm">
-                  <AnimatedBeam 
-                    className="opacity-30"
-                    duration={4}
-                    delay={index * 0.3}
-                    reverse={index % 2 === 1}
-                  />
-                  <CardItem
-                    translateZ="50"
-                    className="text-xl font-bold text-neutral-600 dark:text-white"
-                  >
-                    <Card className="card-elegant hover-lift flex flex-col border-0 shadow-none bg-transparent">
-                    <CardHeader className="p-0">
-                      <div className="flex items-center justify-between mb-4">
-                        <div className="p-2 rounded-lg bg-primary/10">
-                          <project.icon className="w-6 h-6 text-primary" />
+                <Card className="glass-effect hover-lift h-full flex flex-col border-white/20 border-2 overflow-hidden group">
+                  {/* Cover Image */}
+                  <div className="relative w-full h-48 overflow-hidden">
+                    <motion.img
+                      src={project.imageUrl}
+                      alt={project.title}
+                      className="w-full h-full object-cover"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.5 }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                    <div className="absolute top-4 right-4">
+                      <Badge className={getCategoryColor(project.category)}>
+                        {project.category}
+                      </Badge>
+                    </div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="p-2 rounded-lg bg-primary/20 backdrop-blur-sm">
+                          <project.icon className="w-5 h-5 text-primary" />
                         </div>
-                        <Badge className={getCategoryColor(project.category)}>
-                          {project.category}
-                        </Badge>
+                        <CardTitle className="text-xl text-white">{project.title}</CardTitle>
                       </div>
-                      <CardTitle className="text-lg mb-2">{project.title}</CardTitle>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {project.description}
-                      </p>
-                    </CardHeader>
-              
-                    <CardContent className="flex-1 flex flex-col p-0">
-                      <CardItem
-                        as="div"
-                        translateZ="60"
-                        className="mb-4"
-                      >
-                        <h4 className="font-semibold text-sm mb-2">Key Features:</h4>
-                        <ul className="space-y-1">
-                          {project.features.slice(0, 3).map((feature, i) => (
-                            <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
-                              <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0" />
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </CardItem>
-                      
-                      <CardItem
-                        as="div"
-                        translateZ="60"
-                        className="mb-6"
-                      >
-                        <div className="flex flex-wrap gap-1">
-                          {project.technologies.slice(0, 4).map((tech, i) => (
-                            <Badge key={i} variant="outline" className="text-xs">
-                              {tech}
-                            </Badge>
-                          ))}
-                          {project.technologies.length > 4 && (
-                            <Badge variant="outline" className="text-xs">
-                              +{project.technologies.length - 4} more
-                            </Badge>
-                          )}
-                        </div>
-                      </CardItem>
-                      
-                      <CardItem
-                        translateZ="100"
-                        className="w-full mt-auto"
-                      >
-                        <div className="flex gap-2">
-                          {project.demoLink && project.demoLink !== "#" && (
-                            <Button 
-                              size="sm" 
-                              variant="outline" 
-                              className="flex-1"
-                              asChild
-                            >
-                              <a 
-                                href={project.demoLink} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                              >
-                                <ExternalLink className="w-3 h-3 mr-1" />
-                                Live Demo
-                              </a>
-                            </Button>
-                          )}
-                          {project.githubLink && project.githubLink !== "private" && (
-                            <Button 
-                              size="sm" 
-                              variant="outline" 
-                              className="flex-1"
-                              asChild
-                            >
-                              <a 
-                                href={project.githubLink} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                              >
-                                <Github className="w-3 h-3 mr-1" />
-                                Code
-                              </a>
-                            </Button>
-                          )}
-                          {project.githubLink === "private" && (
-                            <Button size="sm" variant="outline" className="flex-1" disabled>
-                              <Github className="w-3 h-3 mr-1" />
-                              Private
-                            </Button>
-                          )}
-                        </div>
-                      </CardItem>
-                    </CardContent>
-                  </Card>
-                </CardItem>
-                <BorderBeam 
-                  size={250}
-                  duration={12}
-                  colorFrom="#3b82f6"
-                  colorTo="#06b6d4"
-                  delay={0}
-                />
-                  </CardBody>
-                </CardContainer>
-              </BlurFade>
-            ))}
+                    </div>
+                  </div>
+                  
+                  <CardHeader className="pb-4">
+                    <p className="text-base text-muted-foreground leading-relaxed">
+                      {project.description}
+                    </p>
+                  </CardHeader>
+            
+                  <CardContent className="flex-1 flex flex-col">
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-base mb-2">Key Features:</h4>
+                      <ul className="space-y-1">
+                        {project.features.slice(0, 3).map((feature, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                            <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="mb-6">
+                      <div className="flex flex-wrap gap-1">
+                        {project.technologies.slice(0, 4).map((tech, i) => (
+                          <Badge key={i} variant="outline" className="text-sm">
+                            {tech}
+                          </Badge>
+                        ))}
+                        {project.technologies.length > 4 && (
+                          <Badge variant="outline" className="text-sm">
+                            +{project.technologies.length - 4} more
+                          </Badge>
+                        )}
+                      </div>
+                    </div>
+                    
+                    <div className="flex gap-2 mt-auto">
+                      {project.demoLink && project.demoLink !== "#" && (
+                        <Button 
+                          size="sm" 
+                          className="flex-1 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 hover:from-gray-700 hover:via-gray-600 hover:to-gray-700 text-white font-semibold border border-gray-600/50 hover:border-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-gray-900/70 transition-all duration-300"
+                          asChild
+                        >
+                          <a 
+                            href={project.demoLink} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="w-3 h-3 mr-1" />
+                            Live Demo
+                          </a>
+                        </Button>
+                      )}
+                      {project.githubLink && project.githubLink !== "private" && (
+                        <Button 
+                          size="sm" 
+                          className="flex-1 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 hover:from-gray-600 hover:via-gray-700 hover:to-gray-600 text-white font-semibold border border-gray-600/50 hover:border-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-gray-900/70 transition-all duration-300"
+                          asChild
+                        >
+                          <a 
+                            href={project.githubLink} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                          >
+                            <Github className="w-3 h-3 mr-1" />
+                            Code
+                          </a>
+                        </Button>
+                      )}
+                      {project.githubLink === "private" && (
+                        <Button size="sm" className="flex-1 bg-gray-700/30 text-gray-400 font-semibold border border-gray-600/30 cursor-not-allowed" disabled>
+                          <Github className="w-3 h-3 mr-1" />
+                          Private
+                        </Button>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </BlurFade>
+          ))}
         </div>
       </div>
     </section>

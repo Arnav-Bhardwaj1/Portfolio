@@ -1,7 +1,6 @@
 import { GraduationCap, Trophy, Users, Code } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BorderBeam } from "./aceternity/BorderBeam";
 import { GridBackground } from "./aceternity/GridBackground";
 import { InfiniteMovingCards } from "./aceternity/InfiniteMovingCards";
 import { motion } from "framer-motion";
@@ -16,7 +15,7 @@ export const About = () => {
     {
       icon: Code,
       title: "DSA (Data Structures and Algorithms)",
-      description: "500+ DSA problems solved | 1650+ LeetCode Contest Rating",
+      description: "700+ DSA problems solved | 1700+ LeetCode Contest Rating",
     },
     {
       icon: Trophy,
@@ -69,7 +68,7 @@ export const About = () => {
             transition={{ duration: 0.5 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Me</span>
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]">Me</span>
           </motion.h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-5xl mx-auto leading-relaxed">
             A passionate computer science student with a strong foundation in full-stack development, machine learning and DSA, dedicated to creating impactful solutions.
@@ -84,7 +83,7 @@ export const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">My Journey</h3>
+            <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] to-[#00D4FF]">My Journey</h3>
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 I'm currently pursuing my Bachelor of Technology in Computer Science Engineering 
@@ -111,7 +110,7 @@ export const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Key Highlights</h3>
+            <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#00D4FF] to-[#64FFDA]">Key Highlights</h3>
             <div className="grid gap-4">
               {highlights.map((highlight, index) => (
                 <motion.div
@@ -122,13 +121,6 @@ export const About = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <Card className="glass-effect hover-lift relative overflow-hidden">
-                    <BorderBeam 
-                      size={150}
-                      duration={12}
-                      colorFrom="#3b82f6"
-                      colorTo="#8b5cf6"
-                      delay={index * 0.4}
-                    />
                     <CardContent className="p-6">
                     <div className="flex items-start gap-3">
                       <div className="p-2 rounded-lg bg-primary/10">
@@ -154,7 +146,7 @@ export const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Technical Skills</h3>
+          <h3 className="text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]">Technical Skills</h3>
           
           {/* Infinite Moving Skills Cards */}
           <div className="mb-12">
@@ -171,7 +163,7 @@ export const About = () => {
                   title: "ML • Gen AI • RAG • Hugging Face"
                 },
                 {
-                  quote: "Strong foundation in Data Structures and Algorithms with 500+ problems solved. Achieved 1650+ rating on LeetCode with expertise in optimization techniques.",
+                  quote: "Strong foundation in Data Structures and Algorithms with 700+ problems solved. Achieved 1700+ rating on LeetCode with expertise in optimization techniques.",
                   name: "Problem Solving",
                   title: "DSA • Algorithms • Competitive Programming"
                 },

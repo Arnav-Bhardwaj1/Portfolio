@@ -8,7 +8,7 @@ import { Contact } from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-purple-950/10 to-slate-950">
+    <div className="min-h-screen bg-gradient-to-b from-black via-[#0A1929] to-black">
       <Navigation />
       <Hero />
       <div className="section-divider" />

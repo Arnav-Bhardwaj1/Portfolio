@@ -37,7 +37,7 @@ export const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-        scrolled 
+      scrolled 
           ? "glass-effect border-b border-white/10 shadow-2xl" 
           : "bg-transparent"
       }`}
@@ -73,14 +73,14 @@ export const Navigation = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <Button 
-                size="sm"
-                onClick={() => scrollToSection('contact')}
+            <Button 
+              size="sm"
+              onClick={() => scrollToSection('contact')}
                 className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-110 neon-glow"
-              >
-                <Sparkles className="w-4 h-4 mr-2" />
-                Get In Touch
-              </Button>
+            >
+              <Sparkles className="w-4 h-4 mr-2" />
+              Get In Touch
+            </Button>
             </motion.div>
           </div>
 
@@ -97,7 +97,7 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         <AnimatePresence>
-          {isOpen && (
+        {isOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
@@ -107,33 +107,33 @@ export const Navigation = () => {
               <div className="flex flex-col gap-4">
                 {navItems.map((item, index) => (
                   <motion.button
-                    key={item.label}
+                  key={item.label}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    onClick={() => scrollToSection(item.href.replace('#', ''))}
+                  onClick={() => scrollToSection(item.href.replace('#', ''))}
                     className="text-gray-200 hover:text-white transition-all duration-300 text-left font-medium py-2 text-base"
-                  >
-                    {item.label}
+                >
+                  {item.label}
                   </motion.button>
-                ))}
+              ))}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-                  <Button 
-                    size="sm" 
+              <Button 
+                size="sm" 
                     className="w-full mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-bold py-3 rounded-full shadow-lg hover:shadow-purple-500/30 transition-all duration-300"
-                    onClick={() => scrollToSection('contact')}
-                  >
-                    <Sparkles className="w-4 h-4 mr-2" />
-                    Get In Touch
-                  </Button>
+                onClick={() => scrollToSection('contact')}
+              >
+                <Sparkles className="w-4 h-4 mr-2" />
+                Get In Touch
+              </Button>
                 </motion.div>
-              </div>
+            </div>
             </motion.div>
-          )}
+        )}
         </AnimatePresence>
       </div>
     </motion.nav>

@@ -2,7 +2,6 @@ import { GraduationCap, Trophy, BookOpen, Award } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GridBackground } from "./aceternity/GridBackground";
-import { BorderBeam } from "./aceternity/BorderBeam";
 import { motion } from "framer-motion";
 
 export const Education = () => {
@@ -116,7 +115,6 @@ export const Education = () => {
             transition={{ duration: 0.6 }}
           >
             <Card className="glass-effect hover-lift relative overflow-hidden">
-              <BorderBeam size={200} duration={12} colorFrom="#3b82f6" colorTo="#8b5cf6" />
             <CardHeader>
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-primary/10">
@@ -185,7 +183,6 @@ export const Education = () => {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="glass-effect hover-lift relative overflow-hidden">
-                  <BorderBeam size={150} duration={10} colorFrom="#8b5cf6" colorTo="#ec4899" delay={index * 0.3} />
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="p-2 rounded-lg bg-primary/10">
@@ -222,7 +219,6 @@ export const Education = () => {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="glass-effect hover-lift relative overflow-hidden">
-                  <BorderBeam size={150} duration={10} colorFrom="#3b82f6" colorTo="#ec4899" delay={index * 0.2} />
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">

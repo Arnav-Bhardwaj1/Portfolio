@@ -106,19 +106,13 @@ export const Experience = () => {
 
         <TracingBeam>
           <div className="space-y-8">
-            {experiences.map((exp, index) => (
+          {experiences.map((exp, index) => (
               <BlurFade key={index} delay={index * 0.15} direction="up">
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.3 }}
                 >
                   <Card className="glass-effect hover-lift relative overflow-hidden">
-                    <AnimatedBeam 
-                      className="opacity-50"
-                      duration={3}
-                      delay={index * 0.5}
-                      reverse={index % 2 === 0}
-                    />
                     <BorderBeam 
                       size={200}
                       duration={15}
@@ -172,8 +166,8 @@ export const Experience = () => {
             </Card>
                 </motion.div>
               </BlurFade>
-            ))}
-          </div>
+          ))}
+        </div>
         </TracingBeam>
       </div>
     </section>
