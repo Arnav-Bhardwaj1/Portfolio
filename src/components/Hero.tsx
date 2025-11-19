@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code, FileText, Target, Award, BookOpen } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Sparkles, Code, FileText, Workflow, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { GridBackground } from "./aceternity/GridBackground";
 import { NeonGridBackground } from "./aceternity/NeonGridBackground";
@@ -124,7 +124,7 @@ export const Hero = () => {
                     className="flex items-center justify-center mb-2"
                   >
                     <div className="p-2.5 rounded-full bg-gradient-to-br from-[#00B8FF]/20 to-[#00D4FF]/20 group-hover:from-[#00B8FF]/40 group-hover:to-[#00D4FF]/40 transition-all duration-300">
-                      <Target className="w-6 h-6 text-[#00D4FF]" />
+                      <Workflow className="w-6 h-6 text-[#00D4FF]" />
                     </div>
                   </motion.div>
                   <div className="text-2xl font-bold mb-1 text-[#00D9B8]">700+</div>
@@ -152,7 +152,11 @@ export const Hero = () => {
                     className="flex items-center justify-center mb-2"
                   >
                     <div className="p-2.5 rounded-full bg-gradient-to-br from-[#00D4FF]/20 to-[#64FFDA]/20 group-hover:from-[#00D4FF]/40 group-hover:to-[#64FFDA]/40 transition-all duration-300">
-                      <Award className="w-6 h-6 text-[#00D4FF]" />
+                      <img
+                        src="/leetcode.svg"
+                        alt="LeetCode"
+                        className="w-6 h-6 object-contain"
+                      />
                     </div>
                   </motion.div>
                   <div className="text-2xl font-bold mb-1 text-[#00D9B8]">1700+</div>
@@ -177,7 +181,7 @@ export const Hero = () => {
                     className="flex items-center justify-center mb-2"
                   >
                     <div className="p-2.5 rounded-full bg-gradient-to-br from-[#64FFDA]/20 to-[#00B8FF]/20 group-hover:from-[#64FFDA]/40 group-hover:to-[#00B8FF]/40 transition-all duration-300">
-                      <BookOpen className="w-6 h-6 text-[#64FFDA]" />
+                      <GraduationCap className="w-6 h-6 text-[#64FFDA]" />
                     </div>
                   </motion.div>
                   <div className="text-2xl font-bold mb-1 text-[#00D9B8]">9.76</div>
