@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { GridBackground } from "./aceternity/GridBackground";
 import { BlurFade } from "./aceternity/BlurFade";
+import { ConcentricCircles } from "./aceternity/ConcentricCircles";
 import { motion } from "framer-motion";
 
 export const Projects = () => {
@@ -91,7 +92,10 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="py-20 px-6 relative overflow-hidden">
-      <GridBackground className="absolute inset-0 opacity-10" />
+      {/* Clean Background */}
+      <div className="absolute inset-0 bg-[#0d151d]" />
+      <ConcentricCircles />
+      <GridBackground className="absolute inset-0 opacity-20" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

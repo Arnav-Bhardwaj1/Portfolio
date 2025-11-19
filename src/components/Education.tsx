@@ -2,6 +2,7 @@ import { GraduationCap, Trophy, BookOpen, Award } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GridBackground } from "./aceternity/GridBackground";
+import { ConcentricCircles } from "./aceternity/ConcentricCircles";
 import { motion } from "framer-motion";
 
 export const Education = () => {
@@ -77,18 +78,21 @@ export const Education = () => {
 
   const getCategoryColor = (category: string) => {
     switch (category) {
-      case "AI/ML": return "bg-primary/10 text-primary border-primary/20";
-      case "Gen AI and RAG": return "bg-yellow-500/10 text-yellow-500 border-yellow-500/20";
-      case "Cloud": return "bg-accent/10 text-accent border-accent/20";
-      case "Professional": return "bg-green-500/10 text-green-500 border-green-500/20";
-      case "Achievement": return "bg-primary/10 text-primary border-primary/20";
-      default: return "bg-muted/10 text-muted-foreground border-muted/20";
+      case "AI/ML": return "bg-cyan-500/20 text-cyan-300 border-cyan-400/40 shadow-sm shadow-cyan-500/20";
+      case "Gen AI and RAG": return "bg-amber-500/20 text-amber-300 border-amber-400/40 shadow-sm shadow-amber-500/20";
+      case "Cloud": return "bg-blue-500/20 text-blue-300 border-blue-400/40 shadow-sm shadow-blue-500/20";
+      case "Professional": return "bg-emerald-500/20 text-emerald-300 border-emerald-400/40 shadow-sm shadow-emerald-500/20";
+      case "Achievement": return "bg-purple-500/20 text-purple-300 border-purple-400/40 shadow-sm shadow-purple-500/20";
+      default: return "bg-slate-500/20 text-slate-300 border-slate-400/40";
     }
   };
 
   return (
     <section id="education" className="py-20 px-6 relative overflow-hidden">
-      <GridBackground className="absolute inset-0 opacity-10" />
+      {/* Clean Background */}
+      <div className="absolute inset-0 bg-[#0d151d]" />
+      <ConcentricCircles />
+      <GridBackground className="absolute inset-0 opacity-20" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -208,7 +212,7 @@ export const Education = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Certifications & Awards</h3>
+          <h3 className="text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Certifications & Awards</h3>
           <div className="grid md:grid-cols-2 gap-4">
             {certifications.map((cert, index) => (
               <motion.div

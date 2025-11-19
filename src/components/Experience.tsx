@@ -7,6 +7,7 @@ import { GridBackground } from "./aceternity/GridBackground";
 import { TracingBeam } from "./aceternity/TracingBeam";
 import { AnimatedBeam } from "./aceternity/AnimatedBeam";
 import { BlurFade } from "./aceternity/BlurFade";
+import { ConcentricCircles } from "./aceternity/ConcentricCircles";
 import { motion } from "framer-motion";
 
 export const Experience = () => {
@@ -81,7 +82,10 @@ export const Experience = () => {
 
   return (
     <section id="experience" className="py-20 px-6 relative overflow-hidden">
-      <GridBackground className="absolute inset-0 opacity-10" />
+      {/* Clean Background */}
+      <div className="absolute inset-0 bg-[#0d151d]" />
+      <ConcentricCircles />
+      <GridBackground className="absolute inset-0 opacity-20" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -99,7 +103,7 @@ export const Experience = () => {
           </p>
           
           {/* 3D Data Visualization */}
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto mt-8">
             <ExperienceVisualization />
           </div>
         </motion.div>

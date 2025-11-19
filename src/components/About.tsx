@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { GridBackground } from "./aceternity/GridBackground";
 import { InfiniteMovingCards } from "./aceternity/InfiniteMovingCards";
+import { ConcentricCircles } from "./aceternity/ConcentricCircles";
 import { motion } from "framer-motion";
 
 export const About = () => {
@@ -58,7 +59,12 @@ export const About = () => {
 
   return (
     <section id="about" className="py-20 px-6 relative overflow-hidden">
-      <GridBackground className="absolute inset-0 opacity-10" />
+      {/* Clean Background */}
+      <div className="absolute inset-0 bg-[#0d151d] z-0" />
+      <div className="absolute inset-0 z-0">
+        <ConcentricCircles />
+      </div>
+      <GridBackground className="absolute inset-0 opacity-20 z-0" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
           <motion.h2 
@@ -146,10 +152,14 @@ export const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]">Technical Skills</h3>
+          <h3 className="text-4xl md:text-5xl font-bold mb-10 text-center">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA] drop-shadow-[0_0_25px_rgba(0,212,255,0.5)]">
+              Technical Skills
+            </span>
+          </h3>
           
           {/* Infinite Moving Skills Cards */}
-          <div className="mb-12">
+          <div className="mb-12 relative z-20">
             <InfiniteMovingCards
               items={[
                 {
@@ -208,19 +218,21 @@ export const About = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className={`glass-effect rounded-xl text-center hover-lift ${index === 0 || index === 1 ? 'pt-[50px] pb-4 px-4' : 'p-4'}`}
+                className={`glass-effect rounded-2xl text-center hover-lift p-1.5 ${index === 0 || index === 1 ? 'pt-[52px]' : 'pt-4'}`}
               >
-                <h4 className="font-semibold text-primary mb-3">{category.title}</h4>
-                <div className="flex flex-wrap gap-2 justify-center items-center">
-                  {category.skills.map((skill, skillIndex) => (
+                <div className="rounded-xl border border-white/10 bg-black/20 backdrop-blur-sm p-4 flex flex-col gap-3">
+                  <h4 className="font-semibold text-primary">{category.title}</h4>
+                  <div className="flex flex-wrap gap-2 justify-center items-center">
+                    {category.skills.map((skill, skillIndex) => (
                     <Badge 
                       key={skillIndex} 
                       variant="secondary" 
-                      className="px-3 py-1 text-xs hover:bg-primary/20 hover:text-primary transition-colors cursor-default"
+                      className="px-3 py-1 text-xs bg-black/30 border border-white/20 text-gray-100 hover:bg-[#00B8FF]/20 hover:text-white transition-colors cursor-default"
                     >
-                      {skill}
-                    </Badge>
-                  ))}
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}

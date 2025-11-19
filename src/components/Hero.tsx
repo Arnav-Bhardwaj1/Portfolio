@@ -22,10 +22,10 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-20 pb-12">
+    <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-28 md:pt-24 pb-12">
       {/* Neon Grid Background */}
       <NeonGridBackground />
-      <StarfieldBackground density={0.28} speed={0.00015} />
+      <StarfieldBackground density={0.5} speed={0.0003} />
       
       {/* Main Content */}
       <div className="container mx-auto px-6 relative z-50 w-full flex-1 flex items-center justify-center">
@@ -39,8 +39,8 @@ export const Hero = () => {
                       <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white blur-2xl opacity-30">
                         Arnav Bhardwaj
                       </h1>
-                    </div>
-                    
+      </div>
+
                     {/* Main Text with Simple Letter Animation */}
                     <h1 className="text-5xl md:text-6xl lg:text-7xl mb-2 font-bold relative z-10">
                       <span className="inline-block">
@@ -67,26 +67,25 @@ export const Hero = () => {
                             {char === " " ? "\u00A0" : char}
                           </motion.span>
                         ))}
-                      </span>
+              </span>
                     </h1>
                   </div>
-                </div>
+              </div>
               </BlurFade>
-              
+            
               {/* Subtitle with TypewriterEffect */}
               <BlurFade delay={0.2} direction="up">
                 <div className="space-y-1.5 mb-3">
                   <div className="flex items-center justify-center">
                     <TypewriterEffectSmooth
                       words={[
-                        { text: "ML", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                        { text: "Ex-ML", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
                         { text: "Intern", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
                         { text: "@DRDO", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
                         { text: "|", className: "text-[#00D4FF]" },
                         { text: "AI", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
                         { text: "&", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
                         { text: "Full-Stack", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                        { text: "Web", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
                         { text: "Developer", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
                       ]}
                       className="text-xl md:text-2xl lg:text-3xl font-bold"
@@ -100,17 +99,17 @@ export const Hero = () => {
                       filter={false}
                       duration={0.3}
                     />
-                  </div>
-                </div>
+            </div>
+          </div>
               </BlurFade>
-              
+          
               {/* Achievement Cards with Creative Animations */}
               <BlurFade delay={0.4} direction="up">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-5 max-w-4xl mx-auto mt-6">
-              {/* DSA Card */}
+            {/* DSA Card */}
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 5 }}
-                className="glass-effect rounded-xl p-5 group relative overflow-hidden"
+                className="glass-effect rounded-lg px-3 py-3 sm:px-4 sm:py-4 group relative overflow-hidden scale-95"
               >
                 <motion.div
                   animate={{ rotate: [0, 360] }}
@@ -121,24 +120,24 @@ export const Hero = () => {
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
-                    className="flex items-center justify-center mb-2"
+                    className="flex items-center justify-center mb-1.5"
                   >
-                    <div className="p-2.5 rounded-full bg-gradient-to-br from-[#00B8FF]/20 to-[#00D4FF]/20 group-hover:from-[#00B8FF]/40 group-hover:to-[#00D4FF]/40 transition-all duration-300">
-                      <Workflow className="w-6 h-6 text-[#00D4FF]" />
+                    <div className="p-2 rounded-full bg-gradient-to-br from-[#00B8FF]/15 to-[#00D4FF]/15 group-hover:from-[#00B8FF]/35 group-hover:to-[#00D4FF]/35 transition-all duration-300">
+                      <Workflow className="w-5 h-5 text-[#00D4FF]" />
                     </div>
                   </motion.div>
-                  <div className="text-2xl font-bold mb-1 text-[#00D9B8]">700+</div>
-                  <p className="text-gray-300 text-sm font-medium">DSA Problems</p>
+                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">700+</div>
+                  <p className="text-gray-300 text-[0.7rem] md:text-xs font-medium">DSA Problems</p>
                 </div>
               </motion.div>
 
-              {/* LeetCode Card */}
+            {/* LeetCode Card */}
               <motion.a
-                href="https://leetcode.com/u/ArnavBhardwaj/" 
-                target="_blank" 
-                rel="noopener noreferrer"
+              href="https://leetcode.com/u/ArnavBhardwaj/" 
+              target="_blank" 
+              rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, rotateY: -5 }}
-                className="glass-effect rounded-xl p-5 group relative overflow-hidden block"
+                className="glass-effect rounded-lg px-3 py-3 sm:px-4 sm:py-4 group relative overflow-hidden block scale-95"
               >
                 <motion.div
                   animate={{ rotate: [360, 0] }}
@@ -149,25 +148,25 @@ export const Hero = () => {
                   <motion.div
                     whileHover={{ rotate: -360 }}
                     transition={{ duration: 0.5 }}
-                    className="flex items-center justify-center mb-2"
+                    className="flex items-center justify-center mb-1.5"
                   >
-                    <div className="p-2.5 rounded-full bg-gradient-to-br from-[#00D4FF]/20 to-[#64FFDA]/20 group-hover:from-[#00D4FF]/40 group-hover:to-[#64FFDA]/40 transition-all duration-300">
+                    <div className="p-2 rounded-full bg-gradient-to-br from-[#00D4FF]/15 to-[#64FFDA]/15 group-hover:from-[#00D4FF]/35 group-hover:to-[#64FFDA]/35 transition-all duration-300">
                       <img
                         src="/leetcode.svg"
                         alt="LeetCode"
-                        className="w-6 h-6 object-contain"
+                        className="w-5 h-5 object-contain"
                       />
                     </div>
                   </motion.div>
-                  <div className="text-2xl font-bold mb-1 text-[#00D9B8]">1700+</div>
-                  <p className="text-gray-300 text-sm font-medium">LeetCode Rating</p>
+                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">1700+</div>
+                  <p className="text-gray-300 text-[0.7rem] md:text-xs font-medium">LeetCode Rating</p>
                 </div>
               </motion.a>
 
-              {/* CGPA Card */}
+            {/* CGPA Card */}
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 5 }}
-                className="glass-effect rounded-xl p-5 group relative overflow-hidden"
+                className="glass-effect rounded-lg px-3 py-3 sm:px-4 sm:py-4 group relative overflow-hidden scale-95"
               >
                 <motion.div
                   animate={{ rotate: [0, -360] }}
@@ -178,14 +177,14 @@ export const Hero = () => {
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
-                    className="flex items-center justify-center mb-2"
+                    className="flex items-center justify-center mb-1.5"
                   >
-                    <div className="p-2.5 rounded-full bg-gradient-to-br from-[#64FFDA]/20 to-[#00B8FF]/20 group-hover:from-[#64FFDA]/40 group-hover:to-[#00B8FF]/40 transition-all duration-300">
-                      <GraduationCap className="w-6 h-6 text-[#64FFDA]" />
+                    <div className="p-2 rounded-full bg-gradient-to-br from-[#64FFDA]/15 to-[#00B8FF]/15 group-hover:from-[#64FFDA]/35 group-hover:to-[#00B8FF]/35 transition-all duration-300">
+                      <GraduationCap className="w-5 h-5 text-[#64FFDA]" />
                     </div>
                   </motion.div>
-                  <div className="text-2xl font-bold mb-1 text-[#00D9B8]">9.76</div>
-                  <p className="text-gray-300 text-sm font-medium">CGPA</p>
+                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">9.76</div>
+                  <p className="text-gray-300 text-[0.7rem] md:text-xs font-medium">CGPA</p>
                 </div>
               </motion.div>
             </div>
@@ -216,11 +215,11 @@ export const Hero = () => {
                     <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-3 py-1 rounded-lg font-mono">
                       software development
                     </span>
-                    </p>
-                  </div>
-                </div>
+              </p>
+            </div>
+          </div>
               </BlurFade>
-              
+          
               {/* CTA Buttons with Creative Styling */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -229,15 +228,15 @@ export const Hero = () => {
                 className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-5"
               >
                   <MagicButton
-                    onClick={() => scrollToSection('contact')}
+              onClick={() => scrollToSection('contact')}
                     className="bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA] text-black font-bold px-7 py-4 rounded-full"
-                  >
-                    <Mail className="w-5 h-5 mr-2" />
-                    Get In Touch
-                    <Sparkles className="w-5 h-5 ml-2" />
+            >
+              <Mail className="w-5 h-5 mr-2" />
+              Get In Touch
+              <Sparkles className="w-5 h-5 ml-2" />
                   </MagicButton>
                   <motion.button
-                    onClick={() => scrollToSection('projects')}
+              onClick={() => scrollToSection('projects')}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="relative font-bold px-7 py-4 rounded-full text-white transition-all duration-300 flex items-center justify-center overflow-hidden group backdrop-blur-xl"
@@ -266,37 +265,37 @@ export const Hero = () => {
                     whileTap={{ scale: 0.95 }}
                     className="glass-effect border-2 border-[#00D4FF]/50 text-[#00D4FF] hover:bg-[#00D4FF]/20 hover:text-white hover:border-[#00D4FF] font-bold px-7 py-4 rounded-full shadow-lg hover:shadow-[#00D4FF]/30 transition-all duration-300 flex items-center justify-center"
                   >
-                    <FileText className="w-5 h-5 mr-2" />
-                    View Resume
+                <FileText className="w-5 h-5 mr-2" />
+                View Resume
                   </motion.a>
                 </motion.div>
-              
+          
               {/* Social Links with Glass Effect */}
               <div className="flex justify-center gap-4 md:gap-5 mb-4">
-                <a 
-                  href="https://github.com/Arnav-Bhardwaj1" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+            <a 
+              href="https://github.com/Arnav-Bhardwaj1" 
+              target="_blank" 
+              rel="noopener noreferrer"
                   className="glass-effect p-3.5 rounded-full hover-lift group transition-all duration-300"
-                >
+            >
                   <Github className="w-5 h-5 text-gray-300 group-hover:text-[#00D4FF] transition-colors" />
-                </a>
-                <a 
-                  href="https://linkedin.com/in/-arnavbhardwaj" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+            </a>
+            <a 
+              href="https://linkedin.com/in/-arnavbhardwaj" 
+              target="_blank" 
+              rel="noopener noreferrer"
                   className="glass-effect p-3.5 rounded-full hover-lift group transition-all duration-300"
-                >
+            >
                   <Linkedin className="w-5 h-5 text-gray-300 group-hover:text-[#00D4FF] transition-colors" />
-                </a>
-                <a 
-                  href="mailto:arnavbhardwaj111@gmail.com"
+            </a>
+            <a 
+              href="mailto:arnavbhardwaj111@gmail.com"
                   className="glass-effect p-3.5 rounded-full hover-lift group transition-all duration-300"
-                >
+            >
                   <Mail className="w-5 h-5 text-gray-300 group-hover:text-[#64FFDA] transition-colors" />
-                </a>
-              </div>
-              
+            </a>
+          </div>
+          
               {/* Scroll Indicator with Creative Animation */}
               <BlurFade delay={0.7} direction="up">
                 <motion.div

@@ -37,9 +37,9 @@ export const Navigation = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      scrolled 
-          ? "glass-effect border-b border-white/10 shadow-2xl" 
-          : "bg-transparent"
+        scrolled 
+          ? "glass-effect bg-[#050c18]/90 backdrop-blur-3xl border-b border-[#00B8FF]/30 shadow-[0_20px_60px_rgba(0,0,0,0.65)]"
+          : "bg-black/30 backdrop-blur-xl border-b border-white/10"
       }`}
     >
       <div className="container mx-auto px-6">

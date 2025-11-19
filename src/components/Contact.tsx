@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { BorderBeam } from "./aceternity/BorderBeam";
 import { GridBackground } from "./aceternity/GridBackground";
 import { MagicButton } from "./aceternity/MagicButton";
+import { ConcentricCircles } from "./aceternity/ConcentricCircles";
 import { motion } from "framer-motion";
 
 export const Contact = () => {
@@ -26,26 +27,29 @@ export const Contact = () => {
 
   const socialLinks = [
     {
-      icon: Github,
-      label: "GitHub",
-      href: "https://github.com/Arnav-Bhardwaj1"
-    },
-    {
       icon: Linkedin,
       label: "LinkedIn",
       href: "https://linkedin.com/in/-arnavbhardwaj"
     },
     {
-      icon: Award,
+      iconUrl: "/leetcode.svg",
       label: "LeetCode",
       href: "https://leetcode.com/u/ArnavBhardwaj/"
+    },
+    {
+      icon: Github,
+      label: "GitHub",
+      href: "https://github.com/Arnav-Bhardwaj1"
     }
   ];
 
 
   return (
     <section id="contact" className="py-20 px-6 relative overflow-hidden">
-      <GridBackground className="absolute inset-0 opacity-10" />
+      {/* Clean Background */}
+      <div className="absolute inset-0 bg-[#0d151d]" />
+      <ConcentricCircles />
+      <GridBackground className="absolute inset-0 opacity-20" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -125,10 +129,14 @@ export const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-lg bg-card border border-border hover:border-primary/50 transition-all duration-300 hover-lift cursor-pointer hover:bg-primary/5 group"
+                    className="flex items-center gap-3 p-3 rounded-lg glass-effect hover:border-primary/50 transition-all duration-300 hover-lift cursor-pointer hover:bg-primary/5 group"
                   >
                     <div className="p-2 rounded-lg bg-primary/10">
-                      <social.icon className="w-4 h-4 text-primary" />
+                      {social.iconUrl ? (
+                        <img src={social.iconUrl} alt={social.label} className="w-4 h-4 object-contain" />
+                      ) : (
+                        <social.icon className="w-4 h-4 text-primary" />
+                      )}
                     </div>
                     <div className="flex items-center justify-between w-full">
                       <p className="font-semibold text-sm">{social.label}</p>
@@ -147,13 +155,14 @@ export const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <Card className="glass-effect relative overflow-hidden">
+            <Card className="relative overflow-hidden border-2 border-cyan-500/20 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95 backdrop-blur-xl shadow-2xl shadow-cyan-500/10">
               <BorderBeam 
                 size={250}
                 duration={12}
                 colorFrom="#3b82f6"
                 colorTo="#ec4899"
               />
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent pointer-events-none" />
               <CardHeader>
                 <CardTitle className="text-2xl font-bold">Send a Message</CardTitle>
               </CardHeader>
@@ -173,6 +182,7 @@ export const Contact = () => {
                       name="name"
                       placeholder="Your name" 
                       required 
+                      className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
                     />
                   </div>
                   <div>
@@ -185,6 +195,7 @@ export const Contact = () => {
                       type="email" 
                       placeholder="your.email@example.com" 
                       required 
+                      className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
                     />
                   </div>
                 </div>
@@ -198,6 +209,7 @@ export const Contact = () => {
                     name="subject"
                     placeholder="What's this about?" 
                     required 
+                    className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
                   />
                 </div>
                 
@@ -211,12 +223,13 @@ export const Contact = () => {
                     placeholder="Please tell me about your project or opportunity..."
                     rows={6}
                     required 
+                    className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
                   />
                 </div>
                 
                 <MagicButton 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 hover:from-gray-700 hover:via-gray-600 hover:to-gray-700 text-white font-semibold border border-gray-600/50 hover:border-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-gray-900/70 transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-cyan-600 via-cyan-500 to-cyan-600 hover:from-cyan-500 hover:via-cyan-400 hover:to-cyan-500 text-white font-bold border border-cyan-400/50 hover:border-cyan-300 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50 transition-all duration-300"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   Send Message
