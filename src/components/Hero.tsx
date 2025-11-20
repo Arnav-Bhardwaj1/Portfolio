@@ -22,7 +22,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-32 md:pt-28 pb-8 sm:pb-12">
+    <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-32 md:pt-28 pb-2 sm:pb-4">
       {/* Neon Grid Background */}
       <NeonGridBackground />
       <StarfieldBackground density={0.5} speed={0.0003} />
@@ -43,7 +43,7 @@ export const Hero = () => {
                     </div>
 
                     {/* Main Text with Premium Styling */}
-                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-3 sm:mb-4 font-bold relative z-10 leading-tight">
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl mb-3 sm:mb-4 font-bold relative z-10 leading-tight">
                       <div className="flex flex-wrap items-center justify-center gap-x-2">
                         {/* Arnav */}
                         <span className="inline-block">

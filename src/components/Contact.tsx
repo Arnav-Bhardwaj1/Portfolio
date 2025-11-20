@@ -229,7 +229,7 @@ export const Contact = () => {
                 
                 <MagicButton 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-cyan-600 via-cyan-500 to-cyan-600 hover:from-cyan-500 hover:via-cyan-400 hover:to-cyan-500 text-white font-bold border border-cyan-400/50 hover:border-cyan-300 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50 transition-all duration-300"
+                  className="w-full bg-gradient-to-r from-cyan-600 via-cyan-500 to-cyan-600 hover:from-cyan-500 hover:via-cyan-400 hover:to-cyan-500 text-white font-bold border border-cyan-400/50 hover:border-cyan-300 shadow-md shadow-cyan-500/15 hover:shadow-cyan-400/25 transition-all duration-300"
                 >
                   <Send className="w-4 h-4 mr-2" />
                   Send Message
