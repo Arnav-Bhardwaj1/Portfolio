@@ -392,12 +392,12 @@ export function ExperienceVisualization() {
       })}
 
       {/* Skill circles instead of bars */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center gap-8">
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-start gap-3 md:gap-8">
         {dataPoints.map((point, index) => (
           <div key={point.label} className="flex flex-col items-center">
             {/* Circular skill indicator */}
             <div
-              className={`w-16 h-16 rounded-full border-2 transition-all duration-1000 cursor-pointer hover:scale-110`}
+              className={`w-10 h-10 md:w-16 md:h-16 rounded-full border-2 transition-all duration-1000 cursor-pointer hover:scale-110`}
               style={{
                 backgroundColor: `${point.color}20`,
                 borderColor: point.color,
@@ -408,7 +408,7 @@ export function ExperienceVisualization() {
             >
               <div className="w-full h-full flex items-center justify-center">
                 <div 
-                  className="w-8 h-8 rounded-full"
+                  className="w-5 h-5 md:w-8 md:h-8 rounded-full"
                   style={{ backgroundColor: point.color }}
                 />
               </div>
@@ -416,7 +416,7 @@ export function ExperienceVisualization() {
             
             {/* Clean label */}
             <div
-              className={`mt-3 text-sm font-medium text-gray-300 transition-all duration-1000 ${
+              className={`mt-2 md:mt-3 text-[10px] md:text-sm font-medium text-gray-300 transition-all duration-1000 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               }`}
               style={{ animationDelay: `${point.delay + 0.1}s` }}

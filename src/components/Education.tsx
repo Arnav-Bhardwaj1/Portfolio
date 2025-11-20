@@ -156,7 +156,7 @@ export const Education = () => {
                 
                 <div className="pt-4">
                   <h4 className="font-semibold mb-3">Key Coursework</h4>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {education.coursework.map((course, index) => (
                       <div key={index} className="text-sm text-muted-foreground">
                         • {course}
@@ -177,7 +177,7 @@ export const Education = () => {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Key Achievements</h3>
+            <h3 className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Key Achievements</h3>
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}
@@ -224,12 +224,12 @@ export const Education = () => {
               >
                 <Card className="glass-effect hover-lift relative overflow-hidden">
                 <CardContent className="p-6">
-                  <div className="flex items-start justify-between gap-4">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 text-center sm:text-left">
                     <div className="flex-1">
                       <h4 className="font-semibold mb-2">{cert.title}</h4>
                       <p className="text-sm text-muted-foreground">{cert.issuer}</p>
                     </div>
-                    <Badge className={getCategoryColor(cert.category)}>
+                    <Badge className={`self-center sm:self-auto ${getCategoryColor(cert.category)}`}>
                       {cert.category}
                     </Badge>
                   </div>

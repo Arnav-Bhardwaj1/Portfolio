@@ -22,7 +22,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-28 md:pt-24 pb-12">
+    <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-32 md:pt-28 pb-12">
       {/* Neon Grid Background */}
       <NeonGridBackground />
       <StarfieldBackground density={0.5} speed={0.0003} />
@@ -32,22 +32,22 @@ export const Hero = () => {
         <div className="text-center max-w-6xl mx-auto w-full">
               {/* Name with Clean Premium Effect */}
               <BlurFade delay={0.1} direction="up">
-                <div className="mb-3">
+                <div className="mb-[18px]">
                   <div className="relative">
-                    {/* Single Subtle Glow Layer */}
+                    {/* Subtle Single Glow Layer */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white blur-2xl opacity-30">
+                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white blur-2xl opacity-20">
                         Arnav Bhardwaj
                       </h1>
-      </div>
+                    </div>
 
-                    {/* Main Text with Simple Letter Animation */}
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl mb-2 font-bold relative z-10">
+                    {/* Main Text with Premium Styling */}
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-2 font-bold relative z-10">
                       <span className="inline-block">
                         {"Arnav Bhardwaj".split("").map((char, index) => (
                           <motion.span
                             key={index}
-                            className="inline-block text-white"
+                            className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-400 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ 
                               opacity: 1, 
@@ -60,7 +60,8 @@ export const Hero = () => {
                             }}
                             whileHover={{
                               scale: 1.05,
-                              y: -3,
+                              y: -2,
+                              textShadow: "0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(6,182,212,0.3)",
                               transition: { duration: 0.2 },
                             }}
                           >
@@ -88,14 +89,14 @@ export const Hero = () => {
                         { text: "Full-Stack", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
                         { text: "Developer", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
                       ]}
-                      className="text-xl md:text-2xl lg:text-3xl font-bold"
+                      className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold"
                       cursorClassName="bg-[#00D4FF]"
                     />
                   </div>
-                  <div className="text-lg md:text-xl lg:text-2xl text-gray-300 mt-3">
+                  <div className="text-sm sm:text-lg md:text-xl lg:text-2xl text-gray-300 mt-3">
                     <TextGenerateEffect 
                       words="CSE Pre-Final Year | Core Team Member @TechCom | Top 10 Finalist @TECHNOV8"
-                      className="text-gray-300"
+                      className="text-gray-300 text-sm sm:text-base md:text-xl"
                       filter={false}
                       duration={0.3}
                     />
@@ -194,30 +195,30 @@ export const Hero = () => {
               <BlurFade delay={0.5} direction="up">
                 <div className="mb-5 max-w-5xl mx-auto">
                   <div className="glass-effect rounded-xl px-6 py-5 backdrop-blur-xl">
-                    <p className="text-base md:text-lg text-gray-300 leading-relaxed text-center font-medium">
+                    <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-center font-medium">
                     Passionate about{" "}
-                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-3 py-1 rounded-lg font-mono">
+                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-xs sm:text-base">
                       machine learning
                     </span>
                     ,{" "}
-                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-3 py-1 rounded-lg font-mono">
+                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-xs sm:text-base">
                       full-stack web development
                     </span>
                     {" "}and{" "}
-                    <span className="text-[#64FFDA] font-bold bg-[#64FFDA]/10 px-3 py-1 rounded-lg font-mono">
+                    <span className="text-[#64FFDA] font-bold bg-[#64FFDA]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-xs sm:text-base">
                       DSA
                     </span>
                     . Currently pursuing B.Tech in Computer Science and Engineering with a strong focus on{" "}
-                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-3 py-1 rounded-lg font-mono">
+                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-xs sm:text-base">
                       AI
                     </span>
                     {" "}and{" "}
-                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-3 py-1 rounded-lg font-mono">
+                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-xs sm:text-base">
                       software development
                     </span>
-              </p>
-            </div>
-          </div>
+                    </p>
+                  </div>
+                </div>
               </BlurFade>
           
               {/* CTA Buttons with Creative Styling */}
