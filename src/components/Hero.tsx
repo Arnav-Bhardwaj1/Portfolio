@@ -22,53 +22,84 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-32 md:pt-28 pb-12">
+    <section id="hero" className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-32 md:pt-28 pb-8 sm:pb-12">
       {/* Neon Grid Background */}
       <NeonGridBackground />
       <StarfieldBackground density={0.5} speed={0.0003} />
       
       {/* Main Content */}
-      <div className="container mx-auto px-6 relative z-50 w-full flex-1 flex items-center justify-center">
-        <div className="text-center max-w-6xl mx-auto w-full">
+      <div className="container mx-auto px-2 sm:px-4 md:px-6 relative z-50 w-full flex-1 flex items-center justify-center">
+        <div className="text-center max-w-6xl mx-auto w-full space-y-4 sm:space-y-6">
               {/* Name with Clean Premium Effect */}
               <BlurFade delay={0.1} direction="up">
-                <div className="mb-[18px]">
+                <div className="mb-4 sm:mb-6">
                   <div className="relative">
                     {/* Subtle Single Glow Layer */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white blur-2xl opacity-20">
-                        Arnav Bhardwaj
+                      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold blur-2xl opacity-30 flex flex-wrap items-center justify-center gap-x-2">
+                        <span className="text-[#3069df]">Arnav</span>
+                        <span className="text-cyan-100">Bhardwaj</span>
                       </h1>
                     </div>
 
                     {/* Main Text with Premium Styling */}
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-2 font-bold relative z-10">
-                      <span className="inline-block">
-                        {"Arnav Bhardwaj".split("").map((char, index) => (
-                          <motion.span
-                            key={index}
-                            className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-400 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]"
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ 
-                              opacity: 1, 
-                              y: 0,
-                            }}
-                            transition={{
-                              duration: 0.4,
-                              delay: 0.1 + index * 0.03,
-                              ease: "easeOut",
-                            }}
-                            whileHover={{
-                              scale: 1.05,
-                              y: -2,
-                              textShadow: "0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(6,182,212,0.3)",
-                              transition: { duration: 0.2 },
-                            }}
-                          >
-                            {char === " " ? "\u00A0" : char}
-                          </motion.span>
-                        ))}
-              </span>
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mb-3 sm:mb-4 font-bold relative z-10 leading-tight">
+                      <div className="flex flex-wrap items-center justify-center gap-x-2">
+                        {/* Arnav */}
+                        <span className="inline-block">
+                          {"Arnav".split("").map((char, index) => (
+                            <motion.span
+                              key={index}
+                              className="inline-block text-[#3069df] drop-shadow-[0_0_15px_rgba(48,105,223,0.4)]"
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ 
+                                opacity: 1, 
+                                y: 0,
+                              }}
+                              transition={{
+                                duration: 0.4,
+                                delay: 0.1 + index * 0.03,
+                                ease: "easeOut",
+                              }}
+                              whileHover={{
+                                scale: 1.05,
+                                y: -2,
+                                textShadow: "0 0 25px rgba(48,105,223,0.6), 0 0 50px rgba(48,105,223,0.3)",
+                                transition: { duration: 0.2 },
+                              }}
+                            >
+                              {char}
+                            </motion.span>
+                          ))}
+                        </span>
+                        {/* Bhardwaj */}
+                        <span className="inline-block">
+                          {"Bhardwaj".split("").map((char, index) => (
+                            <motion.span
+                              key={index}
+                              className="inline-block text-cyan-100 drop-shadow-[0_0_8px_rgba(147,197,253,0.3)]"
+                              initial={{ opacity: 0, y: 10 }}
+                              animate={{ 
+                                opacity: 1, 
+                                y: 0,
+                              }}
+                              transition={{
+                                duration: 0.4,
+                                delay: 0.1 + (5 + index) * 0.03,
+                                ease: "easeOut",
+                              }}
+                              whileHover={{
+                                scale: 1.05,
+                                y: -2,
+                                textShadow: "0 0 15px rgba(147,197,253,0.5), 0 0 30px rgba(147,197,253,0.2)",
+                                transition: { duration: 0.2 },
+                              }}
+                            >
+                              {char}
+                            </motion.span>
+                          ))}
+                        </span>
+                      </div>
                     </h1>
                   </div>
               </div>
@@ -76,27 +107,31 @@ export const Hero = () => {
             
               {/* Subtitle with TypewriterEffect */}
               <BlurFade delay={0.2} direction="up">
-                <div className="space-y-1.5 mb-3">
-                  <div className="flex items-center justify-center">
-                    <TypewriterEffectSmooth
-                      words={[
-                        { text: "Ex-ML", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                        { text: "Intern", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                        { text: "@DRDO", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                        { text: "|", className: "text-[#00D4FF]" },
-                        { text: "AI", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                        { text: "&", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                        { text: "Full-Stack", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                        { text: "Developer", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                      ]}
-                      className="text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold"
-                      cursorClassName="bg-[#00D4FF]"
-                    />
+                <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+                  <div className="flex items-center justify-center w-full overflow-x-auto overflow-y-visible">
+                    <div className="flex justify-center w-full">
+                      <div className="flex-shrink-0">
+                        <TypewriterEffectSmooth
+                          words={[
+                            { text: "Ex-ML", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                            { text: "Intern", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                            { text: "@DRDO", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                            { text: "|", className: "text-[#00D4FF]" },
+                            { text: "AI", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                            { text: "&", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                            { text: "Full-Stack", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                            { text: "Developer", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                          ]}
+                          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold leading-tight"
+                          cursorClassName="bg-[#00D4FF]"
+                        />
+                      </div>
+                    </div>
                   </div>
-                  <div className="text-sm sm:text-lg md:text-xl lg:text-2xl text-gray-300 mt-3">
+                  <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 mt-2 sm:mt-3 leading-relaxed px-2 w-full text-center">
                     <TextGenerateEffect 
                       words="CSE Pre-Final Year | Core Team Member @TechCom | Top 10 Finalist @TECHNOV8"
-                      className="text-gray-300 text-sm sm:text-base md:text-xl"
+                      className="text-gray-300"
                       filter={false}
                       duration={0.3}
                     />
@@ -195,25 +230,25 @@ export const Hero = () => {
               <BlurFade delay={0.5} direction="up">
                 <div className="mb-5 max-w-5xl mx-auto">
                   <div className="glass-effect rounded-xl px-6 py-5 backdrop-blur-xl">
-                    <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed text-center font-medium">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center font-medium">
                     Passionate about{" "}
-                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-xs sm:text-base">
+                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
                       machine learning
                     </span>
                     ,{" "}
-                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-xs sm:text-base">
+                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
                       full-stack web development
                     </span>
                     {" "}and{" "}
-                    <span className="text-[#64FFDA] font-bold bg-[#64FFDA]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-xs sm:text-base">
+                    <span className="text-[#64FFDA] font-bold bg-[#64FFDA]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
                       DSA
                     </span>
                     . Currently pursuing B.Tech in Computer Science and Engineering with a strong focus on{" "}
-                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-xs sm:text-base">
+                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
                       AI
                     </span>
                     {" "}and{" "}
-                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-xs sm:text-base">
+                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
                       software development
                     </span>
                     </p>
