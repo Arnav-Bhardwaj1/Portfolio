@@ -25,6 +25,8 @@ export function SkillsVisualization() {
 
   const skills = [
     { name: 'React.js', color: '#61dafb', delay: 0, glow: '#61dafb80' },
+    { name: 'Next.js', color: '#ffffff', delay: 0.1, glow: '#ffffff80' },
+    { name: 'TypeScript', color: '#3178c6', delay: 0.15, glow: '#3178c680' },
     { name: 'RAG Agent', color: '#9c27b0', delay: 0.2, glow: '#9c27b080' },
     { name: 'ML', color: '#ff6b6b', delay: 0.4, glow: '#ff6b6b80' },
     { name: 'Node.js', color: '#68a063', delay: 0.6, glow: '#68a06380' },

@@ -33,11 +33,11 @@ export const About = () => {
   const skillCategories = [
     {
       title: "Programming Languages",
-      skills: ["C++", "Python", "C", "Java", "JavaScript"]
+      skills: ["C++", "Python", "C", "Java", "JavaScript", "TypeScript"]
     },
     {
       title: "Web Development",
-      skills: ["HTML", "CSS", "React.js", "Node.js", "Express.js", "MongoDB"]
+      skills: ["HTML", "CSS", "React.js", "Next.js", "Node.js", "Express.js", "MongoDB"]
     },
     {
       title: "Core CS Subjects",
@@ -163,9 +163,9 @@ export const About = () => {
             <InfiniteMovingCards
               items={[
                 {
-                  quote: "Building scalable web applications with React.js, Node.js, and modern JavaScript frameworks. Experienced in full-stack development with MongoDB and Express.js.",
+                  quote: "Building scalable web applications with React.js, Next.js, TypeScript, and Node.js. Experienced in full-stack development with MongoDB and Express.js.",
                   name: "Full-Stack Development",
-                  title: "React • Node • Express • MongoDB"
+                  title: "React • Next.js • TypeScript • Node • Express • MongoDB"
                 },
                 {
                   quote: "Developing intelligent systems using Machine Learning and Generative AI. Specialized in RAG pipelines, Transformers, and building AI-powered solutions.",
@@ -178,9 +178,9 @@ export const About = () => {
                   title: "DSA • Algorithms • Competitive Programming"
                 },
                 {
-                  quote: "Mastering multiple programming languages including C++, Python, Java, and JavaScript. Building efficient and optimized solutions across different platforms.",
+                  quote: "Mastering multiple programming languages including C++, Python, Java, JavaScript, and TypeScript. Building efficient and optimized solutions across different platforms.",
                   name: "Programming Languages",
-                  title: "C++ • Python • Java • JavaScript"
+                  title: "C++ • Python • Java • JavaScript • TypeScript"
                 },
                 {
                   quote: "Creating cross-platform mobile applications with Flutter. Designing intuitive user interfaces and seamless user experiences for iOS and Android.",

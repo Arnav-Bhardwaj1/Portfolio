@@ -135,7 +135,7 @@ export const Contact = () => {
                       {social.iconUrl ? (
                         <img src={social.iconUrl} alt={social.label} className="w-4 h-4 object-contain" />
                       ) : (
-                        <social.icon className="w-4 h-4 text-primary" />
+                      <social.icon className="w-4 h-4 text-primary" />
                       )}
                     </div>
                     <div className="flex items-center justify-between w-full">
