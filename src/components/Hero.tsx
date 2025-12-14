@@ -294,7 +294,7 @@ export const Hero = () => {
                     />
                   </motion.button>
                   <motion.a
-                    href="https://qrr.to/ebb73269"
+                    href="https://drive.google.com/file/d/1opaG6GfxDMqRbg_JZPnAr5Tg-4MFttSR/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
