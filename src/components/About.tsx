@@ -10,13 +10,13 @@ export const About = () => {
   const highlights = [
     {
       icon: GraduationCap,
-      title: "Perfect Academic Record",
-      description: "10.0 GPA in 3rd Semester, Overall CGPA: 9.76",
+      title: "Perfect Academic Record - Rank 1",
+      description: "10.0 GPA in 3rd & 5th Semesters | Overall CGPA: 9.81 | Rank 1 across all branches",
     },
     {
       icon: Code,
       title: "DSA (Data Structures and Algorithms)",
-      description: "700+ DSA problems solved | 1700+ LeetCode Contest Rating",
+      description: "750+ DSA problems solved | 1750+ LeetCode Contest Rating",
     },
     {
       icon: Trophy,
@@ -25,8 +25,8 @@ export const About = () => {
     },
     {
       icon: Users,
-      title: "Leadership Experience",
-      description: "Core Team Member @TechCom, Organized HackwithMAIT 5.0",
+      title: "Leadership & Internship Experience",
+      description: "ML Intern @DRDO & Full Stack Developer @Cogzin | Core Team @TechCom | Organized HackwithMAIT 5.0",
     },
   ];
 
@@ -37,7 +37,7 @@ export const About = () => {
     },
     {
       title: "Web Development",
-      skills: ["HTML", "CSS", "React.js", "Next.js", "Node.js", "Express.js", "MongoDB"]
+      skills: ["HTML", "CSS", "React.js", "Next.js", "Node.js", "Express.js", "FastAPI", "MongoDB"]
     },
     {
       title: "Core CS Subjects",
@@ -45,7 +45,7 @@ export const About = () => {
     },
     {
       title: "Machine Learning and Gen AI",
-      skills: ["Machine Learning", "RAG Agent (Retrieval-Augmented Generation)"]
+      skills: ["Machine Learning", "Deep Learning", "RAG Agent (Retrieval-Augmented Generation)"]
     },
     {
       title: "Databases & Mobile",
@@ -94,12 +94,15 @@ export const About = () => {
               <p>
                 I'm currently pursuing my Bachelor of Technology in Computer Science Engineering 
                 at Maharaja Agrasen Institute of Technology, Delhi, where I've maintained an 
-                exceptional academic record with a 9.76 CGPA and secured a perfect 10.0 GPA in my 3rd semester.
+                exceptional academic record with a 9.81 CGPA, secured a perfect 10.0 GPA twice (in 3rd and 5th semesters), 
+                and hold Rank 1 across all branches.
               </p>
               <p>
-                As a Machine Learning Intern at DRDO (Defence Research & Development Organisation), 
-                I worked on RAG pipelines using FAISS and Hugging Face Transformers, and developed 
-                interactive weather analysis systems for Indian Air Force airbases to enhance operational planning.
+                I've completed internships at DRDO (Defence Research & Development Organisation) as a Machine Learning Intern, 
+                working on RAG pipelines using FAISS and Hugging Face Transformers, and developing 
+                interactive weather analysis systems for 41 Indian Air Force airbases. Most recently, I worked as a 
+                Full Stack Developer Intern at Cogzin Technologies, building AI-enabled investor-founder matchmaking 
+                platforms with Pinecone vector search and OpenAI integration.
               </p>
               <p>
                 Beyond academics, I'm actively involved in the tech community as a Core Team Member 
@@ -163,17 +166,17 @@ export const About = () => {
             <InfiniteMovingCards
               items={[
                 {
-                  quote: "Building scalable web applications with React.js, Next.js, TypeScript, and Node.js. Experienced in full-stack development with MongoDB and Express.js.",
+                  quote: "Building scalable web applications with React.js, Next.js, TypeScript, and Node.js. Experienced in full-stack development with MongoDB, Express.js, and FastAPI.",
                   name: "Full-Stack Development",
-                  title: "React • Next.js • TypeScript • Node • Express • MongoDB"
+                  title: "React • Next.js • TypeScript • Node • Express • FastAPI • MongoDB"
                 },
                 {
-                  quote: "Developing intelligent systems using Machine Learning and Generative AI. Specialized in RAG pipelines, Transformers, and building AI-powered solutions.",
+                  quote: "Developing intelligent systems using Machine Learning, Deep Learning, and Generative AI. Specialized in RAG pipelines, Transformers, and building AI-powered solutions.",
                   name: "AI & Machine Learning",
-                  title: "ML • Gen AI • RAG • Hugging Face"
+                  title: "ML • DL • Gen AI • RAG • Hugging Face"
                 },
                 {
-                  quote: "Strong foundation in Data Structures and Algorithms with 700+ problems solved. Achieved 1700+ rating on LeetCode with expertise in optimization techniques.",
+                  quote: "Strong foundation in Data Structures and Algorithms with 750+ problems solved. Achieved 1750+ rating on LeetCode with expertise in optimization techniques.",
                   name: "Problem Solving",
                   title: "DSA • Algorithms • Competitive Programming"
                 },

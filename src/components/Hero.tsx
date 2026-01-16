@@ -111,20 +111,21 @@ export const Hero = () => {
                   <div className="flex items-center justify-center w-full overflow-x-auto overflow-y-visible">
                     <div className="flex justify-center w-full">
                       <div className="flex-shrink-0">
-                        <TypewriterEffectSmooth
-                          words={[
-                            { text: "Ex-ML", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                            { text: "Intern", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                            { text: "@DRDO", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                            { text: "|", className: "text-[#00D4FF]" },
-                            { text: "AI", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                            { text: "&", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                            { text: "Full-Stack", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                            { text: "Developer", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                          ]}
-                          className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold leading-tight"
-                          cursorClassName="bg-[#00D4FF]"
-                        />
+                      <TypewriterEffectSmooth
+                        words={[
+                          { text: "AI", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                          { text: "&", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                          { text: "Full-Stack", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                          { text: "Developer", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                          { text: "|", className: "text-[#00D4FF]" },
+                          { text: "Ex-Intern", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                          { text: "@DRDO", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                          { text: "&", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                          { text: "Cogzin Technologies", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                        ]}
+                        className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold leading-tight"
+                        cursorClassName="bg-[#00D4FF]"
+                      />
                       </div>
                     </div>
                   </div>
@@ -162,7 +163,7 @@ export const Hero = () => {
                       <Workflow className="w-5 h-5 text-[#00D4FF]" />
                     </div>
                   </motion.div>
-                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">700+</div>
+                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">750+</div>
                   <p className="text-gray-300 text-[0.7rem] md:text-xs font-medium">DSA Problems</p>
                 </div>
               </motion.div>
@@ -194,7 +195,7 @@ export const Hero = () => {
                       />
                     </div>
                   </motion.div>
-                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">1700+</div>
+                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">1750+</div>
                   <p className="text-gray-300 text-[0.7rem] md:text-xs font-medium">LeetCode Rating</p>
                 </div>
               </motion.a>
@@ -219,8 +220,8 @@ export const Hero = () => {
                       <GraduationCap className="w-5 h-5 text-[#64FFDA]" />
                     </div>
                   </motion.div>
-                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">9.76</div>
-                  <p className="text-gray-300 text-[0.7rem] md:text-xs font-medium">CGPA</p>
+                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">9.81</div>
+                  <p className="text-gray-300 text-[0.7rem] md:text-xs font-medium">CGPA | Rank 1</p>
                 </div>
               </motion.div>
             </div>
@@ -228,7 +229,7 @@ export const Hero = () => {
 
               {/* Description with Enhanced Styling */}
               <BlurFade delay={0.5} direction="up">
-                <div className="mb-5 max-w-5xl mx-auto">
+                <div className="mb-5 max-w-[68rem] mx-auto">
                   <div className="glass-effect rounded-xl px-6 py-5 backdrop-blur-xl">
                     <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center font-medium">
                     Passionate about{" "}
@@ -236,10 +237,14 @@ export const Hero = () => {
                       machine learning
                     </span>
                     ,{" "}
-                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                      full-stack web development
+                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
+                      deep learning
                     </span>
-                    {" "}and{" "}
+                    ,{" "}
+                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
+                      full-stack development
+                    </span>
+                    {" "}&{" "}
                     <span className="text-[#64FFDA] font-bold bg-[#64FFDA]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
                       DSA
                     </span>
@@ -247,7 +252,7 @@ export const Hero = () => {
                     <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
                       AI
                     </span>
-                    {" "}and{" "}
+                    {" "}&{" "}
                     <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
                       software development
                     </span>

@@ -11,8 +11,9 @@ export const Education = () => {
     degree: "Bachelor of Technology - BTech, Computer Science Engineering",
     duration: "Sept 2023 - Aug 2027",
     location: "New Delhi, India",
-    cgpa: "9.76",
-    perfectGPA: "Perfect 10.0 GPA in 3rd Semester",
+    cgpa: "9.81",
+    rank: "Rank 1 across all branches",
+    perfectGPA: "Secured Perfect 10.0 GPA in 3rd and 5th Semesters",
     coursework: [
       "Data Structures and Algorithms",
       "Object-Oriented Programming",
@@ -65,8 +66,8 @@ export const Education = () => {
     {
       icon: Award,
       title: "Perfect Academic Performance",
-      description: "10.0 GPA in 3rd Semester",
-      detail: "Current CGPA: 9.76 | CBSE: 10th - 97.8%, 12th - 95.2%"
+      description: "Perfect 10.0 GPA in 3rd & 5th Semesters | Rank 1 across all branches",
+      detail: "Current CGPA: 9.81 | CBSE: 10th - 97.8%, 12th - 95.2%"
     },
     {
       icon: BookOpen,
@@ -143,14 +144,20 @@ export const Education = () => {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-muted-foreground">Current CGPA</span>
-                  <Badge className="bg-primary/10 text-primary border-primary/20 font-bold">
+                  <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-base px-3 py-0.5">
                     {education.cgpa}
                   </Badge>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">3rd Semester</span>
-                  <Badge className="bg-accent/10 text-accent border-accent/20 font-bold">
-                    {education.perfectGPA}
+                  <span className="text-muted-foreground">College Rank</span>
+                  <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-base px-3 py-0.5">
+                    {education.rank}
+                  </Badge>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-muted-foreground">Perfect 10.0 GPA</span>
+                  <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-sm px-3 py-0.5">
+                    3rd & 5th Semesters
                   </Badge>
                 </div>
                 

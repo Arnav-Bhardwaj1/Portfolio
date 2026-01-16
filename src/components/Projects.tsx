@@ -10,15 +10,17 @@ import { motion } from "framer-motion";
 export const Projects = () => {
   const projects = [
     {
-      title: "FarmSphere - AI Driven Smart Farming Web Application",
-      description: "Built an ML Crop Health Scanner for instant leaf disease diagnosis and remediation steps. Integrated an AI chatbot for personalized farming advice, real-time weather alerts, and market price aggregation. Features computer vision for crop analysis and intelligent recommendations.",
+      title: "FarmSphere - AI Driven Smart Farming Application",
+      description: "Built an on-device ML Crop Health Scanner using TFLite for instant leaf disease diagnosis and remediation steps. Integrated an AI chatbot for personalized farming advice, real-time weather alerts, market price aggregation, and location retrieval. Designed with Riverpod state management, local caching, and multilingual voice input/output.",
       category: "Full-Stack, AI and ML",
-      technologies: ["React", "Node.js", "TensorFlow.js", "Computer Vision", "AI/ML", "Weather API"],
+      technologies: ["Flutter", "TFLite", "Generative AI", "SQL", "Riverpod", "Voice I/O"],
       features: [
-        "ML-powered crop disease detection",
-        "AI chatbot for farming guidance",
-        "Real-time weather alerts",
-        "Computer vision crop analysis"
+        "On-device ML crop disease detection with TFLite",
+        "AI chatbot for personalized farming guidance",
+        "Real-time weather alerts & market prices",
+        "Riverpod state management & local caching",
+        "Multilingual voice input/output support",
+        "Location-based services & recommendations"
       ],
       icon: Brain,
       imageUrl: "/fa.png",

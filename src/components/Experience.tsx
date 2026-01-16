@@ -13,6 +13,19 @@ import { motion } from "framer-motion";
 export const Experience = () => {
   const experiences = [
     {
+      company: "Cogzin Technologies",
+      position: "Full Stack Developer Intern",
+      duration: "Nov 2025 - Jan 2026",
+      location: "Remote",
+      type: "Internship",
+      description: [
+        "Developed full-stack core modules of an AI-enabled investor-founder matchmaking platform, including company onboarding workflows, admin approval systems, and subscription-based access control",
+        "Built a scalable admin panel for managing users, companies, and subscription tiers with role-based access control",
+        "Implemented an AI-driven navigation assistant using Pinecone vector search and OpenAI, enabling automatic filtering, sorting, and seamless page navigation to relevant company profiles"
+      ],
+      technologies: ["React.js", "Next.js", "Node.js", "TypeScript", "MongoDB", "Pinecone", "OpenAI", "AI/ML"]
+    },
+    {
       company: "DRDO (Defence Research & Development Organisation)",
       position: "Machine Learning Intern",
       duration: "May 2025 - Aug 2025",
@@ -20,8 +33,8 @@ export const Experience = () => {
       type: "Internship",
       description: [
         "Designed and implemented a RAG pipeline using FAISS, Hugging Face Transformers, and OpenAI to query and summarize unstructured data on Air Force weapons for analytical presentation",
-        "Engineered an interactive weather analysis and prediction system for Indian Air Force airbases using Tkinter and geospatial mapping",
-        "Assessed mission route feasibility and enhanced operational planning for defense operations"
+        "Engineered an interactive weather analysis and prediction system for 41 Indian Air Force airbases using Tkinter and geospatial mapping, delivering 15-day forecasts and enhancing mission-route feasibility assessments",
+        "Resulted in improvement in operational planning efficiency through enhanced weather prediction capabilities and mission route optimization"
       ],
       technologies: ["Python", "FAISS", "Hugging Face", "OpenAI", "RAG", "Tkinter", "Geospatial Mapping"]
     },
