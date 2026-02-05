@@ -10,6 +10,24 @@ import { motion } from "framer-motion";
 export const Projects = () => {
   const projects = [
     {
+      title: "CogniFlow — Workflow Automation Platform",
+      description: "Built a workflow automation platform with a drag-and-drop editor, multi-trigger support (webhooks, forms, Stripe), and background job orchestration using Inngest. Implemented SaaS billing, paywalls, secure authentication, and AI-assisted error monitoring with Sentry. Architected a fully type-safe backend using tRPC, Prisma, and Neon Postgres.",
+      category: "Full-Stack & SaaS",
+      technologies: ["Next.js", "Prisma", "Inngest", "tRPC", "Better Auth", "Polar Payments", "Sentry", "Neon Postgres"],
+      features: [
+        "Drag-and-drop workflow editor with visual builder",
+        "Multi-trigger support: webhooks, forms, Stripe events",
+        "Background job orchestration with Inngest",
+        "SaaS billing & paywalls via Polar Payments",
+        "AI-assisted error monitoring with Sentry diagnostics",
+        "Type-safe backend with tRPC & Prisma"
+      ],
+      icon: Code,
+      imageUrl: "/cogniflow.png",
+      demoLink: "#",
+      githubLink: "https://github.com/Arnav-Bhardwaj1/CogniFlow"
+    },
+    {
       title: "FarmSphere - AI Driven Smart Farming Application",
       description: "Built an on-device ML Crop Health Scanner using TFLite for instant leaf disease diagnosis and remediation steps. Integrated an AI chatbot for personalized farming advice, real-time weather alerts, market price aggregation, and location retrieval. Designed with Riverpod state management, local caching, and multilingual voice input/output.",
       category: "Full-Stack, AI and ML",
@@ -60,24 +78,6 @@ export const Projects = () => {
       imageUrl: "/astro.png",
       demoLink: "#",
       githubLink: "https://github.com/Arnav-Bhardwaj1/AstroGuard"
-    },
-    {
-      title: "TaskFlow - Task Management Web App",
-      description: "TaskFlow helps users organize work with secure sign-in, task creation/editing, powerful filtering and sorting, and priority & deadline tracking. Built with React on the frontend and Node/Express + MongoDB on the backend, it includes analytics to surface actionable insights and supports real-time UI updates for instant feedback.",
-      category: "Full-Stack Development",
-      technologies: ["React 18", "Node.js", "Express", "MongoDB", "JWT", "Tailwind CSS", "Framer Motion", "React Query"],
-      features: [
-        "JWT-based secure authentication system",
-        "Advanced task filtering by status, priority & tags",
-        "Real-time dashboard with analytics & insights",
-        "Priority levels (Urgent, High, Medium, Low)",
-        "Due date tracking with deadline alerts",
-        "Custom tag system for task organization"
-      ],
-      icon: CheckSquare,
-      imageUrl: "/taskflow.jpg",
-      demoLink: "#",
-      githubLink: "https://github.com/Arnav-Bhardwaj1/TaskFlow"
     }
   ];
 
@@ -88,6 +88,7 @@ export const Projects = () => {
       case "Full-Stack, AI and ML": return "bg-orange-500/10 text-orange-500 border-orange-500/20";
       case "Full-Stack & ML": return "bg-green-500/10 text-green-500 border-green-500/20";
       case "Full-Stack & 3D": return "bg-purple-500/10 text-purple-500 border-purple-500/20";
+      case "Full-Stack & SaaS": return "bg-cyan-500/10 text-cyan-500 border-cyan-500/20";
       default: return "bg-muted/10 text-muted-foreground border-muted/20";
     }
   };
@@ -110,7 +111,7 @@ export const Projects = () => {
             Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Projects</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            A showcase of my technical projects spanning full-stack development, machine learning, 
+            A showcase of my technical projects spanning full-stack development, machine learning,
             mobile applications, and open-source contributions.
           </p>
         </motion.div>
@@ -148,13 +149,13 @@ export const Projects = () => {
                       </div>
                     </div>
                   </div>
-                  
+
                   <CardHeader className="pb-4">
                     <p className="text-base text-muted-foreground leading-relaxed">
                       {project.description}
                     </p>
                   </CardHeader>
-            
+
                   <CardContent className="flex-1 flex flex-col">
                     <div className="mb-4">
                       <h4 className="font-semibold text-base mb-2">Key Features:</h4>
@@ -167,7 +168,7 @@ export const Projects = () => {
                         ))}
                       </ul>
                     </div>
-                    
+
                     <div className="mb-6">
                       <div className="flex flex-wrap gap-1">
                         {project.technologies.slice(0, 4).map((tech, i) => (
@@ -182,17 +183,17 @@ export const Projects = () => {
                         )}
                       </div>
                     </div>
-                    
+
                     <div className="flex gap-2 mt-auto">
                       {project.demoLink && project.demoLink !== "#" && (
-                        <Button 
-                          size="sm" 
+                        <Button
+                          size="sm"
                           className="flex-1 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 hover:from-gray-700 hover:via-gray-600 hover:to-gray-700 text-white font-semibold border border-gray-600/50 hover:border-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-gray-900/70 transition-all duration-300"
                           asChild
                         >
-                          <a 
-                            href={project.demoLink} 
-                            target="_blank" 
+                          <a
+                            href={project.demoLink}
+                            target="_blank"
                             rel="noopener noreferrer"
                           >
                             <ExternalLink className="w-3 h-3 mr-1" />
@@ -201,14 +202,14 @@ export const Projects = () => {
                         </Button>
                       )}
                       {project.githubLink && project.githubLink !== "private" && (
-                        <Button 
-                          size="sm" 
+                        <Button
+                          size="sm"
                           className="flex-1 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 hover:from-gray-600 hover:via-gray-700 hover:to-gray-600 text-white font-semibold border border-gray-600/50 hover:border-gray-500 shadow-lg shadow-gray-900/50 hover:shadow-gray-900/70 transition-all duration-300"
                           asChild
                         >
-                          <a 
-                            href={project.githubLink} 
-                            target="_blank" 
+                          <a
+                            href={project.githubLink}
+                            target="_blank"
                             rel="noopener noreferrer"
                           >
                             <Github className="w-3 h-3 mr-1" />

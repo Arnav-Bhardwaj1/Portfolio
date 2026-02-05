@@ -16,7 +16,7 @@ export const About = () => {
     {
       icon: Code,
       title: "DSA (Data Structures and Algorithms)",
-      description: "750+ DSA problems solved | 1750+ LeetCode Contest Rating",
+      description: "900+ DSA problems solved | 1800+ LeetCode Contest Rating",
     },
     {
       icon: Trophy,
@@ -67,7 +67,7 @@ export const About = () => {
       <GridBackground className="absolute inset-0 opacity-20 z-0" />
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -92,21 +92,21 @@ export const About = () => {
             <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] to-[#00D4FF]">My Journey</h3>
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                I'm currently pursuing my Bachelor of Technology in Computer Science Engineering 
-                at Maharaja Agrasen Institute of Technology, Delhi, where I've maintained an 
-                exceptional academic record with a 9.81 CGPA, secured a perfect 10.0 GPA twice (in 3rd and 5th semesters), 
+                I'm currently pursuing my Bachelor of Technology in Computer Science Engineering
+                at Maharaja Agrasen Institute of Technology, Delhi, where I've maintained an
+                exceptional academic record with a 9.81 CGPA, secured a perfect 10.0 GPA twice (in 3rd and 5th semesters),
                 and hold Rank 1 across all branches.
               </p>
               <p>
-                I've completed internships at DRDO (Defence Research & Development Organisation) as a Machine Learning Intern, 
-                working on RAG pipelines using FAISS and Hugging Face Transformers, and developing 
-                interactive weather analysis systems for 41 Indian Air Force airbases. Most recently, I worked as a 
-                Full Stack Developer Intern at Cogzin Technologies, building AI-enabled investor-founder matchmaking 
+                I've completed internships at DRDO (Defence Research & Development Organisation) as a Machine Learning Intern,
+                working on RAG pipelines using FAISS and Hugging Face Transformers, and developing
+                interactive weather analysis systems for 41 Indian Air Force airbases. Most recently, I worked as a
+                Full Stack Developer Intern at Cogzin Technologies, building AI-enabled investor-founder matchmaking
                 platforms with Pinecone vector search and OpenAI integration.
               </p>
               <p>
-                Beyond academics, I'm actively involved in the tech community as a Core Team Member 
-                at TechCom, where I helped organize HackwithMAIT 5.0 with 450+ participants. I'm also 
+                Beyond academics, I'm actively involved in the tech community as a Core Team Member
+                at TechCom, where I helped organize HackwithMAIT 5.0 with 450+ participants. I'm also
                 a member of IOSD MAIT since October 2023.
               </p>
             </div>
@@ -131,17 +131,17 @@ export const About = () => {
                 >
                   <Card className="glass-effect hover-lift relative overflow-hidden">
                     <CardContent className="p-6">
-                    <div className="flex items-start gap-3">
-                      <div className="p-2 rounded-lg bg-primary/10">
-                        <highlight.icon className="w-5 h-5 text-primary" />
+                      <div className="flex items-start gap-3">
+                        <div className="p-2 rounded-lg bg-primary/10">
+                          <highlight.icon className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-1">{highlight.title}</h4>
+                          <p className="text-sm text-muted-foreground">{highlight.description}</p>
+                        </div>
                       </div>
-                      <div>
-                        <h4 className="font-semibold mb-1">{highlight.title}</h4>
-                        <p className="text-sm text-muted-foreground">{highlight.description}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               ))}
             </div>
@@ -160,7 +160,7 @@ export const About = () => {
               Technical Skills
             </span>
           </h3>
-          
+
           {/* Infinite Moving Skills Cards */}
           <div className="mb-12 relative z-20">
             <InfiniteMovingCards
@@ -176,7 +176,7 @@ export const About = () => {
                   title: "ML • DL • Gen AI • RAG • Hugging Face"
                 },
                 {
-                  quote: "Strong foundation in Data Structures and Algorithms with 750+ problems solved. Achieved 1750+ rating on LeetCode with expertise in optimization techniques.",
+                  quote: "Strong foundation in Data Structures and Algorithms with 900+ problems solved. Achieved 1800+ rating on LeetCode with expertise in optimization techniques.",
                   name: "Problem Solving",
                   title: "DSA • Algorithms • Competitive Programming"
                 },
@@ -212,7 +212,7 @@ export const About = () => {
               className="[--animation-duration:80s]"
             />
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {skillCategories.map((category, index) => (
               <motion.div
@@ -227,11 +227,11 @@ export const About = () => {
                   <h4 className="font-semibold text-primary">{category.title}</h4>
                   <div className="flex flex-wrap gap-2 justify-center items-center">
                     {category.skills.map((skill, skillIndex) => (
-                    <Badge 
-                      key={skillIndex} 
-                      variant="secondary" 
-                      className="px-3 py-1 text-xs bg-black/30 border border-white/20 text-gray-100 hover:bg-[#00B8FF]/20 hover:text-white transition-colors cursor-default"
-                    >
+                      <Badge
+                        key={skillIndex}
+                        variant="secondary"
+                        className="px-3 py-1 text-xs bg-black/30 border border-white/20 text-gray-100 hover:bg-[#00B8FF]/20 hover:text-white transition-colors cursor-default"
+                      >
                         {skill}
                       </Badge>
                     ))}

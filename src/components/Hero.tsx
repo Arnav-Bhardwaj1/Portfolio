@@ -26,124 +26,124 @@ export const Hero = () => {
       {/* Neon Grid Background */}
       <NeonGridBackground />
       <StarfieldBackground density={0.5} speed={0.0003} />
-      
+
       {/* Main Content */}
       <div className="container mx-auto px-2 sm:px-4 md:px-6 relative z-50 w-full flex-1 flex items-center justify-center">
         <div className="text-center max-w-6xl mx-auto w-full space-y-4 sm:space-y-6">
-              {/* Name with Clean Premium Effect */}
-              <BlurFade delay={0.1} direction="up">
-                <div className="mb-4 sm:mb-6">
-                  <div className="relative">
-                    {/* Subtle Single Glow Layer */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold blur-2xl opacity-30 flex flex-wrap items-center justify-center gap-x-2">
-                        <span className="text-[#3069df]">Arnav</span>
-                        <span className="text-cyan-100">Bhardwaj</span>
-                      </h1>
-                    </div>
+          {/* Name with Clean Premium Effect */}
+          <BlurFade delay={0.1} direction="up">
+            <div className="mb-4 sm:mb-6">
+              <div className="relative">
+                {/* Subtle Single Glow Layer */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold blur-2xl opacity-30 flex flex-wrap items-center justify-center gap-x-2">
+                    <span className="text-[#3069df]">Arnav</span>
+                    <span className="text-cyan-100">Bhardwaj</span>
+                  </h1>
+                </div>
 
-                    {/* Main Text with Premium Styling */}
-                    <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl mb-3 sm:mb-4 font-bold relative z-10 leading-tight">
-                      <div className="flex flex-wrap items-center justify-center gap-x-2">
-                        {/* Arnav */}
-                        <span className="inline-block">
-                          {"Arnav".split("").map((char, index) => (
-                            <motion.span
-                              key={index}
-                              className="inline-block text-[#3069df] drop-shadow-[0_0_15px_rgba(48,105,223,0.4)]"
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{ 
-                                opacity: 1, 
-                                y: 0,
-                              }}
-                              transition={{
-                                duration: 0.4,
-                                delay: 0.1 + index * 0.03,
-                                ease: "easeOut",
-                              }}
-                              whileHover={{
-                                scale: 1.05,
-                                y: -2,
-                                textShadow: "0 0 25px rgba(48,105,223,0.6), 0 0 50px rgba(48,105,223,0.3)",
-                                transition: { duration: 0.2 },
-                              }}
-                            >
-                              {char}
-                            </motion.span>
-                          ))}
-                        </span>
-                        {/* Bhardwaj */}
-                        <span className="inline-block">
-                          {"Bhardwaj".split("").map((char, index) => (
-                            <motion.span
-                              key={index}
-                              className="inline-block text-cyan-100 drop-shadow-[0_0_8px_rgba(147,197,253,0.3)]"
-                              initial={{ opacity: 0, y: 10 }}
-                              animate={{ 
-                                opacity: 1, 
-                                y: 0,
-                              }}
-                              transition={{
-                                duration: 0.4,
-                                delay: 0.1 + (5 + index) * 0.03,
-                                ease: "easeOut",
-                              }}
-                              whileHover={{
-                                scale: 1.05,
-                                y: -2,
-                                textShadow: "0 0 15px rgba(147,197,253,0.5), 0 0 30px rgba(147,197,253,0.2)",
-                                transition: { duration: 0.2 },
-                              }}
-                            >
-                              {char}
-                            </motion.span>
-                          ))}
-                        </span>
-                      </div>
-                    </h1>
+                {/* Main Text with Premium Styling */}
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-7xl xl:text-8xl mb-3 sm:mb-4 font-bold relative z-10 leading-tight">
+                  <div className="flex flex-wrap items-center justify-center gap-x-2">
+                    {/* Arnav */}
+                    <span className="inline-block">
+                      {"Arnav".split("").map((char, index) => (
+                        <motion.span
+                          key={index}
+                          className="inline-block text-[#3069df] drop-shadow-[0_0_15px_rgba(48,105,223,0.4)]"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{
+                            opacity: 1,
+                            y: 0,
+                          }}
+                          transition={{
+                            duration: 0.4,
+                            delay: 0.1 + index * 0.03,
+                            ease: "easeOut",
+                          }}
+                          whileHover={{
+                            scale: 1.05,
+                            y: -2,
+                            textShadow: "0 0 25px rgba(48,105,223,0.6), 0 0 50px rgba(48,105,223,0.3)",
+                            transition: { duration: 0.2 },
+                          }}
+                        >
+                          {char}
+                        </motion.span>
+                      ))}
+                    </span>
+                    {/* Bhardwaj */}
+                    <span className="inline-block">
+                      {"Bhardwaj".split("").map((char, index) => (
+                        <motion.span
+                          key={index}
+                          className="inline-block text-cyan-100 drop-shadow-[0_0_8px_rgba(147,197,253,0.3)]"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{
+                            opacity: 1,
+                            y: 0,
+                          }}
+                          transition={{
+                            duration: 0.4,
+                            delay: 0.1 + (5 + index) * 0.03,
+                            ease: "easeOut",
+                          }}
+                          whileHover={{
+                            scale: 1.05,
+                            y: -2,
+                            textShadow: "0 0 15px rgba(147,197,253,0.5), 0 0 30px rgba(147,197,253,0.2)",
+                            transition: { duration: 0.2 },
+                          }}
+                        >
+                          {char}
+                        </motion.span>
+                      ))}
+                    </span>
                   </div>
+                </h1>
               </div>
-              </BlurFade>
-            
-              {/* Subtitle with TypewriterEffect */}
-              <BlurFade delay={0.2} direction="up">
-                <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-                  <div className="flex items-center justify-center w-full overflow-x-auto overflow-y-visible">
-                    <div className="flex justify-center w-full">
-                      <div className="flex-shrink-0">
-                      <TypewriterEffectSmooth
-                        words={[
-                          { text: "AI", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                          { text: "&", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                          { text: "Full-Stack", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                          { text: "Developer", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                          { text: "|", className: "text-[#00D4FF]" },
-                          { text: "Ex-Intern", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                          { text: "@DRDO", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                          { text: "&", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                          { text: "Cogzin Technologies", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
-                        ]}
-                        className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold leading-tight"
-                        cursorClassName="bg-[#00D4FF]"
-                      />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 mt-2 sm:mt-3 leading-relaxed px-2 w-full text-center">
-                    <TextGenerateEffect 
-                      words="CSE Pre-Final Year | Core Team Member @TechCom | Top 10 Finalist @TECHNOV8"
-                      className="text-gray-300"
-                      filter={false}
-                      duration={0.3}
-                    />
             </div>
-          </div>
-              </BlurFade>
-          
-              {/* Achievement Cards with Creative Animations */}
-              <BlurFade delay={0.4} direction="up">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-5 max-w-4xl mx-auto mt-6">
-            {/* DSA Card */}
+          </BlurFade>
+
+          {/* Subtitle with TypewriterEffect */}
+          <BlurFade delay={0.2} direction="up">
+            <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+              <div className="flex items-center justify-center w-full overflow-x-auto overflow-y-visible">
+                <div className="flex justify-center w-full">
+                  <div className="flex-shrink-0">
+                    <TypewriterEffectSmooth
+                      words={[
+                        { text: "AI", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                        { text: "&", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                        { text: "Full-Stack", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                        { text: "Developer", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                        { text: "|", className: "text-[#00D4FF]" },
+                        { text: "Ex-Intern", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                        { text: "@DRDO", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                        { text: "&", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                        { text: "Cogzin Technologies", className: "text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]" },
+                      ]}
+                      className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold leading-tight"
+                      cursorClassName="bg-[#00D4FF]"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-gray-300 mt-2 sm:mt-3 leading-relaxed px-2 w-full text-center">
+                <TextGenerateEffect
+                  words="CSE Pre-Final Year | Core Team Member @TechCom | Top 10 Finalist @TECHNOV8"
+                  className="text-gray-300"
+                  filter={false}
+                  duration={0.3}
+                />
+              </div>
+            </div>
+          </BlurFade>
+
+          {/* Achievement Cards with Creative Animations */}
+          <BlurFade delay={0.4} direction="up">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 mb-5 max-w-4xl mx-auto mt-6">
+              {/* DSA Card */}
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 className="glass-effect rounded-lg px-3 py-3 sm:px-4 sm:py-4 group relative overflow-hidden scale-95"
@@ -163,16 +163,16 @@ export const Hero = () => {
                       <Workflow className="w-5 h-5 text-[#00D4FF]" />
                     </div>
                   </motion.div>
-                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">750+</div>
+                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">900+</div>
                   <p className="text-gray-300 text-[0.7rem] md:text-xs font-medium">DSA Problems</p>
                 </div>
               </motion.div>
 
-            {/* LeetCode Card */}
+              {/* LeetCode Card */}
               <motion.a
-              href="https://leetcode.com/u/ArnavBhardwaj/" 
-              target="_blank" 
-              rel="noopener noreferrer"
+                href="https://leetcode.com/u/ArnavBhardwaj/"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, rotateY: -5 }}
                 className="glass-effect rounded-lg px-3 py-3 sm:px-4 sm:py-4 group relative overflow-hidden block scale-95"
               >
@@ -195,12 +195,12 @@ export const Hero = () => {
                       />
                     </div>
                   </motion.div>
-                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">1750+</div>
+                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">1800+</div>
                   <p className="text-gray-300 text-[0.7rem] md:text-xs font-medium">LeetCode Rating</p>
                 </div>
               </motion.a>
 
-            {/* CGPA Card */}
+              {/* CGPA Card */}
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 className="glass-effect rounded-lg px-3 py-3 sm:px-4 sm:py-4 group relative overflow-hidden scale-95"
@@ -225,137 +225,137 @@ export const Hero = () => {
                 </div>
               </motion.div>
             </div>
-              </BlurFade>
+          </BlurFade>
 
-              {/* Description with Enhanced Styling */}
-              <BlurFade delay={0.5} direction="up">
-                <div className="mb-5 max-w-[68rem] mx-auto">
-                  <div className="glass-effect rounded-xl px-6 py-5 backdrop-blur-xl">
-                    <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center font-medium">
-                    Passionate about{" "}
-                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                      machine learning
-                    </span>
-                    ,{" "}
-                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                      deep learning
-                    </span>
-                    ,{" "}
-                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                      full-stack development
-                    </span>
-                    {" "}&{" "}
-                    <span className="text-[#64FFDA] font-bold bg-[#64FFDA]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                      DSA
-                    </span>
-                    . Currently pursuing B.Tech in Computer Science and Engineering with a strong focus on{" "}
-                    <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                      AI
-                    </span>
-                    {" "}&{" "}
-                    <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                      software development
-                    </span>
-                    </p>
-                  </div>
-                </div>
-              </BlurFade>
-          
-              {/* CTA Buttons with Creative Styling */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-5"
-              >
-                  <MagicButton
+          {/* Description with Enhanced Styling */}
+          <BlurFade delay={0.5} direction="up">
+            <div className="mb-5 max-w-[68rem] mx-auto">
+              <div className="glass-effect rounded-xl px-6 py-5 backdrop-blur-xl">
+                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed text-center font-medium">
+                  Passionate about{" "}
+                  <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
+                    machine learning
+                  </span>
+                  ,{" "}
+                  <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
+                    deep learning
+                  </span>
+                  ,{" "}
+                  <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
+                    full-stack development
+                  </span>
+                  {" "}&{" "}
+                  <span className="text-[#64FFDA] font-bold bg-[#64FFDA]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
+                    DSA
+                  </span>
+                  . Currently pursuing B.Tech in Computer Science and Engineering with a strong focus on{" "}
+                  <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
+                    AI
+                  </span>
+                  {" "}&{" "}
+                  <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
+                    software development
+                  </span>
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+
+          {/* CTA Buttons with Creative Styling */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-5"
+          >
+            <MagicButton
               onClick={() => scrollToSection('contact')}
-                    className="bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA] text-black font-bold px-7 py-4 rounded-full"
+              className="bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA] text-black font-bold px-7 py-4 rounded-full"
             >
               <Mail className="w-5 h-5 mr-2" />
               Get In Touch
               <Sparkles className="w-5 h-5 ml-2" />
-                  </MagicButton>
-                  <motion.button
+            </MagicButton>
+            <motion.button
               onClick={() => scrollToSection('projects')}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="relative font-bold px-7 py-4 rounded-full text-white transition-all duration-300 flex items-center justify-center overflow-hidden group backdrop-blur-xl"
-                    style={{
-                      background: 'linear-gradient(135deg, rgba(0, 184, 255, 0.15), rgba(0, 212, 255, 0.15), rgba(100, 255, 218, 0.15))',
-                      border: '2px solid rgba(0, 212, 255, 0.4)',
-                      boxShadow: '0 8px 32px rgba(0, 212, 255, 0.2)',
-                    }}
-                  >
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00B8FF]/0 via-[#00D4FF]/0 to-[#64FFDA]/0 group-hover:from-[#00B8FF]/25 group-hover:via-[#00D4FF]/25 group-hover:to-[#64FFDA]/25 transition-all duration-300" />
-                    <Github className="w-5 h-5 mr-2 relative z-10" />
-                    <span className="relative z-10">View Projects</span>
-                    <Code className="w-5 h-5 ml-2 relative z-10" />
-                    <div 
-                      className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                      style={{
-                        boxShadow: '0 0 30px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 184, 255, 0.2)',
-                      }}
-                    />
-                  </motion.button>
-                  <motion.a
-                    href="https://drive.google.com/file/d/1opaG6GfxDMqRbg_JZPnAr5Tg-4MFttSR/view?usp=sharing"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="glass-effect border-2 border-[#00D4FF]/50 text-[#00D4FF] hover:bg-[#00D4FF]/20 hover:text-white hover:border-[#00D4FF] font-bold px-7 py-4 rounded-full shadow-lg hover:shadow-[#00D4FF]/30 transition-all duration-300 flex items-center justify-center"
-                  >
-                <FileText className="w-5 h-5 mr-2" />
-                View Resume
-                  </motion.a>
-                </motion.div>
-          
-              {/* Social Links with Glass Effect */}
-              <div className="flex justify-center gap-4 md:gap-5 mb-4">
-            <a 
-              href="https://github.com/Arnav-Bhardwaj1" 
-              target="_blank" 
-              rel="noopener noreferrer"
-                  className="glass-effect p-3.5 rounded-full hover-lift group transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="relative font-bold px-7 py-4 rounded-full text-white transition-all duration-300 flex items-center justify-center overflow-hidden group backdrop-blur-xl"
+              style={{
+                background: 'linear-gradient(135deg, rgba(0, 184, 255, 0.15), rgba(0, 212, 255, 0.15), rgba(100, 255, 218, 0.15))',
+                border: '2px solid rgba(0, 212, 255, 0.4)',
+                boxShadow: '0 8px 32px rgba(0, 212, 255, 0.2)',
+              }}
             >
-                  <Github className="w-5 h-5 text-gray-300 group-hover:text-[#00D4FF] transition-colors" />
-            </a>
-            <a 
-              href="https://linkedin.com/in/-arnavbhardwaj" 
-              target="_blank" 
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#00B8FF]/0 via-[#00D4FF]/0 to-[#64FFDA]/0 group-hover:from-[#00B8FF]/25 group-hover:via-[#00D4FF]/25 group-hover:to-[#64FFDA]/25 transition-all duration-300" />
+              <Github className="w-5 h-5 mr-2 relative z-10" />
+              <span className="relative z-10">View Projects</span>
+              <Code className="w-5 h-5 ml-2 relative z-10" />
+              <div
+                className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{
+                  boxShadow: '0 0 30px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 184, 255, 0.2)',
+                }}
+              />
+            </motion.button>
+            <motion.a
+              href="https://drive.google.com/file/d/1opaG6GfxDMqRbg_JZPnAr5Tg-4MFttSR/view?usp=sharing"
+              target="_blank"
               rel="noopener noreferrer"
-                  className="glass-effect p-3.5 rounded-full hover-lift group transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="glass-effect border-2 border-[#00D4FF]/50 text-[#00D4FF] hover:bg-[#00D4FF]/20 hover:text-white hover:border-[#00D4FF] font-bold px-7 py-4 rounded-full shadow-lg hover:shadow-[#00D4FF]/30 transition-all duration-300 flex items-center justify-center"
             >
-                  <Linkedin className="w-5 h-5 text-gray-300 group-hover:text-[#00D4FF] transition-colors" />
+              <FileText className="w-5 h-5 mr-2" />
+              View Resume
+            </motion.a>
+          </motion.div>
+
+          {/* Social Links with Glass Effect */}
+          <div className="flex justify-center gap-4 md:gap-5 mb-4">
+            <a
+              href="https://github.com/Arnav-Bhardwaj1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-effect p-3.5 rounded-full hover-lift group transition-all duration-300"
+            >
+              <Github className="w-5 h-5 text-gray-300 group-hover:text-[#00D4FF] transition-colors" />
             </a>
-            <a 
+            <a
+              href="https://linkedin.com/in/-arnavbhardwaj"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-effect p-3.5 rounded-full hover-lift group transition-all duration-300"
+            >
+              <Linkedin className="w-5 h-5 text-gray-300 group-hover:text-[#00D4FF] transition-colors" />
+            </a>
+            <a
               href="mailto:arnavbhardwaj111@gmail.com"
-                  className="glass-effect p-3.5 rounded-full hover-lift group transition-all duration-300"
+              className="glass-effect p-3.5 rounded-full hover-lift group transition-all duration-300"
             >
-                  <Mail className="w-5 h-5 text-gray-300 group-hover:text-[#64FFDA] transition-colors" />
+              <Mail className="w-5 h-5 text-gray-300 group-hover:text-[#64FFDA] transition-colors" />
             </a>
           </div>
-          
-              {/* Scroll Indicator with Creative Animation */}
-              <BlurFade delay={0.7} direction="up">
-                <motion.div
-                  animate={{ y: [0, 8, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="flex flex-col items-center gap-1 cursor-pointer"
-                  onClick={() => scrollToSection('about')}
-                >
-                  <motion.div
-                    animate={{ rotate: [0, 10, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    <ArrowDown className="w-5 h-5 text-[#00D4FF]" />
-                  </motion.div>
-                  <AnimatedGradientText className="text-xs font-medium">
-                    Scroll to explore
-                  </AnimatedGradientText>
-                </motion.div>
-              </BlurFade>
+
+          {/* Scroll Indicator with Creative Animation */}
+          <BlurFade delay={0.7} direction="up">
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="flex flex-col items-center gap-1 cursor-pointer"
+              onClick={() => scrollToSection('about')}
+            >
+              <motion.div
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <ArrowDown className="w-5 h-5 text-[#00D4FF]" />
+              </motion.div>
+              <AnimatedGradientText className="text-xs font-medium">
+                Scroll to explore
+              </AnimatedGradientText>
+            </motion.div>
+          </BlurFade>
         </div>
       </div>
     </section>
