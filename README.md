@@ -1,6 +1,6 @@
 # Arnav Bhardwaj — Portfolio
 
-Hi! I'm Arnav Bhardwaj, a pre-final year B.Tech CSE student. I build reliable software and applied AI systems. I've solved 900+ DSA problems with a 1800+ LeetCode contest rating, and I like turning ideas into fast, accessible products with a clean UX.
+Hi! I'm Arnav Bhardwaj, a pre-final year B.Tech CSE student. I build reliable software and applied AI systems. I've solved 900+ DSA problems with a 1850+ LeetCode contest rating, and I like turning ideas into fast, accessible products with a clean UX.
 
 - Focus: Machine Learning, Deep Learning, AI, Software Engineering and full‑stack development.
 - Highlights: Top 10 TECHNOV8 FinTech Hackathon, VVM district winner, cloud/AI certifications

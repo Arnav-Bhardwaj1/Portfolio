@@ -16,7 +16,7 @@ export const About = () => {
     {
       icon: Code,
       title: "DSA (Data Structures and Algorithms)",
-      description: "900+ DSA problems solved | 1800+ LeetCode Contest Rating",
+      description: "900+ DSA problems solved | 1850+ LeetCode rating",
     },
     {
       icon: Trophy,
@@ -45,7 +45,7 @@ export const About = () => {
     },
     {
       title: "Machine Learning and Gen AI",
-      skills: ["Machine Learning", "Deep Learning", "RAG Agent (Retrieval-Augmented Generation)"]
+      skills: ["Machine Learning", "Deep Learning", "Generative AI (RAG, LLM Agents, Agentic AI)"]
     },
     {
       title: "Databases & Mobile",
@@ -176,7 +176,7 @@ export const About = () => {
                   title: "ML • DL • Gen AI • RAG • Hugging Face"
                 },
                 {
-                  quote: "Strong foundation in Data Structures and Algorithms with 900+ problems solved. Achieved 1800+ rating on LeetCode with expertise in optimization techniques.",
+                  quote: "Strong foundation in Data Structures and Algorithms with 900+ problems solved. Achieved 1850+ rating on LeetCode with expertise in optimization techniques.",
                   name: "Problem Solving",
                   title: "DSA • Algorithms • Competitive Programming"
                 },

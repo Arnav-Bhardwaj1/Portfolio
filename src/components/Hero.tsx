@@ -195,7 +195,7 @@ export const Hero = () => {
                       />
                     </div>
                   </motion.div>
-                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">1800+</div>
+                  <div className="text-lg md:text-xl font-bold mb-0.5 text-[#00D9B8]">1850+</div>
                   <p className="text-gray-300 text-[0.7rem] md:text-xs font-medium">LeetCode Rating</p>
                 </div>
               </motion.a>
