@@ -32,19 +32,18 @@ export const Navigation = () => {
   ];
 
   return (
-    <motion.nav 
+    <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
-        scrolled 
-          ? "glass-effect bg-[#050c18]/90 backdrop-blur-3xl border-b border-[#00B8FF]/30 shadow-[0_20px_60px_rgba(0,0,0,0.65)]"
-          : "bg-black/30 backdrop-blur-xl border-b border-white/10"
-      }`}
+      className={`fixed top-0 w-full z-[100] transition-all duration-500 ${scrolled
+        ? "glass-effect bg-[#050c18]/90 backdrop-blur-3xl border-b border-[#00B8FF]/30 shadow-[0_20px_60px_rgba(0,0,0,0.65)]"
+        : "bg-black/30 backdrop-blur-xl border-b border-white/10"
+        }`}
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
-          <motion.button 
+          <motion.button
             onClick={() => scrollToSection('hero')}
             className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 hover:from-blue-300 hover:via-purple-300 hover:to-pink-300 transition-all duration-300 transform hover:scale-105"
             whileHover={{ scale: 1.05 }}
@@ -52,7 +51,7 @@ export const Navigation = () => {
           >
             Arnav Bhardwaj
           </motion.button>
-          
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
@@ -73,14 +72,14 @@ export const Navigation = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 }}
             >
-            <Button 
-              size="sm"
-              onClick={() => scrollToSection('contact')}
-                className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-bold px-8 py-3 rounded-full shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-110 neon-glow"
-            >
-              <Sparkles className="w-4 h-4 mr-2" />
-              Get In Touch
-            </Button>
+              <Button
+                size="sm"
+                onClick={() => scrollToSection('contact')}
+                className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:via-orange-400 hover:to-amber-400 text-black font-bold px-5 py-3 rounded-full border border-orange-300/60 shadow-lg shadow-orange-900/40 hover:shadow-orange-900/60 transition-all duration-300 transform hover:scale-110"
+              >
+                <Sparkles className="w-4 h-4 mr-2" />
+                Get In Touch
+              </Button>
             </motion.div>
           </div>
 
@@ -97,7 +96,7 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         <AnimatePresence>
-        {isOpen && (
+          {isOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
@@ -107,33 +106,33 @@ export const Navigation = () => {
               <div className="flex flex-col gap-4">
                 {navItems.map((item, index) => (
                   <motion.button
-                  key={item.label}
+                    key={item.label}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                  onClick={() => scrollToSection(item.href.replace('#', ''))}
+                    onClick={() => scrollToSection(item.href.replace('#', ''))}
                     className="text-gray-200 hover:text-white transition-all duration-300 text-left font-medium py-2 text-base"
-                >
-                  {item.label}
+                  >
+                    {item.label}
                   </motion.button>
-              ))}
+                ))}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
                 >
-              <Button 
-                size="sm" 
-                    className="w-full mt-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:from-blue-600 hover:via-purple-600 hover:to-pink-600 text-white font-bold py-3 rounded-full shadow-lg hover:shadow-purple-500/30 transition-all duration-300"
-                onClick={() => scrollToSection('contact')}
-              >
-                <Sparkles className="w-4 h-4 mr-2" />
-                Get In Touch
-              </Button>
+                  <Button
+                    size="sm"
+                    className="w-full mt-4 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:via-orange-400 hover:to-amber-400 text-black font-bold py-3 rounded-full border border-orange-300/60 shadow-lg shadow-orange-900/40 hover:shadow-orange-900/60 transition-all duration-300"
+                    onClick={() => scrollToSection('contact')}
+                  >
+                    <Sparkles className="w-4 h-4 mr-2" />
+                    Get In Touch
+                  </Button>
                 </motion.div>
-            </div>
+              </div>
             </motion.div>
-        )}
+          )}
         </AnimatePresence>
       </div>
     </motion.nav>
