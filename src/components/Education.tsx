@@ -64,6 +64,12 @@ export const Education = () => {
       detail: "FinTech Innovation track - Built AI-powered finance manager"
     },
     {
+      icon: Trophy,
+      title: "Top 10 Finalist - Logic Rush Hackathon",
+      description: "Built a blockchain and AI powered crowdfunding platform",
+      detail: "Competed against top teams in building innovative solutions"
+    },
+    {
       icon: Award,
       title: "Perfect Academic Performance",
       description: "Perfect 10.0 GPA in 3rd & 5th Semesters | Rank 1 across all branches",
@@ -102,11 +108,13 @@ export const Education = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-            Education & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Achievements</span>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 flex flex-wrap justify-center items-center gap-x-3 gap-y-2">
+            <span>Education</span>
+            <span>&</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Achievements</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            My academic journey, certifications, and achievements that demonstrate 
+            My academic journey, certifications, and achievements that demonstrate
             my commitment to continuous learning and excellence.
           </p>
         </motion.div>
@@ -118,62 +126,63 @@ export const Education = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="lg:mt-11"
           >
-            <Card className="glass-effect hover-lift relative overflow-hidden">
-            <CardHeader>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <GraduationCap className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <CardTitle className="text-xl">{education.degree}</CardTitle>
-                  <p className="text-muted-foreground">{education.institution}</p>
-                </div>
-              </div>
-            </CardHeader>
-            
-            <CardContent>
-              <div className="space-y-4">
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Duration</span>
-                  <span className="font-semibold">{education.duration}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Location</span>
-                  <span className="font-semibold">{education.location}</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Current CGPA</span>
-                  <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-base px-3 py-0.5">
-                    {education.cgpa}
-                  </Badge>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">College Rank</span>
-                  <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-base px-3 py-0.5">
-                    {education.rank}
-                  </Badge>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-muted-foreground">Perfect 10.0 GPA</span>
-                  <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-sm px-3 py-0.5">
-                    3rd & 5th Semesters
-                  </Badge>
-                </div>
-                
-                <div className="pt-4">
-                  <h4 className="font-semibold mb-3">Key Coursework</h4>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {education.coursework.map((course, index) => (
-                      <div key={index} className="text-sm text-muted-foreground">
-                        • {course}
-                      </div>
-                    ))}
+            <Card className="glass-effect hover-lift relative overflow-hidden h-fit">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 rounded-lg bg-primary/10">
+                    <GraduationCap className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-xl">{education.degree}</CardTitle>
+                    <p className="text-muted-foreground">{education.institution}</p>
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardHeader>
+
+              <CardContent>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Duration</span>
+                    <span className="font-semibold">{education.duration}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Location</span>
+                    <span className="font-semibold">{education.location}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Current CGPA</span>
+                    <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-base px-3 py-0.5">
+                      {education.cgpa}
+                    </Badge>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">College Rank</span>
+                    <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-base px-3 py-0.5">
+                      {education.rank}
+                    </Badge>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-muted-foreground">Perfect 10.0 GPA</span>
+                    <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-sm px-3 py-0.5">
+                      3rd & 5th Semesters
+                    </Badge>
+                  </div>
+
+                  <div className="pt-4">
+                    <h4 className="font-semibold mb-3">Key Coursework</h4>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                      {education.coursework.map((course, index) => (
+                        <div key={index} className="text-sm text-muted-foreground">
+                          • {course}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
 
           {/* Achievements */}
@@ -194,19 +203,19 @@ export const Education = () => {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="glass-effect hover-lift relative overflow-hidden">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 rounded-lg bg-primary/10">
-                      <achievement.icon className="w-5 h-5 text-primary" />
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="p-2 rounded-lg bg-primary/10">
+                        <achievement.icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-1">{achievement.title}</h4>
+                        <p className="text-sm text-primary mb-1">{achievement.description}</p>
+                        <p className="text-sm text-muted-foreground">{achievement.detail}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold mb-1">{achievement.title}</h4>
-                      <p className="text-sm text-primary mb-1">{achievement.description}</p>
-                      <p className="text-sm text-muted-foreground">{achievement.detail}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </motion.div>
@@ -230,18 +239,18 @@ export const Education = () => {
                 transition={{ delay: index * 0.1 }}
               >
                 <Card className="glass-effect hover-lift relative overflow-hidden">
-                <CardContent className="p-6">
-                  <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 text-center sm:text-left">
-                    <div className="flex-1">
-                      <h4 className="font-semibold mb-2">{cert.title}</h4>
-                      <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                  <CardContent className="p-6">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 text-center sm:text-left">
+                      <div className="flex-1">
+                        <h4 className="font-semibold mb-2">{cert.title}</h4>
+                        <p className="text-sm text-muted-foreground">{cert.issuer}</p>
+                      </div>
+                      <Badge className={`self-center sm:self-auto ${getCategoryColor(cert.category)}`}>
+                        {cert.category}
+                      </Badge>
                     </div>
-                    <Badge className={`self-center sm:self-auto ${getCategoryColor(cert.category)}`}>
-                      {cert.category}
-                    </Badge>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>

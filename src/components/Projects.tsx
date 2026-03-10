@@ -138,9 +138,9 @@ export const Projects = () => {
             const isOddCount = projects.length % 2 !== 0;
 
             return (
-              <BlurFade 
-                key={index} 
-                delay={index * 0.1} 
+              <BlurFade
+                key={index}
+                delay={index * 0.1}
                 direction="up"
                 className={isOddCount && isLastItem ? "md:col-span-2 flex justify-center" : ""}
               >
@@ -205,28 +205,26 @@ export const Projects = () => {
                         </div>
                       </div>
 
-                      <div className="flex gap-3">
+                      <div className="flex flex-col sm:flex-row gap-3">
                         {project.demoLink && project.demoLink !== "#" && (
                           <Button
-                            size="sm"
-                            className="flex-1 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:via-orange-400 hover:to-amber-400 text-black font-bold border border-orange-300/60 shadow-lg shadow-orange-900/40 hover:shadow-orange-900/60 transition-all duration-300"
+                            className="flex-1 py-3 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:via-orange-400 hover:to-amber-400 text-black font-bold border border-orange-300/60 shadow-lg shadow-orange-900/40 hover:shadow-orange-900/60 transition-all duration-300"
                             asChild
                           >
                             <a href={project.demoLink} target="_blank" rel="noopener noreferrer">
                               <ExternalLink className="w-4 h-4 mr-2" />
-                              Live Demo
+                              <span className="text-sm">Live Demo</span>
                             </a>
                           </Button>
                         )}
                         {project.githubLink && project.githubLink !== "private" && (
                           <Button
-                            size="sm"
-                            className="flex-1 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 hover:from-gray-600 hover:via-gray-700 hover:to-gray-600 text-white font-semibold border border-gray-600/50 hover:border-gray-500 shadow-lg shadow-gray-900/50 transition-all duration-300"
+                            className="flex-1 py-3 bg-gradient-to-r from-gray-700 via-gray-800 to-gray-700 hover:from-gray-600 hover:via-gray-700 hover:to-gray-600 text-white font-semibold border border-gray-600/50 hover:border-gray-500 shadow-lg shadow-gray-900/50 transition-all duration-300"
                             asChild
                           >
                             <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                               <Github className="w-4 h-4 mr-2" />
-                              Code
+                              <span className="text-sm">Code</span>
                             </a>
                           </Button>
                         )}

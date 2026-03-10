@@ -105,7 +105,7 @@ const FloatingCodeTerminal = () => {
 
       {/* ── Terminal Window ── */}
       <motion.div
-        className="relative z-10 w-[340px] sm:w-[400px] md:w-[440px] lg:w-[480px] xl:w-[520px] rounded-xl overflow-hidden"
+        className="relative z-10 w-[90vw] max-w-[340px] sm:max-w-none sm:w-[400px] md:w-[440px] lg:w-[480px] xl:w-[520px] rounded-xl overflow-hidden"
         style={{
           background: "rgba(13,17,23,0.95)",
           border: "1px solid rgba(0,212,255,0.25)",
@@ -146,7 +146,7 @@ const FloatingCodeTerminal = () => {
 
         {/* ── Code Area ── */}
         <div
-          className="px-4 py-3 font-mono text-[12px] sm:text-[13px] leading-[1.7] overflow-hidden"
+          className="px-4 py-3 font-mono text-[11px] sm:text-[13px] leading-[1.7] overflow-x-auto overflow-y-hidden"
           style={{ minHeight: "320px" }}
         >
           {codeLines.slice(0, visibleLines).map((line, idx) => (
@@ -193,7 +193,7 @@ const FloatingCodeTerminal = () => {
 
         {/* ── Status Bar ── */}
         <div
-          className="flex items-center justify-between px-4 py-1.5 text-[11px] font-medium select-none"
+          className="flex items-center justify-between px-3 sm:px-4 py-1.5 text-[9px] sm:text-[11px] font-medium select-none"
           style={{
             background: "rgba(0,122,204,0.85)",
             color: "#ffffff",
@@ -340,24 +340,6 @@ export const Hero = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 pt-24 pb-8">
           {/* ─── Left Column: Text Content ─── */}
           <div className="flex-1 max-w-2xl text-center lg:text-left space-y-6">
-            {/* Status badge */}
-            <BlurFade delay={0.1} direction="up">
-              <motion.div
-                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium"
-                style={{
-                  background: "linear-gradient(135deg, rgba(100,255,218,0.08), rgba(0,184,255,0.05))",
-                  border: "1px solid rgba(100,255,218,0.25)",
-                }}
-                animate={{ boxShadow: ["0 0 15px rgba(100,255,218,0.1)", "0 0 25px rgba(100,255,218,0.2)", "0 0 15px rgba(100,255,218,0.1)"] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#64FFDA] opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#64FFDA]" />
-                </span>
-                <span className="text-[#64FFDA]/90">Open to Opportunities</span>
-              </motion.div>
-            </BlurFade>
 
             {/* Name */}
             <BlurFade delay={0.2} direction="up">

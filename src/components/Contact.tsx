@@ -45,7 +45,7 @@ export const Contact = () => {
 
 
   return (
-    <section id="contact" className="py-20 px-6 relative overflow-hidden">
+    <section id="contact" className="py-20 px-4 sm:px-6 md:px-8 relative overflow-hidden">
       {/* Clean Background */}
       <div className="absolute inset-0 bg-[#0d151d]" />
       <ConcentricCircles />
@@ -62,22 +62,22 @@ export const Contact = () => {
             Get In <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">Touch</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            I'm always open to discussing new opportunities, interesting projects, 
+            I'm always open to discussing new opportunities, interesting projects,
             or just having a chat about technology and innovation.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 place-items-center lg:place-items-stretch">
           {/* Contact Information */}
-          <div>
+          <div className="flex flex-col items-center lg:items-stretch text-center lg:text-left w-full max-w-md lg:max-w-none">
             <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
             <p className="text-muted-foreground mb-8">
-              Whether you're looking for a passionate developer, have an exciting project in mind, 
+              Whether you're looking for a passionate developer, have an exciting project in mind,
               or want to collaborate on machine learning research, I'd love to hear from you.
             </p>
 
             {/* Contact Details */}
-            <div className="space-y-4 mb-8">
+            <div className="space-y-4 mb-8 w-full text-left">
               {contactInfo.map((contact, index) => (
                 <motion.div
                   key={index}
@@ -87,40 +87,40 @@ export const Contact = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <Card className="glass-effect hover-lift relative overflow-hidden">
-                    <BorderBeam 
+                    <BorderBeam
                       size={150}
                       duration={10}
                       colorFrom="#3b82f6"
                       colorTo="#8b5cf6"
                       delay={index * 0.3}
                     />
-                    <CardContent className="p-6">
-                    <div className="flex items-center gap-4">
-                      <div className="p-2 rounded-lg bg-primary/10">
-                        <contact.icon className="w-5 h-5 text-primary" />
+                    <CardContent className="p-4 sm:p-6">
+                      <div className="flex items-center gap-3 sm:gap-4">
+                        <div className="p-2 rounded-lg bg-primary/10 shrink-0">
+                          <contact.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="font-semibold text-sm sm:text-base">{contact.label}</p>
+                          {contact.href === "#" ? (
+                            <p className="text-muted-foreground text-xs sm:text-sm break-all sm:break-normal">{contact.value}</p>
+                          ) : (
+                            <a
+                              href={contact.href}
+                              className="text-muted-foreground hover:text-primary transition-colors text-xs sm:text-sm break-all sm:break-normal"
+                            >
+                              {contact.value}
+                            </a>
+                          )}
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-semibold">{contact.label}</p>
-                        {contact.href === "#" ? (
-                          <p className="text-muted-foreground">{contact.value}</p>
-                        ) : (
-                          <a 
-                            href={contact.href}
-                            className="text-muted-foreground hover:text-primary transition-colors"
-                          >
-                            {contact.value}
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               ))}
             </div>
 
             {/* Social Links */}
-            <div>
+            <div className="w-full text-left">
               <h4 className="font-semibold mb-4">My Accounts</h4>
               <div className="space-y-3">
                 {socialLinks.map((social, index) => (
@@ -135,7 +135,7 @@ export const Contact = () => {
                       {social.iconUrl ? (
                         <img src={social.iconUrl} alt={social.label} className="w-4 h-4 object-contain" />
                       ) : (
-                      <social.icon className="w-4 h-4 text-primary" />
+                        <social.icon className="w-4 h-4 text-primary" />
                       )}
                     </div>
                     <div className="flex items-center justify-between w-full">
@@ -156,7 +156,7 @@ export const Contact = () => {
             transition={{ duration: 0.6 }}
           >
             <Card className="relative overflow-hidden border-2 border-cyan-500/20 bg-gradient-to-br from-slate-900/95 via-slate-800/90 to-slate-900/95 backdrop-blur-xl shadow-2xl shadow-cyan-500/10">
-              <BorderBeam 
+              <BorderBeam
                 size={250}
                 duration={12}
                 colorFrom="#3b82f6"
@@ -164,79 +164,79 @@ export const Contact = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-transparent pointer-events-none" />
               <CardHeader>
-                <CardTitle className="text-2xl font-bold">Send a Message</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl font-bold">Send a Message</CardTitle>
               </CardHeader>
-            <CardContent>
-              <form 
-                action="https://formspree.io/f/myznoqkr" 
-                method="POST" 
-                className="space-y-6"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Name
-                    </label>
-                    <Input 
-                      id="name" 
-                      name="name"
-                      placeholder="Your name" 
-                      required 
-                      className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      Email
-                    </label>
-                    <Input 
-                      id="email" 
-                      name="email"
-                      type="email" 
-                      placeholder="your.email@example.com" 
-                      required 
-                      className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                    Subject
-                  </label>
-                  <Input 
-                    id="subject" 
-                    name="subject"
-                    placeholder="What's this about?" 
-                    required 
-                    className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
-                  </label>
-                  <Textarea 
-                    id="message" 
-                    name="message"
-                    placeholder="Please tell me about your project or opportunity..."
-                    rows={6}
-                    required 
-                    className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
-                  />
-                </div>
-                
-                <MagicButton 
-                  type="submit" 
-                  className="w-full bg-gradient-to-r from-cyan-600 via-cyan-500 to-cyan-600 hover:from-cyan-500 hover:via-cyan-400 hover:to-cyan-500 text-white font-bold border border-cyan-400/50 hover:border-cyan-300 shadow-md shadow-cyan-500/15 hover:shadow-cyan-400/25 transition-all duration-300"
+              <CardContent>
+                <form
+                  action="https://formspree.io/f/myznoqkr"
+                  method="POST"
+                  className="space-y-6"
                 >
-                  <Send className="w-4 h-4 mr-2" />
-                  Send Message
-                </MagicButton>
-              </form>
-            </CardContent>
-          </Card>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium mb-2">
+                        Name
+                      </label>
+                      <Input
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        required
+                        className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium mb-2">
+                        Email
+                      </label>
+                      <Input
+                        id="email"
+                        name="email"
+                        type="email"
+                        placeholder="your.email@example.com"
+                        required
+                        className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                      Subject
+                    </label>
+                    <Input
+                      id="subject"
+                      name="subject"
+                      placeholder="What's this about?"
+                      required
+                      className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium mb-2">
+                      Message
+                    </label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Please tell me about your project or opportunity..."
+                      rows={6}
+                      required
+                      className="bg-slate-950/80 border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400/50"
+                    />
+                  </div>
+
+                  <MagicButton
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-cyan-600 via-cyan-500 to-cyan-600 hover:from-cyan-500 hover:via-cyan-400 hover:to-cyan-500 text-white font-bold border border-cyan-400/50 hover:border-cyan-300 shadow-md shadow-cyan-500/15 hover:shadow-cyan-400/25 transition-all duration-300"
+                  >
+                    <Send className="w-4 h-4 mr-2" />
+                    Send Message
+                  </MagicButton>
+                </form>
+              </CardContent>
+            </Card>
           </motion.div>
         </div>
 
@@ -250,13 +250,13 @@ export const Contact = () => {
         >
           <Card className="glass-effect max-w-2xl mx-auto relative overflow-hidden">
             <BorderBeam size={300} duration={15} colorFrom="#8b5cf6" colorTo="#ec4899" />
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-semibold mb-4">Ready to collaborate?</h3>
-              <p className="text-muted-foreground mb-6">
-                I'm currently open to internship opportunities, research collaborations, 
+            <CardContent className="p-5 sm:p-8">
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4">Ready to collaborate?</h3>
+              <p className="text-sm sm:text-base text-muted-foreground mb-6">
+                I'm currently open to internship opportunities, research collaborations,
                 and exciting projects in AI/ML and full-stack development.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" asChild>
                   <a href="mailto:arnavbhardwaj111@gmail.com">
                     <Mail className="w-4 h-4 mr-2" />
@@ -264,9 +264,9 @@ export const Contact = () => {
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <a 
-                    href="https://linkedin.com/in/-arnavbhardwaj" 
-                    target="_blank" 
+                  <a
+                    href="https://linkedin.com/in/-arnavbhardwaj"
+                    target="_blank"
                     rel="noopener noreferrer"
                   >
                     <Linkedin className="w-4 h-4 mr-2" />
