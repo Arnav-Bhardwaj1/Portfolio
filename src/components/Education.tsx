@@ -153,20 +153,26 @@ export const Education = () => {
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Current CGPA</span>
-                    <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-base px-3 py-0.5">
-                      {education.cgpa}
+                    <Badge className="bg-orange-500/20 border-orange-500/40 font-bold text-base px-3 py-0.5">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
+                        {education.cgpa}
+                      </span>
                     </Badge>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">College Rank</span>
-                    <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-base px-3 py-0.5">
-                      {education.rank}
+                    <Badge className="bg-orange-500/20 border-orange-500/40 font-bold text-base px-3 py-0.5">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
+                        {education.rank}
+                      </span>
                     </Badge>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-muted-foreground">Perfect 10.0 GPA</span>
-                    <Badge className="bg-orange-500/20 text-orange-400 border-orange-500/40 font-bold text-sm px-3 py-0.5">
-                      3rd & 5th Semesters
+                    <Badge className="bg-orange-500/20 border-orange-500/40 font-bold text-sm px-3 py-0.5">
+                      <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
+                        3rd & 5th Semesters
+                      </span>
                     </Badge>
                   </div>
 
@@ -193,7 +199,7 @@ export const Education = () => {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <h3 className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Key Achievements</h3>
+            <h3 className="text-3xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Key Achievements</h3>
             {achievements.map((achievement, index) => (
               <motion.div
                 key={index}

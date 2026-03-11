@@ -379,11 +379,11 @@ export const Hero = () => {
                 <span className="text-[#64FFDA] font-bold bg-[#64FFDA]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
                   DSA
                 </span>
-                . Currently pursuing B.Tech in CSE with a strong focus on{" "}
+                . Currently a pre-final year CSE student focused on{" "}
                 <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
                   AI
                 </span>
-                {" "}&{" "}
+                {" "}and{" "}
                 <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
                   software development
                 </span>
@@ -411,11 +411,11 @@ export const Hero = () => {
                   onClick={() => scrollToSection('contact')}
                   whileHover={{ scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
-                  className="relative group px-7 py-3.5 rounded-xl font-bold text-black overflow-hidden transition-all duration-300 flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:via-orange-400 hover:to-amber-400 border border-orange-300/60 shadow-lg shadow-orange-900/40 hover:shadow-orange-900/60"
+                  className="relative group px-7 py-3.5 rounded-xl font-bold overflow-hidden transition-all duration-300 flex items-center justify-center gap-2 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-500/50 hover:border-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.15)] hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] backdrop-blur-sm"
                 >
-                  <Mail className="w-4 h-4 relative z-10" />
-                  <span className="relative z-10">Get In Touch</span>
-                  <Sparkles className="w-4 h-4 relative z-10" />
+                  <Mail className="w-4 h-4 relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500" style={{ WebkitTextFillColor: "unset", color: "#f59e0b" }} />
+                  <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Get In Touch</span>
+                  <Sparkles className="w-4 h-4 relative z-10" style={{ color: "#f97316" }} />
                 </motion.button>
 
                 <motion.a

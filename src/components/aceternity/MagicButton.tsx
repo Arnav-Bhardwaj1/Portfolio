@@ -12,7 +12,7 @@ export const MagicButton = ({
   children: React.ReactNode;
   className?: string;
   onClick?: () => void;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>) => {
+} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "onDrag" | "onDragStart" | "onDragEnd" | "onAnimationStart">) => {
   return (
     <motion.button
       onClick={onClick}
@@ -24,8 +24,8 @@ export const MagicButton = ({
       whileTap={{ scale: 0.95 }}
       {...props}
     >
-      <span className="absolute inset-0 bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-      <span className="absolute inset-0 bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA] blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
+      <span className="absolute inset-0 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <span className="absolute inset-0 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-300" />
       <span className="relative z-10 flex items-center gap-2">
         {children}
       </span>

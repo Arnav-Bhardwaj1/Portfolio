@@ -74,7 +74,7 @@ export const About = () => {
             transition={{ duration: 0.5 }}
             className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
           >
-            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA]">Me</span>
+            About <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500">Me</span>
           </motion.h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-5xl mx-auto leading-relaxed">
             A passionate computer science student with a strong foundation in full-stack development, machine learning and DSA, dedicated to creating impactful solutions.
@@ -89,7 +89,7 @@ export const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] to-[#00D4FF]">My Journey</h3>
+            <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">My Journey</h3>
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
                 I'm currently pursuing my Bachelor of Technology in Computer Science Engineering
@@ -119,7 +119,7 @@ export const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#00D4FF] to-[#64FFDA]">Key Highlights</h3>
+            <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Key Highlights</h3>
             <div className="grid gap-4">
               {highlights.map((highlight, index) => (
                 <motion.div
@@ -155,11 +155,25 @@ export const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-4xl md:text-5xl font-bold mb-10 text-center">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B8FF] via-[#00D4FF] to-[#64FFDA] drop-shadow-[0_0_25px_rgba(0,212,255,0.5)]">
-              Technical Skills
-            </span>
-          </h3>
+          <div className="text-center mb-10 relative">
+            {/* Subtle glow backdrop */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[80px] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+
+            <h3 className="text-4xl md:text-5xl font-bold relative inline-block">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400 drop-shadow-[0_0_30px_rgba(249,115,22,0.4)]">
+                Technical Skills
+              </span>
+              {/* Decorative animated underline */}
+              <motion.div
+                className="h-[3px] mt-2 rounded-full bg-gradient-to-r from-transparent via-orange-500 to-transparent"
+                initial={{ scaleX: 0, opacity: 0 }}
+                whileInView={{ scaleX: 1, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              />
+            </h3>
+
+          </div>
 
           {/* Infinite Moving Skills Cards */}
           <div className="mb-12 relative z-20">
@@ -224,13 +238,13 @@ export const About = () => {
                 className={`glass-effect rounded-2xl text-center hover-lift p-1.5 ${index === 0 || index === 1 ? 'pt-[52px]' : 'pt-4'}`}
               >
                 <div className="rounded-xl border border-white/10 bg-black/20 backdrop-blur-sm p-4 flex flex-col gap-3">
-                  <h4 className="font-semibold text-primary">{category.title}</h4>
+                  <h4 className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">{category.title}</h4>
                   <div className="flex flex-wrap gap-2 justify-center items-center">
                     {category.skills.map((skill, skillIndex) => (
                       <Badge
                         key={skillIndex}
                         variant="secondary"
-                        className="px-3 py-1 text-xs bg-black/30 border border-white/20 text-gray-100 hover:bg-[#00B8FF]/20 hover:text-white transition-colors cursor-default"
+                        className="px-3 py-1 text-xs bg-black/30 border border-white/20 text-gray-100 hover:bg-orange-500/20 hover:text-white transition-colors cursor-default"
                       >
                         {skill}
                       </Badge>

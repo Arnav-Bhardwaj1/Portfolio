@@ -227,13 +227,13 @@ export const Contact = () => {
                     />
                   </div>
 
-                  <MagicButton
+                  <Button
                     type="submit"
-                    className="w-full bg-gradient-to-r from-cyan-600 via-cyan-500 to-cyan-600 hover:from-cyan-500 hover:via-cyan-400 hover:to-cyan-500 text-white font-bold border border-cyan-400/50 hover:border-cyan-300 shadow-md shadow-cyan-500/15 hover:shadow-cyan-400/25 transition-all duration-300"
+                    className="w-full px-8 py-3 text-base bg-orange-500/10 hover:bg-orange-500/20 font-bold border border-orange-500/50 hover:border-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.15)] hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] transition-all duration-300 backdrop-blur-sm"
                   >
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
-                  </MagicButton>
+                    <Send className="w-4 h-4 mr-2" style={{ color: "#f97316" }} />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Send Message</span>
+                  </Button>
                 </form>
               </CardContent>
             </Card>
@@ -251,16 +251,16 @@ export const Contact = () => {
           <Card className="glass-effect max-w-2xl mx-auto relative overflow-hidden">
             <BorderBeam size={300} duration={15} colorFrom="#8b5cf6" colorTo="#ec4899" />
             <CardContent className="p-5 sm:p-8">
-              <h3 className="text-xl sm:text-2xl font-semibold mb-4">Ready to collaborate?</h3>
+              <h3 className="text-xl sm:text-2xl font-semibold mb-4">Let's Build Something Meaningful</h3>
               <p className="text-sm sm:text-base text-muted-foreground mb-6">
                 I'm currently open to internship opportunities, research collaborations,
                 and exciting projects in AI/ML and full-stack development.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <Button size="lg" asChild>
+                <Button size="lg" asChild className="bg-orange-500/10 hover:bg-orange-500/20 font-bold border border-orange-500/50 hover:border-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.15)] hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] transition-all duration-300 backdrop-blur-sm">
                   <a href="mailto:arnavbhardwaj111@gmail.com">
-                    <Mail className="w-4 h-4 mr-2" />
-                    Email Me
+                    <Mail className="w-4 h-4 mr-2" style={{ color: "#f97316" }} />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Email Me</span>
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>

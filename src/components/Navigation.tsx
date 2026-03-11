@@ -45,7 +45,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           <motion.button
             onClick={() => scrollToSection('hero')}
-            className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 hover:from-blue-300 hover:via-purple-300 hover:to-pink-300 transition-all duration-300 transform hover:scale-105"
+            className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-amber-400 hover:from-amber-300 hover:via-orange-400 hover:to-amber-300 transition-all duration-300 transform hover:scale-105"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -75,10 +75,10 @@ export const Navigation = () => {
               <Button
                 size="sm"
                 onClick={() => scrollToSection('contact')}
-                className="bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:via-orange-400 hover:to-amber-400 text-black font-bold px-5 py-3 rounded-full border border-orange-300/60 shadow-lg shadow-orange-900/40 hover:shadow-orange-900/60 transition-all duration-300 transform hover:scale-110"
+                className="bg-orange-500/10 hover:bg-orange-500/20 font-bold px-5 py-3 rounded-full border border-orange-500/50 hover:border-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.15)] hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] transition-all duration-300 transform hover:scale-110 backdrop-blur-sm"
               >
-                <Sparkles className="w-4 h-4 mr-2" />
-                Get In Touch
+                <Sparkles className="w-4 h-4 mr-2" style={{ color: "#f97316" }} />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Get In Touch</span>
               </Button>
             </motion.div>
           </div>
@@ -123,11 +123,11 @@ export const Navigation = () => {
                 >
                   <Button
                     size="sm"
-                    className="w-full mt-4 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 hover:from-amber-400 hover:via-orange-400 hover:to-amber-400 text-black font-bold py-3 rounded-full border border-orange-300/60 shadow-lg shadow-orange-900/40 hover:shadow-orange-900/60 transition-all duration-300"
+                    className="w-full mt-4 bg-orange-500/10 hover:bg-orange-500/20 font-bold py-3 rounded-full border border-orange-500/50 hover:border-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.15)] hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] transition-all duration-300 backdrop-blur-sm"
                     onClick={() => scrollToSection('contact')}
                   >
-                    <Sparkles className="w-4 h-4 mr-2" />
-                    Get In Touch
+                    <Sparkles className="w-4 h-4 mr-2" style={{ color: "#f97316" }} />
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Get In Touch</span>
                   </Button>
                 </motion.div>
               </div>
