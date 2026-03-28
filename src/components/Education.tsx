@@ -25,8 +25,8 @@ export const Education = () => {
 
   const certifications = [
     {
-      title: "Generative AI Professional - Oracle Cloud (OCI)",
-      issuer: "Oracle",
+      title: "Generative AI Professional — Oracle Cloud (OCI)",
+      issuer: "Oracle — LLMs, Retrieval Augmented Generation, Deployment",
       category: "Gen AI and RAG",
     },
     {
@@ -59,9 +59,9 @@ export const Education = () => {
   const achievements = [
     {
       icon: Trophy,
-      title: "Top 10 Finalist - TECHNOV8 Hackathon",
-      description: "Ranked Top 10 out of 192 teams",
-      detail: "FinTech Innovation track - Built AI-powered finance manager"
+      title: "Top 10 Finalist — TECHNOV8 Hackathon",
+      description: "Ranked in the Top 10 out of 192 teams in the FinTech Innovation track",
+      detail: "Built AI-powered finance manager"
     },
     {
       icon: Trophy,

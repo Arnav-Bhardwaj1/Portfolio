@@ -16,7 +16,7 @@ export const About = () => {
     {
       icon: Code,
       title: "DSA (Data Structures and Algorithms)",
-      description: "900+ DSA problems solved | 1850+ LeetCode rating",
+      description: "Solved 900+ DSA problems across platforms; achieved Knight (1850+) rating on LeetCode",
     },
     {
       icon: Trophy,
@@ -37,7 +37,7 @@ export const About = () => {
     },
     {
       title: "Web Development",
-      skills: ["HTML", "CSS", "React.js", "Next.js", "Node.js", "Express.js", "FastAPI", "MongoDB"]
+      skills: ["HTML", "CSS", "React.js", "Next.js", "Node.js", "Express.js", "FastAPI", "MongoDB", "REST APIs"]
     },
     {
       title: "Core CS Subjects",

@@ -19,8 +19,8 @@ export const Experience = () => {
       location: "Remote",
       type: "Internship",
       description: [
-        "Developed full-stack core modules of an AI-enabled investor–founder matchmaking platform, including company onboarding workflows, admin approval systems, subscription-based access control, and a config-driven admin panel",
-        "Implemented an AI-driven navigation assistant using Pinecone vector search and OpenAI, enabling automatic filtering, sorting, and seamless page navigation to relevant company profiles"
+        "Developed full-stack core modules of an AI-enabled venture capital platform connecting investors and founders, including onboarding workflows, admin approvals, subscription-based access control, and a config-driven admin panel",
+        "Implemented an AI-driven navigation assistant using Pinecone and OpenAI, enabling semantic search, intelligent filtering, and context-aware navigation to relevant company profiles, improving user discovery and interaction efficiency"
       ],
       technologies: ["React.js", "Next.js", "Node.js", "TypeScript", "MongoDB", "Pinecone", "OpenAI", "AI/ML"]
     },

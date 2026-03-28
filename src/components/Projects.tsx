@@ -12,16 +12,17 @@ export const Projects = () => {
   const projects = [
     {
       title: "CogniFlow — Workflow Automation Platform",
-      description: "Built a workflow automation platform with a node-based editor, multi-trigger support (webhooks, Google Forms, Razorpay), and integrations like Slack, Discord, and AI nodes, powered by event-driven background orchestration using Inngest. Implemented billing, paywalls, secure authentication, and observability using Sentry. Built an AI Workflow Generator that converts natural language input into structured workflow drafts rendered directly on canvas. Architected a fully type-safe backend using tRPC, Prisma, and Neon Postgres.",
+      description: "Built a workflow automation platform with a node-based editor, multi-trigger support (webhooks, Google Forms, Razorpay), and integrations like Slack, Discord, and AI nodes, powered by event-driven background orchestration using Inngest. Implemented billing, paywalls, secure authentication, and error monitoring & observability using Sentry. Built an AI Workflow Generator that converts natural language input into structured workflow drafts rendered directly on canvas. Architected a fully type-safe backend using tRPC, Prisma, and Neon Postgres, ensuring end-to-end data integrity and reducing runtime errors via production CI/CD workflows.",
       category: "Full-Stack & SaaS",
-      technologies: ["Next.js", "Prisma", "Inngest", "tRPC", "Better Auth", "Polar Payments", "Sentry", "Neon Postgres"],
+      technologies: ["Next.js", "Prisma", "Inngest", "tRPC", "Better Auth", "Razorpay"],
       features: [
         "Node-based workflow editor with multi-trigger support",
         "Triggers: webhooks, Google Forms, Razorpay",
         "Integrations: Slack, Discord, and AI nodes",
         "Event-driven background orchestration using Inngest",
-        "Billing, paywalls, and secure authentication",
-        "AI Workflow Generator: natural language to workflow draft on canvas"
+        "Billing, paywalls, secure authentication, and error monitoring & observability using Sentry",
+        "AI Workflow Generator: natural language to workflow draft on canvas",
+        "End-to-end data integrity and reduced runtime errors via production CI/CD workflows"
       ],
       icon: Code,
       imageUrl: "/cogniflow.png",
@@ -30,16 +31,16 @@ export const Projects = () => {
     },
     {
       title: "Perceptron — B2B AI Support Platform",
-      description: "Built a multi-tenant AI customer support platform with real-time chat, human handoff, auto-close logic, secure API keys, and an embeddable support widget with persistent sessions. Engineered a RAG-powered knowledge base, added voice support via VAPI, and built an operator dashboard with usage-based billing, team management, and observability via Sentry. Focused on tenant-aware architecture to ensure isolation across organizations while maintaining low-latency real-time interactions.",
+      description: "Built a multi-tenant AI support platform with an embeddable script launching a sandbox widget, enabling chat, voice calls, persistent sessions, and escalation, with a real-time operator dashboard for monitoring and response. Engineered a cross-origin iframe widget with Convex real-time sync, Jotai state atoms, and postMessage origin validation. Implemented RAG-powered workflows, usage-based billing, & integrated Sentry, Clerk, and webhook-driven sync.",
       category: "Full-Stack & AI",
-      technologies: ["Next.js", "Convex", "Clerk", "OpenAI", "VAPI", "Turborepo", "Sentry"],
+      technologies: ["Next.js", "Convex", "Clerk", "OpenAI", "VAPI", "Turborepo"],
       features: [
-        "Multi-tenant real-time chat with human handoff",
-        "Embeddable support widget with persistent sessions",
-        "RAG-powered knowledge base with secure API keys",
-        "Voice support via VAPI and multi-model orchestration",
-        "Operator dashboard: usage-based billing & team management",
-        "Observability and monitoring via Sentry"
+        "Multi-tenant AI support with embeddable script launching a sandbox widget",
+        "Chat, voice calls, persistent sessions, and escalation",
+        "Cross-origin iframe widget with Convex real-time sync, Jotai state atoms, and postMessage origin validation",
+        "RAG-powered workflows with usage-based billing",
+        "Real-time operator dashboard for monitoring and response",
+        "Integrated Sentry, Clerk, and webhook-driven sync"
       ],
       icon: Brain,
       imageUrl: "/perceptron.png",
@@ -47,17 +48,17 @@ export const Projects = () => {
       githubLink: "https://github.com/Arnav-Bhardwaj1/Perceptron"
     },
     {
-      title: "FarmSphere - AI Driven Smart Farming Application",
-      description: "Built an on-device ML Crop Health Scanner using TFLite for instant leaf disease diagnosis and remediation steps. Integrated an AI chatbot for personalized farming advice, real-time weather alerts, market price aggregation, and location retrieval. Designed with Riverpod state management, local caching, and multilingual voice input/output.",
+      title: "FarmSphere — AI-Powered Smart Farming Application",
+      description: "Built an ML-powered crop health monitoring system for disease detection with diagnostic reports & remediation guidance. Integrated an AI chatbot for personalized farming advice, real-time weather alerts, market price aggregation, and location retrieval. Implemented a multi-agent system with specialized agents for Weather and Crop Health monitoring. Designed with Riverpod state management, local caching, and multilingual voice input/output.",
       category: "Full-Stack, AI and ML",
-      technologies: ["Flutter", "TFLite", "Generative AI", "SQL", "Riverpod", "Voice I/O"],
+      technologies: ["Flutter", "Generative AI", "SQLite", "REST APIs", "Riverpod", "Voice I/O"],
       features: [
-        "On-device ML crop disease detection with TFLite",
-        "AI chatbot for personalized farming guidance",
-        "Real-time weather alerts & market prices",
+        "ML-powered crop health monitoring with diagnostic reports & remediation guidance",
+        "AI chatbot for personalized farming advice",
+        "Multi-agent system with specialized agents for Weather and Crop Health monitoring",
+        "Real-time weather alerts & market price aggregation",
         "Riverpod state management & local caching",
-        "Multilingual voice input/output support",
-        "Location-based services & recommendations"
+        "Multilingual voice input/output support"
       ],
       icon: Brain,
       imageUrl: "/fa.png",
