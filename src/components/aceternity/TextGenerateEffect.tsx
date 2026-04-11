@@ -31,13 +31,13 @@ export const TextGenerateEffect = ({
   }, [scope.current]);
 
   const renderWords = () => {
-    // Check if the last 4 words are "Top", "10", "Finalist", "@TECHNOV8"
+    // Check if the last 4 words are "Top", "10", "Finalist", "@Technov8"
     const lastFourWords = wordsArray.slice(-4);
     const isTop10Phrase = lastFourWords.length === 4 && 
       lastFourWords[0] === "Top" && 
       lastFourWords[1] === "10" && 
       lastFourWords[2] === "Finalist" && 
-      lastFourWords[3] === "@TECHNOV8";
+      lastFourWords[3] === "@Technov8";
     
     const regularWords = isTop10Phrase ? wordsArray.slice(0, -4) : wordsArray;
     const top10Words = isTop10Phrase ? wordsArray.slice(-4) : [];

@@ -20,8 +20,8 @@ export const About = () => {
     },
     {
       icon: Trophy,
-      title: "Hackathon Achievement",
-      description: "Top 10 Finalist at TECHNOV8 Hackathon (192 teams)",
+      title: "Hackathon Achievements",
+      description: "9th Rank at Hack Energy 2.0 (400+ teams) & Top 10 at Technov8 and Logic Rush",
     },
     {
       icon: Users,

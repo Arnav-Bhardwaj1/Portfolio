@@ -59,7 +59,13 @@ export const Education = () => {
   const achievements = [
     {
       icon: Trophy,
-      title: "Top 10 Finalist — TECHNOV8 Hackathon",
+      title: "9th Rank - Hack Energy 2.0 Hackathon",
+      description: "National Level Hackathon",
+      detail: "Ranked 9th among 400+ teams (1100+ participants)"
+    },
+    {
+      icon: Trophy,
+      title: "Top 10 Finalist — Technov8 Hackathon",
       description: "Ranked in the Top 10 out of 192 teams in the FinTech Innovation track",
       detail: "Built AI-powered finance manager"
     },
@@ -67,7 +73,7 @@ export const Education = () => {
       icon: Trophy,
       title: "Top 10 Finalist - Logic Rush Hackathon",
       description: "Built a blockchain and AI powered crowdfunding platform",
-      detail: "Competed against top teams in building innovative solutions"
+      detail: "Ranked in the Top 10 out of 91 competitive teams"
     },
     {
       icon: Award,
