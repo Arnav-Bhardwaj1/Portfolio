@@ -99,7 +99,7 @@ export const About = () => {
               </p>
               <p>
                 I've completed internships at DRDO (Defence Research & Development Organisation) as a Machine Learning Intern,
-                working on RAG pipelines using FAISS and Hugging Face Transformers, and developing
+                working on RAG pipelines and developing
                 interactive weather analysis systems for 41 Indian Air Force airbases. Most recently, I worked as a
                 Full Stack Developer Intern at Cogzin Technologies, building AI-enabled investor-founder matchmaking
                 platforms with Pinecone vector search and OpenAI integration.
