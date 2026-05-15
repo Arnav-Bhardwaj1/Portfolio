@@ -31,7 +31,7 @@ export const Experience = () => {
       location: "Delhi, India",
       type: "Internship",
       description: [
-        "Designed and implemented a secure, on-premise RAG pipeline using FAISS and Hugging Face Transformers with locally hosted LLMs to analyze and summarize unstructured defense-related documents.",
+        "Designed and implemented a production-grade, secure on-prem RAG pipeline using FAISS and locally hosted LLMs to analyze unstructured defense documents, optimizing retrieval accuracy, latency, and inference reliability.",
         "Engineered an interactive weather analysis and prediction system for 41 Indian Air Force airbases using Tkinter and geospatial mapping, delivering 15-day forecasts and enhancing mission-route feasibility assessments, resulting in improvement in operational planning efficiency"
       ],
       technologies: ["Python", "FAISS", "Hugging Face", "OpenAI", "RAG", "Tkinter", "Geospatial Mapping"]

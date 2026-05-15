@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
@@ -15,13 +15,28 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
     }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  const scrollToSection = useCallback((sectionId: string) => {
+    // Close menu first, then scroll after animation completes
     setIsOpen(false);
-  };
+    setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 350);
+  }, []);
 
   const navItems = [
     { label: "About", href: "#about" },
@@ -93,48 +108,59 @@ export const Navigation = () => {
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
         </div>
+      </div>
 
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden py-6 border-t border-white/10 glass-effect rounded-b-2xl mt-2"
-            >
-              <div className="flex flex-col gap-4">
-                {navItems.map((item, index) => (
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: -20, x: "-50%" }}
+            animate={{ opacity: 1, scale: 1, y: 0, x: "-50%" }}
+            exit={{ opacity: 0, scale: 0.95, y: -20, x: "-50%" }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden absolute top-24 left-1/2 w-[280px] border border-white/10 bg-[#050f1d] rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.9)] overflow-hidden"
+          >
+            <div className="flex flex-col p-6 gap-2">
+              {navItems.map((item, index) => (
+                <div key={item.label} className="w-full">
                   <motion.button
-                    key={item.label}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ delay: index * 0.05 }}
                     onClick={() => scrollToSection(item.href.replace('#', ''))}
-                    className="text-gray-200 hover:text-white transition-all duration-300 text-left font-medium py-2 text-base"
+                    className="w-full text-gray-200 hover:text-white transition-all duration-300 text-center font-medium py-3 px-4 rounded-xl hover:bg-white/5 active:bg-white/10"
                   >
                     {item.label}
                   </motion.button>
-                ))}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
+                  {index !== navItems.length - 1 && (
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: index * 0.05 + 0.1 }}
+                      className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/10 to-transparent my-1" 
+                    />
+                  )}
+                </div>
+              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="pt-4"
+              >
+                <Button
+                  size="sm"
+                  className="w-full bg-orange-500/10 hover:bg-orange-500/20 font-bold py-6 rounded-full border border-orange-500/50 hover:border-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.15)] hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] transition-all duration-300 text-base"
+                  onClick={() => scrollToSection('contact')}
                 >
-                  <Button
-                    size="sm"
-                    className="w-full mt-4 bg-orange-500/10 hover:bg-orange-500/20 font-bold py-3 rounded-full border border-orange-500/50 hover:border-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.15)] hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] transition-all duration-300 backdrop-blur-sm"
-                    onClick={() => scrollToSection('contact')}
-                  >
-                    <Sparkles className="w-4 h-4 mr-2" style={{ color: "#f97316" }} />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Get In Touch</span>
-                  </Button>
-                </motion.div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+                  <Sparkles className="w-4 h-4 mr-2" style={{ color: "#f97316" }} />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">Get In Touch</span>
+                </Button>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };

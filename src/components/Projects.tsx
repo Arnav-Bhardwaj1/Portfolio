@@ -31,15 +31,15 @@ export const Projects = () => {
     },
     {
       title: "Perceptron — B2B AI Support Platform",
-      description: "Built a multi-tenant AI support platform with an embeddable script launching a sandbox widget, enabling chat, voice calls, persistent sessions, and escalation, with a real-time operator dashboard for monitoring and response. Engineered a cross-origin iframe widget with Convex real-time sync, Jotai state atoms, and postMessage origin validation. Implemented RAG-powered workflows, usage-based billing, & integrated Sentry, Clerk, and webhook-driven sync.",
+      description: "Built a multi-tenant AI support platform with an embeddable widget supporting chat, voice calls, persistent sessions, and escalation, along with a real-time operator dashboard for monitoring and response, featuring triage and customization. Engineered a cross-origin iframe widget with Convex real-time sync and secure postMessage origin validation. Implemented RAG-powered workflows, usage-based billing, & integrated Sentry, Clerk, and webhook-driven sync.",
       category: "Full-Stack & AI",
       technologies: ["Next.js", "Convex", "Clerk", "OpenAI", "VAPI", "Turborepo"],
       features: [
-        "Multi-tenant AI support with embeddable script launching a sandbox widget",
+        "Multi-tenant AI support with embeddable widget",
         "Chat, voice calls, persistent sessions, and escalation",
-        "Cross-origin iframe widget with Convex real-time sync, Jotai state atoms, and postMessage origin validation",
+        "Real-time operator dashboard featuring triage and customization",
+        "Cross-origin iframe widget with Convex real-time sync",
         "RAG-powered workflows with usage-based billing",
-        "Real-time operator dashboard for monitoring and response",
         "Integrated Sentry, Clerk, and webhook-driven sync"
       ],
       icon: Brain,
@@ -49,14 +49,14 @@ export const Projects = () => {
     },
     {
       title: "FarmSphere — AI-Powered Smart Farming Application",
-      description: "Built an ML-powered crop health monitoring system for disease detection with diagnostic reports & remediation guidance. Integrated an AI chatbot for personalized farming advice, real-time weather alerts, market price aggregation, and location retrieval. Implemented a multi-agent system with specialized agents for Weather and Crop Health monitoring. Designed with Riverpod state management, local caching, and multilingual voice input/output.",
+      description: "Built an ML-powered crop health monitoring system using EfficientNet with transfer learning for image-based disease detection, generating diagnostic reports and remediation guidance. Developed an agentic AI system with specialized agents (Weather, Crop Health, Advisory) orchestrated via LLM-based reasoning, tool integration, and context-aware decision-making. Designed with Riverpod state management, local caching, location-based insights, and multilingual voice support.",
       category: "Full-Stack, AI and ML",
       technologies: ["Flutter", "Generative AI", "SQLite", "REST APIs", "Riverpod", "Voice I/O"],
       features: [
-        "ML-powered crop health monitoring with diagnostic reports & remediation guidance",
-        "AI chatbot for personalized farming advice",
-        "Multi-agent system with specialized agents for Weather and Crop Health monitoring",
-        "Real-time weather alerts & market price aggregation",
+        "ML-powered crop health monitoring using EfficientNet with transfer learning",
+        "Agentic AI system orchestrated via LLM-based reasoning and context-aware decision-making",
+        "Multi-agent system with specialized agents for Weather, Crop Health, and Advisory",
+        "Location-based insights and real-time alerts",
         "Riverpod state management & local caching",
         "Multilingual voice input/output support"
       ],
