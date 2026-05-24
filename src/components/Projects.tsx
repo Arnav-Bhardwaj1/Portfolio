@@ -12,17 +12,16 @@ export const Projects = () => {
   const projects = [
     {
       title: "CogniFlow — Workflow Automation Platform",
-      description: "Built a workflow automation platform with a node-based editor, multi-trigger support (webhooks, Google Forms, Razorpay), and integrations like Slack, Discord, and AI nodes, powered by event-driven background orchestration using Inngest. Implemented billing, paywalls, secure authentication, and error monitoring & observability using Sentry. Built an AI Workflow Generator that converts natural language input into structured workflow drafts rendered directly on canvas. Architected a fully type-safe backend using tRPC, Prisma, and Neon Postgres, ensuring end-to-end data integrity and reducing runtime errors via production CI/CD workflows.",
+      description: "A powerful workflow automation platform to orchestrate background tasks via a visual node editor. Features an AI generator that instantly converts natural language into executable workflows.",
       category: "Full-Stack & SaaS",
       technologies: ["Next.js", "Prisma", "Inngest", "tRPC", "Better Auth", "Razorpay"],
       features: [
-        "Node-based workflow editor with multi-trigger support",
-        "Triggers: webhooks, Google Forms, Razorpay",
-        "Integrations: Slack, Discord, and AI nodes",
-        "Event-driven background orchestration using Inngest",
-        "Billing, paywalls, secure authentication, and error monitoring & observability using Sentry",
-        "AI Workflow Generator: natural language to workflow draft on canvas",
-        "End-to-end data integrity and reduced runtime errors via production CI/CD workflows"
+        "Engineered a workflow automation platform with a node-based visual editor",
+        "Integrated multi-trigger support for webhooks, Google Forms, and Razorpay",
+        "Orchestrated event-driven background tasks and AI nodes using Inngest",
+        "Implemented secure authentication, paywalls, and usage-based billing",
+        "Built an AI Workflow Generator to convert natural language into canvas drafts",
+        "Architected a fully type-safe backend using tRPC, Prisma, and Neon Postgres"
       ],
       icon: Code,
       imageUrl: "/cogniflow.png",
@@ -31,16 +30,16 @@ export const Projects = () => {
     },
     {
       title: "Perceptron — B2B AI Support Platform",
-      description: "Built a multi-tenant AI support platform with an embeddable widget supporting chat, voice calls, persistent sessions, and escalation, along with a real-time operator dashboard for monitoring and response, featuring triage and customization. Engineered a cross-origin iframe widget with Convex real-time sync and secure postMessage origin validation. Implemented RAG-powered workflows, usage-based billing, & integrated Sentry, Clerk, and webhook-driven sync.",
+      description: "An enterprise-grade AI support platform featuring an embeddable chat and voice widget. Empowers teams with a real-time operator dashboard and secure RAG-powered workflows for seamless interactions.",
       category: "Full-Stack & AI",
       technologies: ["Next.js", "Convex", "Clerk", "OpenAI", "VAPI", "Turborepo"],
       features: [
-        "Multi-tenant AI support with embeddable widget",
-        "Chat, voice calls, persistent sessions, and escalation",
-        "Real-time operator dashboard featuring triage and customization",
-        "Cross-origin iframe widget with Convex real-time sync",
-        "RAG-powered workflows with usage-based billing",
-        "Integrated Sentry, Clerk, and webhook-driven sync"
+        "Built a multi-tenant AI support platform with an embeddable chat widget",
+        "Engineered persistent sessions supporting voice calls and intelligent escalation",
+        "Developed a real-time operator dashboard for triage and custom response monitoring",
+        "Implemented a cross-origin iframe widget with secure postMessage origin validation",
+        "Orchestrated RAG-powered workflows with real-time data sync using Convex",
+        "Integrated Sentry, Clerk authentication, and webhook-driven usage-based billing"
       ],
       icon: Brain,
       imageUrl: "/perceptron.png",
@@ -48,51 +47,36 @@ export const Projects = () => {
       githubLink: "https://github.com/Arnav-Bhardwaj1/Perceptron"
     },
     {
-      title: "FarmSphere — AI-Powered Smart Farming Application",
-      description: "Built an ML-powered crop health monitoring system using EfficientNet with transfer learning for image-based disease detection, generating diagnostic reports and remediation guidance. Developed an agentic AI system with specialized agents (Weather, Crop Health, Advisory) orchestrated via LLM-based reasoning, tool integration, and context-aware decision-making. Designed with Riverpod state management, local caching, location-based insights, and multilingual voice support.",
+      title: "FarmSphere — Multi-Agent AI Farming Platform",
+      description: "An intelligent farming platform powered by EfficientNet ML models and Agentic AI orchestration. Delivers real-time crop diagnostics, farming insights, and personalized guidance via a voice-enabled app.",
       category: "Full-Stack, AI and ML",
       technologies: ["Flutter", "Generative AI", "SQLite", "REST APIs", "Riverpod", "Voice I/O"],
       features: [
-        "ML-powered crop health monitoring using EfficientNet with transfer learning",
-        "Agentic AI system orchestrated via LLM-based reasoning and context-aware decision-making",
-        "Multi-agent system with specialized agents for Weather, Crop Health, and Advisory",
-        "Location-based insights and real-time alerts",
-        "Riverpod state management & local caching",
-        "Multilingual voice input/output support"
+        "Built an ML-powered crop health monitoring system using EfficientNet",
+        "Implemented transfer learning for image-based disease detection and diagnostics",
+        "Developed an Agentic AI system with specialized agents for Weather and Crop Health",
+        "Orchestrated multi-agent workflows using LLMs for context-aware decision-making",
+        "Engineered local caching and location-based insights using Riverpod",
+        "Integrated multilingual voice support and a personalized AI Advisory Assistant"
       ],
       icon: Brain,
       imageUrl: "/fa.png",
       demoLink: "#",
       githubLink: "https://github.com/Arnav-Bhardwaj1/FarmSphere"
     },
-    {
-      title: "Finova - AI-Powered Personal Finance Manager",
-      description: "Developed a full-stack expense management platform with real-time features, improving data consistency and reliability across dynamic reports. Implemented secure authentication, document handling, and real-time data sync. Integrated an AI-powered chatbot for personalized financial insights and budget planning.",
-      category: "Full-Stack & AI",
-      technologies: ["JavaScript", "MongoDB", "Express.js", "React.js", "Node.js", "AI Integration"],
-      features: [
-        "AI-powered financial insights & budget recommendations",
-        "Real-time expense tracking with smart categorization",
-        "Interactive charts & comprehensive financial reports",
-        "Document upload & automated expense extraction",
-        "Secure multi-user authentication system",
-        "Advanced filtering & search capabilities"
-      ],
-      icon: Database,
-      imageUrl: "/finova.jpg",
-      demoLink: "https://finance1manager.netlify.app/",
-      githubLink: "https://github.com/Arnav-Bhardwaj1/FinanceManager"
-    },
+
     {
       title: "AstroGuard: Earth's Sentinel",
       description: "Interactive asteroid impact visualization tool that simulates asteroid impacts and tests deflection strategies using real NASA data. Features 3D trajectory visualization, impact calculations, and educational planetary defense insights.",
       category: "Full-Stack & 3D",
       technologies: ["Python", "Flask", "React", "TypeScript", "Three.js", "Leaflet", "Tailwind CSS", "NASA API"],
       features: [
-        "Real NASA Sentry API asteroid data integration",
-        "3D trajectory visualization with Three.js",
-        "Impact simulation: energy, crater size, tsunami risk",
-        "Deflection testing with orbital mechanics"
+        "Integrated live NASA Sentry API data to track real-time near-Earth asteroid trajectories",
+        "Engineered immersive 3D orbital visualizations using Three.js for planetary defense modeling",
+        "Simulated impact physics to calculate kinetic energy, crater dimensions, and tsunami risks",
+        "Implemented orbital mechanics algorithms to simulate kinetic impactor deflection missions",
+        "Built a responsive dashboard with geospatial impact mapping using Leaflet and Tailwind CSS",
+        "Designed a scalable Flask backend to process datasets and serve real-time physics calculations",
       ],
       icon: Globe,
       imageUrl: "/astro.png",

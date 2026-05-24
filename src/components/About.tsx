@@ -16,7 +16,7 @@ export const About = () => {
     {
       icon: Code,
       title: "DSA (Data Structures and Algorithms)",
-      description: "Solved 900+ DSA problems across platforms; achieved Knight (1850+) rating on LeetCode",
+      description: "Solved 1100+ DSA problems across platforms; achieved Knight (1850+) rating on LeetCode",
     },
     {
       icon: Trophy,
@@ -77,7 +77,7 @@ export const About = () => {
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500">Me</span>
           </motion.h2>
           <p className="text-lg md:text-xl text-gray-300 max-w-5xl mx-auto leading-relaxed">
-            A passionate computer science student with a strong foundation in full-stack development, machine learning and DSA, dedicated to creating impactful solutions.
+            AI Engineer & Software Developer focused on building scalable products, intelligent systems, <br /> and impactful solutions that create real-world value.
           </p>
         </div>
 
@@ -92,22 +92,16 @@ export const About = () => {
             <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">My Journey</h3>
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                I'm currently pursuing my Bachelor of Technology in Computer Science Engineering
-                at Maharaja Agrasen Institute of Technology, Delhi, where I've maintained an
-                exceptional academic record with a 9.81 CGPA, secured a perfect 10.0 GPA twice (in 3rd and 5th semesters),
-                and hold Rank 1 across all branches.
+                I’m an AI Engineer & Software Developer focused on building scalable, intelligent systems. I value consistency, continuous learning, and disciplined execution, reflected in my 9.81 GPA, solving 1100+ DSA problems, and achieving the Knight rating on LeetCode.
               </p>
               <p>
-                I've completed internships at DRDO (Defence Research & Development Organisation) as a Machine Learning Intern,
-                working on RAG pipelines and developing
-                interactive weather analysis systems for 41 Indian Air Force airbases. Most recently, I worked as a
-                Full Stack Developer Intern at Cogzin Technologies, building AI-enabled investor-founder matchmaking
-                platforms with Pinecone vector search and OpenAI integration.
+                Recently, I worked as a Machine Learning Intern at DRDO, where I developed a production-grade RAG pipeline for defense analytics. I also interned as a Full-Stack Developer at Cogzin Technologies, contributing to an AI-enabled venture capital platform connecting investors and founders.
               </p>
               <p>
-                Beyond academics, I'm actively involved in the tech community as a Core Team Member
-                at TechCom, where I helped organize HackwithMAIT 5.0 with 450+ participants. I'm also
-                a member of IOSD MAIT since October 2023.
+                My experience spans Software Development, Machine Learning, Deep Learning, Generative AI, RAG systems, Agentic AI, and workflow automation.
+              </p>
+              <p>
+                Beyond engineering, I actively participate in hackathons and technical communities. I enjoy building AI-powered products, exploring new technologies, and solving real-world problems through software.
               </p>
             </div>
           </motion.div>
@@ -190,15 +184,11 @@ export const About = () => {
                   title: "ML • DL • Gen AI • RAG • Hugging Face"
                 },
                 {
-                  quote: "Strong foundation in Data Structures and Algorithms with 900+ problems solved. Achieved 1850+ rating on LeetCode with expertise in optimization techniques.",
+                  quote: "Strong foundation in Data Structures and Algorithms with 1100+ problems solved. Achieved 1850+ rating on LeetCode with expertise in optimization techniques.",
                   name: "Problem Solving",
                   title: "DSA • Algorithms • Competitive Programming"
                 },
-                {
-                  quote: "Mastering multiple programming languages including C++, Python, Java, JavaScript, and TypeScript. Building efficient and optimized solutions across different platforms.",
-                  name: "Programming Languages",
-                  title: "C++ • Python • Java • JavaScript • TypeScript"
-                },
+
                 {
                   quote: "Creating cross-platform mobile applications with Flutter. Designing intuitive user interfaces and seamless user experiences for iOS and Android.",
                   name: "Mobile Development",
@@ -221,9 +211,9 @@ export const About = () => {
                 }
               ]}
               direction="left"
-              speed="slow"
+              speed="normal"
               pauseOnHover={true}
-              className="[--animation-duration:80s]"
+              className="[--animation-duration:40s]"
             />
           </div>
 

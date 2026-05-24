@@ -30,9 +30,9 @@ const SYN = {
 
 const codeLines: CodeLine[] = [
   [{ text: "class ", color: SYN.keyword }, { text: "ArnavBhardwaj", color: SYN.type }, { text: ":", color: SYN.plain }],
-  [{ text: "    role ", color: SYN.plain }, { text: "= ", color: SYN.op }, { text: "\"AI & Full-Stack Developer\"", color: SYN.string }],
+  [{ text: "    role ", color: SYN.plain }, { text: "= ", color: SYN.op }, { text: "\"AI Engineer & Software Developer\"", color: SYN.string }],
   [{ text: "    cgpa ", color: SYN.plain }, { text: "= ", color: SYN.op }, { text: "9.81", color: SYN.number }, { text: "  ", color: SYN.plain }, { text: "# Rank 1", color: SYN.comment }],
-  [{ text: "    dsa  ", color: SYN.plain }, { text: "= ", color: SYN.op }, { text: "\"900+ problems solved\"", color: SYN.string }],
+  [{ text: "    dsa  ", color: SYN.plain }, { text: "= ", color: SYN.op }, { text: "\"1100+ problems solved\"", color: SYN.string }],
   [{ text: "", color: SYN.plain }],
   [{ text: "    skills ", color: SYN.plain }, { text: "= ", color: SYN.op }, { text: "[", color: SYN.plain }],
   [{ text: "        ", color: SYN.plain }, { text: "\"C++\"", color: SYN.string }, { text: ", ", color: SYN.plain }, { text: "\"Python\"", color: SYN.string }, { text: ", ", color: SYN.plain }, { text: "\"JavaScript\"", color: SYN.string }, { text: ", ", color: SYN.plain }, { text: "\"TypeScript\"", color: SYN.string }, { text: ",", color: SYN.plain }],
@@ -216,7 +216,7 @@ const FloatingCodeTerminal = () => {
 // ─── Role Switcher Component ──────────────────────────────────────────────────
 const roles = [
   { text: "AI Engineer", gradient: "from-amber-400 via-orange-500 to-amber-500" },
-  { text: "Full-Stack Developer", gradient: "from-orange-400 via-amber-500 to-orange-500" },
+  { text: "Software Developer", gradient: "from-orange-400 via-amber-500 to-orange-500" },
   { text: "DSA Enthusiast", gradient: "from-amber-500 via-orange-400 to-amber-400" },
   { text: "Ex-Intern @DRDO", gradient: "from-orange-500 via-amber-400 to-orange-400" },
 ];
@@ -288,6 +288,33 @@ const StatBadge = ({
     );
   }
   return content;
+};
+
+// ─── Text Highlight Component ─────────────────────────────────────────────────
+const Highlight = ({ children, colorTheme = "orange" }: { children: React.ReactNode, colorTheme?: "orange" | "amber" | "gold" }) => {
+  const themes = {
+    orange: {
+      text: "text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600",
+      glow: "drop-shadow-[0_0_12px_rgba(249,115,22,0.8)]",
+    },
+    amber: {
+      text: "text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600",
+      glow: "",
+    },
+    gold: {
+      text: "text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500",
+      glow: "",
+    }
+  };
+  const t = themes[colorTheme];
+  return (
+    <motion.span 
+      whileHover={{ scale: 1.05 }}
+      className={`inline-block font-bold ${t.text} ${t.glow} cursor-default`}
+    >
+      {children}
+    </motion.span>
+  );
 };
 
 // ─── Main Hero Component ──────────────────────────────────────────────────────
@@ -363,37 +390,20 @@ export const Hero = () => {
             {/* Tagline */}
             <BlurFade delay={0.45} direction="up">
               <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Passionate about{" "}
-                <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                  machine learning
-                </span>
-                ,{" "}
-                <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                  deep learning
-                </span>
-                ,{" "}
-                <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                  full-stack development
-                </span>
-                {" "}&{" "}
-                <span className="text-[#64FFDA] font-bold bg-[#64FFDA]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                  DSA
-                </span>
-                . Currently a pre-final year CSE student focused on{" "}
-                <span className="text-[#00D4FF] font-bold bg-[#00D4FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                  AI
-                </span>
-                {" "}and{" "}
-                <span className="text-[#00B8FF] font-bold bg-[#00B8FF]/10 px-2 py-0.5 sm:px-3 sm:py-1 rounded-lg font-mono text-sm sm:text-base">
-                  software development
-                </span>
+                Passionate about <Highlight colorTheme="orange">AI</Highlight>,{" "}
+                <Highlight colorTheme="gold">machine learning</Highlight>, and{" "}
+                <Highlight colorTheme="amber">software engineering</Highlight>. 
+                Currently a pre-final year CSE student building{" "}
+                <Highlight colorTheme="gold">intelligent systems</Highlight>,{" "}
+                <Highlight colorTheme="orange">Agentic AI workflows</Highlight>, and{" "}
+                <Highlight colorTheme="amber">scalable applications</Highlight>.
               </p>
             </BlurFade>
 
             {/* Stat Badges */}
             <BlurFade delay={0.55} direction="up">
               <div className="flex flex-wrap gap-3 justify-center lg:justify-start">
-                <StatBadge value="900+" label="DSA Problems" delay={0.6} />
+                <StatBadge value="1100+" label="DSA Problems" delay={0.6} />
                 <StatBadge
                   value="1850+"
                   label="LC Rating"

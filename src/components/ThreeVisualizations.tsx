@@ -200,7 +200,7 @@ export function CodeVisualization() {
   }, [isVisible]);
 
   const codeBlocks = [
-    { text: 'Finova', color: '#61dafb', delay: 0, position: 'top-left', glow: '#61dafb80', type: 'Finance App' },
+    { text: 'Perceptron', color: '#9333ea', delay: 0, position: 'top-left', glow: '#9333ea80', type: 'AI Support' },
     { text: 'FarmSphere', color: '#3776ab', delay: 0.3, position: 'top-right', glow: '#3776ab80', type: 'AI Project' },
     { text: 'CogniFlow', color: '#ff6b6b', delay: 0.6, position: 'bottom-left', glow: '#ff6b6b80', type: 'Web App' },
     { text: 'AstroGuard', color: '#68a063', delay: 0.9, position: 'bottom-right', glow: '#68a06380', type: 'Mobile Dev' },

@@ -72,7 +72,7 @@ export const Contact = () => {
           <div className="flex flex-col items-center lg:items-stretch text-center lg:text-left w-full max-w-md lg:max-w-none">
             <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
             <p className="text-muted-foreground mb-8">
-              Whether you're looking for a passionate developer, have an exciting project in mind,
+              Whether you're looking for a passionate developer or an AI Engineer, have an exciting project in mind,
               or want to collaborate on machine learning research, I'd love to hear from you.
             </p>
 
@@ -254,7 +254,7 @@ export const Contact = () => {
               <h3 className="text-xl sm:text-2xl font-semibold mb-4">Let's Build Something Meaningful</h3>
               <p className="text-sm sm:text-base text-muted-foreground mb-6">
                 I'm currently open to internship opportunities, research collaborations,
-                and exciting projects in AI/ML and full-stack development.
+                and exciting projects in AI/ML and software development.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" asChild className="bg-orange-500/10 hover:bg-orange-500/20 font-bold border border-orange-500/50 hover:border-orange-400 shadow-[0_0_15px_rgba(249,115,22,0.15)] hover:shadow-[0_0_25px_rgba(249,115,22,0.3)] transition-all duration-300 backdrop-blur-sm">
