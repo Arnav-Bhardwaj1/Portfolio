@@ -59,6 +59,12 @@ export const Education = () => {
   const achievements = [
     {
       icon: Trophy,
+      title: "CodeShield 1.0 Winner",
+      description: "National Level Hackathon",
+      detail: "Secured 1st place in CodeShield 1.0 by developing VaultGuard, an enterprise-grade Data Leak Prevention platform."
+    },
+    {
+      icon: Trophy,
       title: "9th Rank - Hack Energy 2.0 Hackathon",
       description: "National Level Hackathon",
       detail: "Ranked 9th among 400+ teams (1100+ participants)"

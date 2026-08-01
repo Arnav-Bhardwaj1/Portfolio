@@ -218,7 +218,7 @@ const roles = [
   { text: "AI Engineer", gradient: "from-amber-400 via-orange-500 to-amber-500" },
   { text: "Software Developer", gradient: "from-orange-400 via-amber-500 to-orange-500" },
   { text: "DSA Enthusiast", gradient: "from-amber-500 via-orange-400 to-amber-400" },
-  { text: "Ex-Intern @DRDO", gradient: "from-orange-500 via-amber-400 to-orange-400" },
+  { text: "Ex-Intern @DRDO & Cogzin Technologies", gradient: "from-orange-500 via-amber-400 to-orange-400" },
 ];
 
 const RoleSwitcher = () => {
@@ -232,18 +232,18 @@ const RoleSwitcher = () => {
   }, []);
 
   return (
-    <div className="h-[42px] sm:h-[48px] md:h-[56px] relative overflow-hidden">
+    <div className="relative overflow-hidden w-full flex items-start min-h-[42px] sm:min-h-[48px] md:min-h-[56px]">
       <AnimatePresence mode="wait">
-        <motion.span
+        <motion.div
           key={currentRole}
           initial={{ y: 30, opacity: 0, filter: "blur(8px)" }}
           animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
           exit={{ y: -30, opacity: 0, filter: "blur(8px)" }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className={`absolute inset-0 text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r ${roles[currentRole].gradient} bg-clip-text text-transparent`}
+          className={`w-full text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r ${roles[currentRole].gradient} bg-clip-text text-transparent pb-1`}
         >
           {roles[currentRole].text}
-        </motion.span>
+        </motion.div>
       </AnimatePresence>
     </div>
   );

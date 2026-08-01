@@ -21,7 +21,7 @@ export const About = () => {
     {
       icon: Trophy,
       title: "Hackathon Achievements",
-      description: "9th Rank at Hack Energy 2.0 (400+ teams) & Top 10 at Technov8 and Logic Rush",
+      description: "1st Place at CodeShield 1.0 | 9th Rank at Hack Energy 2.0 | Top 10 at Technov8 and Logic Rush",
     },
     {
       icon: Users,
